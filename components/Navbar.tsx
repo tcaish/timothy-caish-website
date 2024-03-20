@@ -10,19 +10,18 @@ export default function Navbar() {
 
   return (
     <nav>
-      <Container maxW="container.xl">
-        <Flex paddingY="8px">
+      <Container maxW="container.xl" paddingY="8px">
+        <Flex>
           <Box>
             <Link href={Routes.Home}>
               <Image
                 alt="Timothy Caish Logo"
-                className="object-contain"
                 src={
-                  colorMode === 'light'
-                    ? '/assets/logo/logo__light.png'
-                    : '/assets/logo/logo__dark.png'
+                  colorMode === 'dark'
+                    ? '/assets/logo/logo__dark.png'
+                    : '/assets/logo/logo__light.png'
                 }
-                w={['75px', '100px']}
+                w={{ base: '75px', md: '100px' }}
               />
             </Link>
           </Box>
@@ -35,7 +34,7 @@ export default function Navbar() {
 
       <Divider
         borderBottomWidth="3px"
-        borderColor={colorMode === 'light' ? 'gray.200' : 'gray.600'}
+        borderColor={colorMode === 'dark' ? 'gray.600' : 'gray.200'}
       />
     </nav>
   );
