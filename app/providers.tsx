@@ -1,5 +1,6 @@
 'use client';
 
+import theme from '@/theme';
 import { ChakraProvider } from '@chakra-ui/react';
 
 type ProvidersProps = {
@@ -7,5 +8,5 @@ type ProvidersProps = {
 };
 
 export function Providers(props: ProvidersProps) {
-  return <ChakraProvider>{props.children}</ChakraProvider>;
+  return <ChakraProvider theme={theme}>{props.children}</ChakraProvider>;
 }

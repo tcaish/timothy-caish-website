@@ -1,3 +1,4 @@
+import { Providers } from '@/app/providers';
 import { generateMetaData } from '@/helpers';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
@@ -13,7 +14,9 @@ type RootLayoutProps = {
 export default function RootLayout(props: RootLayoutProps) {
   return (
     <html lang="en">
-      <body className={inter.className}>{props.children}</body>
+      <body className={inter.className}>
+        <Providers>{props.children}</Providers>
+      </body>
     </html>
   );
 }

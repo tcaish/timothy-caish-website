@@ -1,7 +1,10 @@
+import Navbar from '@/components/Navbar';
+import { Container } from '@chakra-ui/layout';
+
 export default function Home() {
   return (
-    <div>
-      <h1>Hello</h1>
-    </div>
+    <Container maxW="container.xl">
+      <Navbar />
+    </Container>
   );
 }

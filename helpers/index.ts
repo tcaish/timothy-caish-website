@@ -63,8 +63,10 @@ export function generateMetaData(meta?: {
           width: 1200
         }
       ],
+      siteName: title,
       title,
-      type: 'website'
+      type: 'website',
+      url: domain
     }
   };
 }
