@@ -32,6 +32,7 @@ export default function Home() {
               <Heading color={colorMode === 'dark' ? 'white' : 'gray.700'}>
                 <TypeAnimation
                   deletionSpeed={60}
+                  preRenderFirstString={true}
                   sequence={[
                     'am a full stack web developer',
                     2000,
@@ -49,7 +50,6 @@ export default function Home() {
                     3000
                   ]}
                   speed={60}
-                  preRenderFirstString={true}
                 />
               </Heading>
             </Balancer>
