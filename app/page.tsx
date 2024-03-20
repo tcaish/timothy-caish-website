@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import { useColorMode } from '@chakra-ui/color-mode';
 import { Box, Center, Flex, Heading } from '@chakra-ui/layout';
 import Lottie from 'lottie-react';
+import { TypeAnimation } from 'react-type-animation';
 import { Balancer } from 'react-wrap-balancer';
 
 export default function Home() {
@@ -23,13 +24,33 @@ export default function Home() {
           <Box textAlign="center">
             <Balancer>
               <Heading color={colorMode === 'dark' ? 'white' : 'gray.700'}>
-                Hello, world 👋🏼 My name is Timothy Caish, and I am a
+                Hello, world 👋🏼 My name is Timothy Caish, and I
               </Heading>
             </Balancer>
 
             <Balancer>
               <Heading color={colorMode === 'dark' ? 'white' : 'gray.700'}>
-                full-stack web developer.
+                <TypeAnimation
+                  deletionSpeed={60}
+                  sequence={[
+                    'am a full stack web developer',
+                    2000,
+                    'am a full stack mobile developer',
+                    3000,
+                    'build websites using React',
+                    3000,
+                    'build websites using Next.js',
+                    3000,
+                    'build websites using Chakra UI',
+                    3000,
+                    'build mobile apps using React Native',
+                    3000,
+                    'build mobile apps using Expo',
+                    3000
+                  ]}
+                  speed={60}
+                  preRenderFirstString={true}
+                />
               </Heading>
             </Balancer>
           </Box>
@@ -51,6 +72,6 @@ export default function Home() {
 const styles = {
   developer_lottie: {
     width: '100%',
-    height: '400px'
+    height: '450px'
   }
 };
