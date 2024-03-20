@@ -8,7 +8,7 @@ export function generateMetaData(meta?: {
   title?: string;
 }): Metadata {
   const domain = !isDevelopmentEnv
-    ? 'https://the-village-social.vercel.app'
+    ? 'https://timothy-caish.vercel.app'
     : 'http://localhost:3000';
 
   const description =
