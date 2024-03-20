@@ -38,15 +38,15 @@ export default function Home() {
                     2000,
                     'am a full stack mobile developer',
                     3000,
-                    'build websites using React',
+                    'build websites with React',
                     3000,
-                    'build websites using Next.js',
+                    'build websites with Next.js',
                     3000,
-                    'build websites using Chakra UI',
+                    'build websites with Chakra UI',
                     3000,
-                    'build mobile apps using React Native',
+                    'build mobile apps with React Native',
                     3000,
-                    'build mobile apps using Expo',
+                    'build mobile apps with Expo',
                     3000
                   ]}
                   speed={60}
