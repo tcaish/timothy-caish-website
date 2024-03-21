@@ -6,6 +6,7 @@ import FadeIn from '@/components/FadeIn';
 import Navbar from '@/components/Navbar';
 import { useColorMode } from '@chakra-ui/color-mode';
 import { Box, Center, Flex, Heading } from '@chakra-ui/layout';
+import { Avatar } from '@chakra-ui/react';
 import Lottie from 'lottie-react';
 import { TypeAnimation } from 'react-type-animation';
 import { Balancer } from 'react-wrap-balancer';
@@ -32,6 +33,12 @@ export default function Home() {
           <Center flexBasis={0} flexGrow={1}>
             <FadeIn>
               <Box textAlign={{ base: 'center', lg: 'end' }}>
+                <Avatar
+                  size="2xl"
+                  name="Timothy Caish"
+                  src="/assets/avatar.png"
+                />
+
                 <Balancer>
                   <Heading
                     color={colorMode === 'dark' ? 'white' : 'gray.700'}
