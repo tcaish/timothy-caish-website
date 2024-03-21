@@ -32,10 +32,7 @@ export default function Navbar() {
         </Flex>
       </Container>
 
-      <Divider
-        borderBottomWidth="3px"
-        borderColor={colorMode === 'dark' ? 'gray.600' : 'gray.200'}
-      />
+      <Divider borderColor={colorMode === 'dark' ? 'gray.600' : 'gray.200'} />
     </nav>
   );
 }
