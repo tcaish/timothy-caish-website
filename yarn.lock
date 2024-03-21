@@ -871,6 +871,11 @@
   resolved "https://registry.yarnpkg.com/@chakra-ui/visually-hidden/-/visually-hidden-2.2.0.tgz#9b0ecef8f01263ab808ba3bda7b36a0d91b4d5c1"
   integrity sha512-KmKDg01SrQ7VbTD3+cPWf/UfpF5MSwm3v7MWi0n5t8HnnadT13MF0MJCDSXbBWnzLv1ZKJ6zlyAOeARWX+DpjQ==
 
+"@devil7softwares/react-drifter-stars@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@devil7softwares/react-drifter-stars/-/react-drifter-stars-1.0.6.tgz#0452afe7bb675aaa3b15a51447f5c7e03823db76"
+  integrity sha512-mYed5Zh/GKOesoSTLEYKTn0y5DZbM6YM8qD3nI1XEX4EJJVQqrclMce19KUtRq4YtyIL2aBA447HZN9k96+Tgw==
+
 "@emotion/babel-plugin@^11.11.0":
   version "11.11.0"
   resolved "https://registry.yarnpkg.com/@emotion/babel-plugin/-/babel-plugin-11.11.0.tgz#c2d872b6a7767a9d176d007f5b31f7d504bb5d6c"
