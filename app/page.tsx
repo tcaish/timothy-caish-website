@@ -12,6 +12,8 @@ import { Balancer } from 'react-wrap-balancer';
 export default function Home() {
   const { colorMode } = useColorMode();
 
+  const defaultWaitInterval = 3000;
+
   return (
     <>
       <AnimatedBackground />
@@ -38,23 +40,30 @@ export default function Home() {
               <Balancer>
                 <Heading color={colorMode === 'dark' ? 'white' : 'gray.700'}>
                   <TypeAnimation
-                    deletionSpeed={60}
+                    deletionSpeed={80}
                     preRenderFirstString={true}
                     sequence={[
                       'create websites',
                       2000,
                       'create websites with React',
-                      3000,
+                      defaultWaitInterval,
                       'create websites with Next.js',
-                      3000,
+                      defaultWaitInterval,
                       'create websites with Chakra UI',
-                      3000,
+                      defaultWaitInterval,
                       'create mobile apps',
-                      3000,
+                      defaultWaitInterval,
                       'create mobile apps with React Native',
-                      3000,
+                      defaultWaitInterval,
                       'create mobile apps with Expo',
-                      3000
+                      defaultWaitInterval,
+                      'can integrate with Supabase',
+                      defaultWaitInterval,
+                      'can integrate with Firebase',
+                      defaultWaitInterval,
+                      'can integrate with AWS',
+                      defaultWaitInterval,
+                      'love what I do! 🚀🌈'
                     ]}
                     speed={60}
                   />
