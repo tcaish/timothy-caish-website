@@ -25,9 +25,12 @@ export default function Home() {
           justifyContent="space-between"
         >
           <Center flexBasis={0} flexGrow={1}>
-            <Box textAlign="center">
+            <Box textAlign={{ base: 'center', lg: 'end' }}>
               <Balancer>
-                <Heading color={colorMode === 'dark' ? 'white' : 'gray.700'}>
+                <Heading
+                  color={colorMode === 'dark' ? 'white' : 'gray.700'}
+                  size="2xl"
+                >
                   Hello, world 👋🏼 My name is Timothy Caish, and I
                 </Heading>
               </Balancer>
@@ -38,19 +41,19 @@ export default function Home() {
                     deletionSpeed={60}
                     preRenderFirstString={true}
                     sequence={[
-                      'am a full stack mobile developer',
+                      'create websites',
                       2000,
-                      'am a full stack web developer',
+                      'create websites with React',
                       3000,
-                      'build websites with React',
+                      'create websites with Next.js',
                       3000,
-                      'build websites with Next.js',
+                      'create websites with Chakra UI',
                       3000,
-                      'build websites with Chakra UI',
+                      'create mobile apps',
                       3000,
-                      'build mobile apps with React Native',
+                      'create mobile apps with React Native',
                       3000,
-                      'build mobile apps with Expo',
+                      'create mobile apps with Expo',
                       3000
                     ]}
                     speed={60}

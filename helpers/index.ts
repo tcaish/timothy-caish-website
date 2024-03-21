@@ -13,7 +13,7 @@ export function generateMetaData(meta?: {
 
   const description =
     meta?.description ||
-    'Discover the work of a passionate full-stack mobile & web developer with expertise in React and React Native.';
+    'Discover the work of a passionate full stack mobile & web developer with expertise in React, React Native, Next.js, Expo, Chakra UI, Supabase, and more!';
   const imageUrl = `${domain}/assets/seo.png`;
   const title = `Timothy Caish - ${
     meta?.title || 'Full Stack Mobile & Web Developer'

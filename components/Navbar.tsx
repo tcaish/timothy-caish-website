@@ -21,7 +21,7 @@ export default function Navbar() {
                     ? '/assets/logo/logo__dark.png'
                     : '/assets/logo/logo__light.png'
                 }
-                w={{ base: '65px', md: '80px' }}
+                w={{ base: '50px', md: '65px' }}
               />
             </Link>
           </Box>
