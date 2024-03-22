@@ -24,7 +24,6 @@
     "react-dom": "^18",
     "react-type-animation": "^3.2.0",
     "react-wrap-balancer": "^1.1.0",
-    "use-scramble": "^2.2.15",
     "zustand": "^4.5.2"
   },
   "devDependencies": {

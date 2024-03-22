@@ -17,7 +17,18 @@ export function Providers(props: ProvidersProps) {
   // Set the language from local storage on load if it exists
   React.useEffect(() => {
     const storedLanguage = LocalStorage.get(LocalStorage.Keys.Language);
-    storedLanguage && (i18n.locale = storedLanguage);
+
+    if (storedLanguage) {
+      i18n.locale = storedLanguage;
+
+      /**
+       * In dark mode, it does an extra rerender, so the page rerenders and
+       * shows the correct language, but on light mode, it does not do this
+       * extra rerender, so the language does not change on initial load of
+       * page. This line is needed to trigger a rerender.
+       */
+      store.setShowLanguagesMenu(false);
+    }
   }, []);
 
   // Listen for window resize events

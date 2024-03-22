@@ -16,51 +16,12 @@ import { CircleUserRound, GalleryVerticalEnd } from 'lucide-react';
 import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { Balancer } from 'react-wrap-balancer';
-import { UseScrambleProps, useScramble } from 'use-scramble';
 
-const defaultScrambleConfig: UseScrambleProps = {
-  chance: 1,
-  ignore: [' ', '!', '?', '👋🏼', '🚀', '🌈'],
-  onAnimationEnd: () => console.log('animation ended'),
-  onAnimationStart: () => console.log('animation started'),
-  overdrive: false,
-  overflow: true,
-  playOnMount: false,
-  range: [97, 122],
-  scramble: 10,
-  seed: 5,
-  speed: 0.5,
-  step: 10,
-  tick: 1
-};
 const defaultWaitInterval = 3000;
 
 export default function Home() {
   const { colorMode } = useColorMode();
   const store = useStore();
-
-  // Text scrambles
-  const helloWorldTextScramble = useScramble({
-    ...defaultScrambleConfig,
-    text: i18n.t('hello_world')
-  });
-  const typedTextScramble = useScramble({
-    ...defaultScrambleConfig,
-    text: i18n.t('create_websites')
-  });
-  const descriptionTextScramble = useScramble({
-    ...defaultScrambleConfig,
-    text: i18n.t('with_blend_of_creativity')
-  });
-
-  // Listen for when the language was changed
-  React.useEffect(() => {
-    // If the language was not selected
-    if (!store.languageWasSelected) return;
-
-    // Reset the language selected flag
-    store.setLanguageWasSelected(false);
-  }, [store.languageWasSelected]);
 
   const CustomTypeAnimation = React.useCallback(
     () => (
@@ -130,9 +91,10 @@ export default function Home() {
                 <Balancer>
                   <Heading
                     color={colorMode === 'dark' ? 'white' : 'gray.700'}
-                    ref={helloWorldTextScramble.ref}
                     size="2xl"
-                  />
+                  >
+                    {i18n.t('hello_world')}
+                  </Heading>
                 </Balancer>
 
                 {/* Type animation */}
@@ -152,8 +114,9 @@ export default function Home() {
                     <Text
                       color={colorMode === 'dark' ? 'gray.300' : 'gray.700'}
                       fontSize={{ base: 'md', md: 'lg' }}
-                      ref={descriptionTextScramble.ref}
-                    />
+                    >
+                      {i18n.t('with_blend_of_creativity')}
+                    </Text>
                   </Balancer>
 
                   <Stack
