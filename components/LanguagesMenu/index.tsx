@@ -18,9 +18,13 @@ export default function LanguagesMenu() {
   const store = useStore();
 
   const currentLocale = i18n.locale;
-  const updatedLanguageCodes = Object.keys(languageCodes).filter(
-    (languageCode) => !currentLocale.includes(languageCode)
-  );
+  const updatedLanguageCodes = Object.keys(languageCodes)
+    .filter((languageCode) => !currentLocale.includes(languageCode))
+    .sort((a, b) =>
+      getLanguageTextForLanguageCode(b).localeCompare(
+        getLanguageTextForLanguageCode(a)
+      )
+    );
 
   // Create an algorithm to calculate the position of the menu items where they
   // spread out like a fan given the index of the menu item.
