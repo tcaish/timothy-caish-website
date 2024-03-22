@@ -7,7 +7,7 @@ import FullPageBlur from '@/components/FullPageBlur';
 import Navbar from '@/components/Navbar';
 import { useStore } from '@/zustand/store';
 import { useColorMode } from '@chakra-ui/color-mode';
-import { Box, Center, Flex, Heading } from '@chakra-ui/layout';
+import { Box, Center, Flex, Heading, Text } from '@chakra-ui/layout';
 import { Avatar } from '@chakra-ui/react';
 import Lottie from 'lottie-react';
 import React from 'react';
@@ -103,6 +103,24 @@ export default function Home() {
                     />
                   </Heading>
                 </Balancer>
+
+                <Box
+                  mx={{ base: 4, sm: 10, lg: 0 }}
+                  textAlign={{ base: 'center', lg: 'end' }}
+                >
+                  <Balancer>
+                    <Text
+                      color={colorMode === 'dark' ? 'gray.300' : 'gray.700'}
+                      fontSize={{ base: 'md', md: 'lg' }}
+                      mt={4}
+                    >
+                      With a blend of creativity and technical expertise, I
+                      excel as a full stack developer, transforming ideas into
+                      dynamic mobile and web applications that enhance user
+                      engagement and propel businesses forward.
+                    </Text>
+                  </Balancer>
+                </Box>
               </Box>
             </FadeIn>
           </Center>
