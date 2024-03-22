@@ -30,7 +30,7 @@ export default function Navbar() {
                       ? '/assets/logo/logo__dark.png'
                       : '/assets/logo/logo__light.png'
                   }
-                  w={{ base: '50px', md: '65px' }}
+                  w={{ base: '50px', md: '150px' }}
                 />
               </FadeIn>
             </Link>
