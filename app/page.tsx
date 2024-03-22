@@ -26,15 +26,19 @@ export default function Home() {
       </FadeIn>
 
       <Flex direction="column" h="100%">
+        {/* Navigation bar */}
         <Navbar />
 
+        {/* Full page blur */}
+        {store.showLanguagesMenu && <FullPageBlur />}
+
+        {/* Main content */}
         <Flex
           direction={{ base: 'column', lg: 'row' }}
           h="100%"
           justifyContent="space-between"
         >
-          {store.isFullPageBlurEnabled && <FullPageBlur />}
-
+          {/* Left side */}
           <Center flexBasis={0} flexGrow={1} zIndex={0}>
             <FadeIn>
               <Box textAlign={{ base: 'center', lg: 'end' }}>
@@ -89,6 +93,7 @@ export default function Home() {
             </FadeIn>
           </Center>
 
+          {/* Right side */}
           <Center flexBasis={0} flexGrow={1}>
             <FadeIn>
               <Box>

@@ -6,6 +6,7 @@ export default function AnimatedBackground() {
 
   const styles = {
     main: {
+      height: '100%',
       opacity: colorMode === 'dark' ? 0.3 : 1,
       position: 'absolute',
       zIndex: '-1'

@@ -1,11 +1,11 @@
 import { create } from 'zustand';
 
 interface ZustandStore {
-  isFullPageBlurEnabled: boolean;
-  setFullPageBlurEnabled: (enabled: boolean) => void;
+  showLanguagesMenu: boolean;
+  setShowLanguagesMenu: (enabled: boolean) => void;
 }
 
 export const useStore = create<ZustandStore>()((set) => ({
-  isFullPageBlurEnabled: false,
-  setFullPageBlurEnabled: (enabled) => set({ isFullPageBlurEnabled: enabled })
+  showLanguagesMenu: false,
+  setShowLanguagesMenu: (enabled) => set({ showLanguagesMenu: enabled })
 }));
