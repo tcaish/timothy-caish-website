@@ -5,6 +5,7 @@ import AnimatedBackground from '@/components/AnimatedBackground';
 import FadeIn from '@/components/FadeIn';
 import FullPageBlur from '@/components/FullPageBlur';
 import Navbar from '@/components/Navbar';
+import { i18n } from '@/services/localization';
 import { useStore } from '@/zustand/store';
 import { useColorMode } from '@chakra-ui/color-mode';
 import { Box, Center, Flex, Heading, Stack, Text } from '@chakra-ui/layout';
@@ -16,11 +17,11 @@ import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { Balancer } from 'react-wrap-balancer';
 
+const defaultWaitInterval = 3000;
+
 export default function Home() {
   const { colorMode } = useColorMode();
   const store = useStore();
-
-  const defaultWaitInterval = 3000;
 
   // Listen for window resize events
   React.useEffect(() => {
@@ -34,6 +35,40 @@ export default function Home() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  const CustomTypeAnimation = React.useCallback(
+    () => (
+      <TypeAnimation
+        deletionSpeed={80}
+        preRenderFirstString={true}
+        sequence={[
+          i18n.t('create_websites'),
+          2000,
+          i18n.t('create_websites_with_react'),
+          defaultWaitInterval,
+          i18n.t('create_websites_with_nextjs'),
+          defaultWaitInterval,
+          i18n.t('create_websites_with_chakra'),
+          defaultWaitInterval,
+          i18n.t('create_mobile_apps'),
+          defaultWaitInterval,
+          i18n.t('create_mobile_apps_with_react_native'),
+          defaultWaitInterval,
+          i18n.t('create_mobile_apps_with_expo'),
+          defaultWaitInterval,
+          i18n.t('can_integrate_with_supabase'),
+          defaultWaitInterval,
+          i18n.t('can_integrate_with_firebase'),
+          defaultWaitInterval,
+          i18n.t('can_integrate_with_aws'),
+          defaultWaitInterval,
+          `${i18n.t('love_what_i_do')} 🚀🌈`
+        ]}
+        speed={60}
+      />
+    ),
+    [i18n.locale]
+  );
 
   return (
     <>
@@ -71,41 +106,14 @@ export default function Home() {
                     color={colorMode === 'dark' ? 'white' : 'gray.700'}
                     size="2xl"
                   >
-                    Hello, world 👋🏼 My name is Timothy Caish, and I
+                    {i18n.t('hello_world')}
                   </Heading>
                 </Balancer>
 
                 {/* Type animation */}
                 <Balancer>
                   <Heading color={colorMode === 'dark' ? 'white' : 'gray.700'}>
-                    <TypeAnimation
-                      deletionSpeed={80}
-                      preRenderFirstString={true}
-                      sequence={[
-                        'create websites',
-                        2000,
-                        'create websites with React',
-                        defaultWaitInterval,
-                        'create websites with Next.js',
-                        defaultWaitInterval,
-                        'create websites with Chakra UI',
-                        defaultWaitInterval,
-                        'create mobile apps',
-                        defaultWaitInterval,
-                        'create mobile apps with React Native',
-                        defaultWaitInterval,
-                        'create mobile apps with Expo',
-                        defaultWaitInterval,
-                        'can integrate with Supabase',
-                        defaultWaitInterval,
-                        'can integrate with Firebase',
-                        defaultWaitInterval,
-                        'can integrate with AWS',
-                        defaultWaitInterval,
-                        'love what I do! 🚀🌈'
-                      ]}
-                      speed={60}
-                    />
+                    <CustomTypeAnimation />
                   </Heading>
                 </Balancer>
 

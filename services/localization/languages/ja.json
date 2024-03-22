@@ -1,1 +1,22 @@
-{}
+{
+  "can_integrate_with_aws": "AWS と統合できます",
+  "can_integrate_with_firebase": "Firebase と統合できます",
+  "can_integrate_with_supabase": "Supabase と統合できます",
+  "chinese": "中国語",
+  "create_mobile_apps": "モバイル アプリを作成します",
+  "create_mobile_apps_with_expo": "Expo を使用してモバイル アプリを作成します",
+  "create_mobile_apps_with_react_native": "React Native を使用してモバイル アプリを作成します",
+  "create_websites": "Web サイトを作成します",
+  "create_websites_with_chakra": "Chakra UI を使用して Web サイトを作成します",
+  "create_websites_with_nextjs": "Next.js を使用して Web サイトを作成します",
+  "create_websites_with_react": "React を使用して Web サイトを作成します",
+  "english": "英語",
+  "french": "フランス語",
+  "german": "ドイツ語",
+  "hello_world": "こんにちは、世界 👋🏼 私の名前はティモシー カイシュです",
+  "japanese": "日本語",
+  "love_what_i_do": "自分のやっていることは大好きです!",
+  "portuguese": "ポルトガル語",
+  "russian": "ロシア語",
+  "spanish": "スペイン語"
+}

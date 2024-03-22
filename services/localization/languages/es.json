@@ -1,1 +1,22 @@
-{}
+{
+  "can_integrate_with_aws": "puedo integrarme con AWS",
+  "can_integrate_with_firebase": "puedo integrarme con Firebase",
+  "can_integrate_with_supabase": "puedo integrarme con Supabase",
+  "chinese": "Chino",
+  "create_mobile_apps": "creo aplicaciones móviles",
+  "create_mobile_apps_with_expo": "creo aplicaciones móviles con Expo",
+  "create_mobile_apps_with_react_native": "creo aplicaciones móviles con React Native",
+  "create_websites": "creo sitios web",
+  "create_websites_with_chakra": "creo sitios web con Chakra UI",
+  "create_websites_with_nextjs": "creo sitios web con Next.js",
+  "create_websites_with_react": "creo sitios web con React",
+  "english": "Inglés",
+  "french": "Francés",
+  "german": "Alemán",
+  "hello_world": "Hola mundo 👋🏼 Me llamo Timothy Caish y",
+  "japanese": "Japonés",
+  "love_what_i_do": "¡Amo lo que hago!",
+  "portuguese": "Portugués",
+  "russian": "Ruso",
+  "spanish": "Español"
+}
