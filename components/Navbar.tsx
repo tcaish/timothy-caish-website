@@ -9,6 +9,9 @@ import { Box, Container, Divider, Flex, Link, Spacer } from '@chakra-ui/layout';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Moon, Sun } from 'lucide-react';
 
+/**
+ * Navigation bar component.
+ */
 export default function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
 

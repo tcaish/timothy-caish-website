@@ -8,11 +8,15 @@ import { Avatar, Box, Tooltip, useColorMode } from '@chakra-ui/react';
 import { AnimatePresence, motion } from 'framer-motion';
 import './index.scss';
 
+/**
+ * Shows the chosen language, and when selected, it then shows a menu of all
+ * the other languages available. Then you can click on one of the languages
+ * to change the language of the website.
+ */
 export default function LanguagesMenu() {
   const { colorMode } = useColorMode();
   const store = useStore();
 
-  const currentLanguageText = getLanguageTextForLanguageCode();
   const currentLocale = i18n.locale;
   const updatedLanguageCodes = Object.keys(languageCodes).filter(
     (languageCode) => !currentLocale.includes(languageCode)
@@ -20,18 +24,20 @@ export default function LanguagesMenu() {
 
   return (
     <Box onClick={() => store.setShowLanguagesMenu(!store.showLanguagesMenu)}>
+      {/* Selected language */}
       <motion.div
         style={{ position: 'relative', zIndex: 2 }}
         whileHover={{ scale: 1.2 }}
         whileTap={{ scale: 0.8 }}
       >
         <Avatar
-          name={currentLanguageText}
+          name={getLanguageTextForLanguageCode()}
           size="xs"
           src={`/assets/flags/${currentLocale.split('-')[0]}.png`}
         />
       </motion.div>
 
+      {/* Menu of other languages */}
       <AnimatePresence>
         {store.showLanguagesMenu &&
           updatedLanguageCodes.map((languageCode, index) => (
@@ -62,6 +68,7 @@ export default function LanguagesMenu() {
                   placement="left"
                 >
                   <Avatar
+                    className="raised"
                     name={getLanguageTextForLanguageCode(languageCode)}
                     size="sm"
                     src={`/assets/flags/${languageCode}.png`}

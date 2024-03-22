@@ -1,6 +1,9 @@
 import { useColorMode } from '@chakra-ui/color-mode';
 import DrifterStars from '@devil7softwares/react-drifter-stars';
 
+/**
+ * Animated background component.
+ */
 export default function AnimatedBackground() {
   const { colorMode } = useColorMode();
 

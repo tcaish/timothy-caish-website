@@ -5,6 +5,9 @@ type FadeInProps = {
   duration?: number;
 };
 
+/**
+ * Component that fades in the children.
+ */
 export default function FadeIn(props: FadeInProps) {
   return (
     <motion.div
