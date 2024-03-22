@@ -31,6 +31,9 @@ export default function LanguagesMenu() {
     // Update the language
     i18n.locale = languageCode;
 
+    // Mark that a language was selected
+    store.setLanguageWasSelected(true);
+
     // Update the <html /> lang attribute
     document.getElementsByTagName('html')[0].lang = languageCode;
   }
