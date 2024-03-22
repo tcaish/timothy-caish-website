@@ -3,7 +3,9 @@
 import DeveloperJson from '@/assets/lottie/developer.json';
 import AnimatedBackground from '@/components/AnimatedBackground';
 import FadeIn from '@/components/FadeIn';
+import FullPageBlur from '@/components/FullPageBlur';
 import Navbar from '@/components/Navbar';
+import { useStore } from '@/zustand/store';
 import { useColorMode } from '@chakra-ui/color-mode';
 import { Box, Center, Flex, Heading } from '@chakra-ui/layout';
 import { Avatar } from '@chakra-ui/react';
@@ -13,6 +15,7 @@ import { Balancer } from 'react-wrap-balancer';
 
 export default function Home() {
   const { colorMode } = useColorMode();
+  const store = useStore();
 
   const defaultWaitInterval = 3000;
 
@@ -30,12 +33,14 @@ export default function Home() {
           h="100%"
           justifyContent="space-between"
         >
-          <Center flexBasis={0} flexGrow={1}>
+          {store.isFullPageBlurEnabled && <FullPageBlur />}
+
+          <Center flexBasis={0} flexGrow={1} zIndex={0}>
             <FadeIn>
               <Box textAlign={{ base: 'center', lg: 'end' }}>
                 <Avatar
-                  size="2xl"
                   name="Timothy Caish"
+                  size="2xl"
                   src="/assets/avatar.png"
                 />
 

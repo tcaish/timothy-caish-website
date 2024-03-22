@@ -1,6 +1,7 @@
 'use client';
 
 import FadeIn from '@/components/FadeIn';
+import LanguagesMenu from '@/components/LanguagesMenu';
 import { Routes } from '@/constants/routes';
 import { useColorMode } from '@chakra-ui/color-mode';
 import { Image } from '@chakra-ui/image';
@@ -15,6 +16,7 @@ export default function Navbar() {
     <nav>
       <Container maxW="container.xl" paddingY="8px">
         <Flex alignItems="center">
+          {/* Logo */}
           <Box>
             <Link href={Routes.Home}>
               <FadeIn>
@@ -33,6 +35,19 @@ export default function Navbar() {
 
           <Spacer />
 
+          {/* Languages menu */}
+          <Box
+            me={2}
+            _hover={{
+              cursor: 'pointer'
+            }}
+          >
+            <FadeIn>
+              <LanguagesMenu />
+            </FadeIn>
+          </Box>
+
+          {/* Theme toggle */}
           <Box
             borderRadius={6}
             padding={1}

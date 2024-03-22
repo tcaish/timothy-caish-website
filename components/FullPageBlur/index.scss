@@ -1,0 +1,15 @@
+.full-page-blur {
+  backdrop-filter: blur(8px) saturate(150%);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+#full-page-blur-light {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+#full-page-blur-dark {
+  background-color: rgba(0, 0, 0, 0.5);
+}
