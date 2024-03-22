@@ -26,6 +26,15 @@ export default function LanguagesMenu() {
       )
     );
 
+  // Handles what happens when a language is selected
+  function handleLanguageSelected(languageCode: string) {
+    // Update the language
+    i18n.locale = languageCode;
+
+    // Update the <html /> lang attribute
+    document.getElementsByTagName('html')[0].lang = languageCode;
+  }
+
   // Create an algorithm to calculate the position of the menu items where they
   // spread out like a fan given the index of the menu item.
   function calculateMenuItemPosition(index: number) {
@@ -62,6 +71,7 @@ export default function LanguagesMenu() {
         whileTap={{ scale: 0.8 }}
       >
         <Avatar
+          className="raised"
           name={getLanguageTextForLanguageCode()}
           size="sm"
           src={`/assets/flags/${currentLocale.split('-')[0]}.png`}
@@ -97,7 +107,7 @@ export default function LanguagesMenu() {
               whileHover={{ scale: 1.2, transition: { delay: 0 } }}
               whileTap={{ scale: 0.8 }}
             >
-              <Box mt={3}>
+              <Box mt={3} onClick={() => handleLanguageSelected(languageCode)}>
                 <Tooltip
                   bg={colorMode === 'dark' ? 'gray.600' : 'gray.200'}
                   color={colorMode === 'dark' ? 'white' : 'gray.700'}
