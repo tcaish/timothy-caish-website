@@ -22,6 +22,33 @@ export default function LanguagesMenu() {
     (languageCode) => !currentLocale.includes(languageCode)
   );
 
+  // Create an algorithm to calculate the position of the menu items where they
+  // spread out like a fan given the index of the menu item.
+  function calculateMenuItemPosition(index: number) {
+    let angleDenominator = 5;
+    let xOffset = 30;
+    let yOffset = 35;
+
+    if (store.windowWidth <= 1330) {
+      xOffset += 20;
+    }
+
+    if (store.windowWidth <= 1290) {
+      angleDenominator = 4.5;
+      xOffset += 20;
+      yOffset += 10;
+    }
+
+    const menuItemWidth = 96;
+    const menuItemHeight = 96;
+
+    const angle = (index * Math.PI) / angleDenominator;
+    const x = Math.cos(angle) * menuItemWidth - xOffset;
+    const y = Math.sin(angle) * menuItemHeight + yOffset;
+
+    return { x, y };
+  }
+
   return (
     <Box onClick={() => store.setShowLanguagesMenu(!store.showLanguagesMenu)}>
       {/* Selected language */}
@@ -43,17 +70,24 @@ export default function LanguagesMenu() {
           updatedLanguageCodes.map((languageCode, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, x: -3.5 }}
+              initial={{ opacity: 0 }}
               animate={{
                 opacity: 1,
                 transition: { delay: 0.05 * index },
-                y: 45 * index
+                ...calculateMenuItemPosition(index)
               }}
-              exit={{ opacity: 0, y: -5, transition: { duration: 0.35 } }}
+              exit={{
+                opacity: 0,
+                transition: {
+                  duration: 0.2
+                },
+                x: 0,
+                y: 0
+              }}
               transition={{
-                type: 'spring',
+                damping: 20,
                 stiffness: 300,
-                damping: 20
+                type: 'spring'
               }}
               style={{ position: 'absolute', zIndex: 2 }}
               whileHover={{ scale: 1.2, transition: { delay: 0 } }}

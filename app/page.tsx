@@ -10,6 +10,7 @@ import { useColorMode } from '@chakra-ui/color-mode';
 import { Box, Center, Flex, Heading } from '@chakra-ui/layout';
 import { Avatar } from '@chakra-ui/react';
 import Lottie from 'lottie-react';
+import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { Balancer } from 'react-wrap-balancer';
 
@@ -18,6 +19,19 @@ export default function Home() {
   const store = useStore();
 
   const defaultWaitInterval = 3000;
+
+  // Listen for window resize events
+  React.useEffect(() => {
+    function handleResize() {
+      store.setWindowWidth(window.innerWidth);
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <>
