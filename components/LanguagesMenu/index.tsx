@@ -1,3 +1,4 @@
+import { LocalStorage } from '@/services/local-storage';
 import {
   getLanguageTextForLanguageCode,
   i18n,
@@ -33,6 +34,9 @@ export default function LanguagesMenu() {
 
     // Mark that a language was selected
     store.setLanguageWasSelected(true);
+
+    // Store the language in local storage
+    LocalStorage.set(LocalStorage.Keys.Language, languageCode);
 
     // Update the <html /> lang attribute
     document.getElementsByTagName('html')[0].lang = languageCode;

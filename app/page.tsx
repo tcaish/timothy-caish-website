@@ -41,19 +41,6 @@ export default function Home() {
     tick: 1
   });
 
-  // Listen for window resize events
-  React.useEffect(() => {
-    function handleResize() {
-      store.setWindowWidth(window.innerWidth);
-    }
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
   // Listen for when the language was changed
   React.useEffect(() => {
     // If the language was not selected
