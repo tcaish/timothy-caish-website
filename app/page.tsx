@@ -161,7 +161,7 @@ export default function Home() {
           {/* Right side */}
           <Center flexBasis={0} flexGrow={1}>
             <FadeIn>
-              <Box>
+              <Box px={{ base: 12, md: 32, lg: 12 }}>
                 <Lottie
                   animationData={DeveloperJson}
                   style={styles.developer_lottie}
@@ -177,7 +177,7 @@ export default function Home() {
 
 const styles = {
   developer_lottie: {
-    width: '100%',
-    height: '450px'
+    height: '100%',
+    width: '100%'
   }
 };
