@@ -12,7 +12,7 @@ import { Box, Center, Flex, Heading, Stack, Text } from '@chakra-ui/layout';
 import { Avatar, Button } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import Lottie from 'lottie-react';
-import { CircleUserRound, GalleryVerticalEnd } from 'lucide-react';
+import { CircleUserRound, PocketKnife } from 'lucide-react';
 import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { Balancer } from 'react-wrap-balancer';
@@ -127,11 +127,11 @@ export default function Home() {
                   >
                     <motion.div whileTap={{ scale: 0.8 }}>
                       <Button
-                        leftIcon={<GalleryVerticalEnd />}
+                        leftIcon={<PocketKnife />}
                         size={{ base: 'md', lg: 'lg' }}
                         variant="solid"
                       >
-                        Portfolio
+                        {i18n.t('my_skillset')}
                       </Button>
                     </motion.div>
 
@@ -141,7 +141,7 @@ export default function Home() {
                         size={{ base: 'md', lg: 'lg' }}
                         variant="outline"
                       >
-                        Contact Me
+                        {i18n.t('contact_me')}
                       </Button>
                     </motion.div>
                   </Stack>
