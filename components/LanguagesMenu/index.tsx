@@ -26,11 +26,11 @@ export default function LanguagesMenu() {
   // spread out like a fan given the index of the menu item.
   function calculateMenuItemPosition(index: number) {
     let angleDenominator = 5;
-    let xOffset = 30;
+    let xOffset = 20;
     let yOffset = 35;
 
     if (store.windowWidth <= 1330) {
-      xOffset += 20;
+      xOffset += 10;
     }
 
     if (store.windowWidth <= 1290) {
@@ -59,7 +59,7 @@ export default function LanguagesMenu() {
       >
         <Avatar
           name={getLanguageTextForLanguageCode()}
-          size="xs"
+          size="sm"
           src={`/assets/flags/${currentLocale.split('-')[0]}.png`}
         />
       </motion.div>

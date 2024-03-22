@@ -40,7 +40,7 @@ export default function Navbar() {
 
           {/* Languages menu */}
           <Box
-            me={2}
+            me={4}
             _hover={{
               cursor: 'pointer'
             }}
@@ -69,11 +69,11 @@ export default function Navbar() {
               <AnimatePresence>
                 {colorMode === 'dark' ? (
                   <FadeIn>
-                    <Sun color="#DBC300" fill="#DBC300" />
+                    <Sun color="#DBC300" fill="#DBC300" size={32} />
                   </FadeIn>
                 ) : (
                   <FadeIn>
-                    <Moon fill="#2D3748" />
+                    <Moon fill="#2D3748" size={32} />
                   </FadeIn>
                 )}
               </AnimatePresence>
