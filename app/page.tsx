@@ -33,7 +33,7 @@ export default function Home() {
 
   // Listen to realtime changes in the unique visitors table
   React.useEffect(() => {
-    const listener = createUniqueVisitorsListener(store);
+    const listener = createUniqueVisitorsListener(store).subscribe();
 
     return () => {
       listener.unsubscribe();
