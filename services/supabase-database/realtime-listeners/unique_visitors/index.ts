@@ -11,7 +11,7 @@ export function createUniqueVisitorsListener(store: ZustandStore) {
       table: 'unique_visitors'
     },
     (payload) => {
-      store.setTotalUniqueVisitors(store.totalUniqueVisitors + 1);
+      store.addUniqueVisitor();
     }
   );
 }

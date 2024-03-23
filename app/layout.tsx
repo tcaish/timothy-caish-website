@@ -1,7 +1,9 @@
 import { Providers } from '@/app/providers';
+import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import { generateMetaData } from '@/helpers';
 import { i18n } from '@/services/localization';
+import { Flex } from '@chakra-ui/react';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
@@ -19,10 +21,15 @@ export default function RootLayout(props: RootLayoutProps) {
     <html lang={i18n.locale}>
       <body className={inter.className}>
         <Providers>
-          {/* Navigation bar */}
-          <Navbar />
+          <Flex direction="column" h="100%">
+            {/* Navigation bar */}
+            <Navbar />
 
-          {props.children}
+            {props.children}
+
+            {/* Footer */}
+            <Footer />
+          </Flex>
         </Providers>
       </body>
     </html>

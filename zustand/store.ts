@@ -9,6 +9,7 @@ export type ZustandStore = {
 
   totalUniqueVisitors: number;
   setTotalUniqueVisitors: (total: number) => void;
+  addUniqueVisitor: () => void;
 
   windowWidth: number;
   setWindowWidth: (width: number) => void;
@@ -23,6 +24,8 @@ export const useStore = create<ZustandStore>()((set) => ({
 
   totalUniqueVisitors: 0,
   setTotalUniqueVisitors: (total) => set({ totalUniqueVisitors: total }),
+  addUniqueVisitor: () =>
+    set((state) => ({ totalUniqueVisitors: state.totalUniqueVisitors + 1 })),
 
   windowWidth: 0,
   setWindowWidth: (width) => set({ windowWidth: width })

@@ -2,6 +2,7 @@
 
 import DeveloperJson from '@/assets/lottie/developer.json';
 import AnimatedBackground from '@/components/AnimatedBackground';
+import AnimatedPressIn from '@/components/AnimatedPressIn';
 import FadeIn from '@/components/FadeIn';
 import FullPageBlur from '@/components/FullPageBlur';
 import { i18n } from '@/services/localization';
@@ -11,7 +12,6 @@ import { useStore } from '@/zustand/store';
 import { useColorMode } from '@chakra-ui/color-mode';
 import { Box, Center, Flex, Heading, Stack, Text } from '@chakra-ui/layout';
 import { Avatar, Button } from '@chakra-ui/react';
-import { motion } from 'framer-motion';
 import Lottie from 'lottie-react';
 import { CircleUserRound, PocketKnife } from 'lucide-react';
 import React from 'react';
@@ -139,7 +139,7 @@ export default function Home() {
                     mt={4}
                     spacing={4}
                   >
-                    <motion.div whileTap={{ scale: 0.8 }}>
+                    <AnimatedPressIn>
                       <Button
                         leftIcon={<PocketKnife />}
                         size={{ base: 'md', lg: 'lg' }}
@@ -147,9 +147,9 @@ export default function Home() {
                       >
                         {i18n.t('my_skillset')}
                       </Button>
-                    </motion.div>
+                    </AnimatedPressIn>
 
-                    <motion.div whileTap={{ scale: 0.8 }}>
+                    <AnimatedPressIn>
                       <Button
                         rightIcon={<CircleUserRound />}
                         size={{ base: 'md', lg: 'lg' }}
@@ -157,7 +157,7 @@ export default function Home() {
                       >
                         {i18n.t('contact_me')}
                       </Button>
-                    </motion.div>
+                    </AnimatedPressIn>
                   </Stack>
                 </Box>
               </Box>
