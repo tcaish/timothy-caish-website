@@ -1,4 +1,5 @@
 import { Providers } from '@/app/providers';
+import Navbar from '@/components/Navbar';
 import { generateMetaData } from '@/helpers';
 import { i18n } from '@/services/localization';
 import type { Metadata } from 'next';
@@ -17,7 +18,12 @@ export default function RootLayout(props: RootLayoutProps) {
   return (
     <html lang={i18n.locale}>
       <body className={inter.className}>
-        <Providers>{props.children}</Providers>
+        <Providers>
+          {/* Navigation bar */}
+          <Navbar />
+
+          {props.children}
+        </Providers>
       </body>
     </html>
   );

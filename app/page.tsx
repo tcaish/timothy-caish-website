@@ -4,9 +4,9 @@ import DeveloperJson from '@/assets/lottie/developer.json';
 import AnimatedBackground from '@/components/AnimatedBackground';
 import FadeIn from '@/components/FadeIn';
 import FullPageBlur from '@/components/FullPageBlur';
-import Navbar from '@/components/Navbar';
 import { i18n } from '@/services/localization';
 import { getTotalUniqueVisitors } from '@/services/supabase-database/getters/unique_visitors';
+import { createUniqueVisitorsListener } from '@/services/supabase-database/realtime-listeners/unique_visitors';
 import { useStore } from '@/zustand/store';
 import { useColorMode } from '@chakra-ui/color-mode';
 import { Box, Center, Flex, Heading, Stack, Text } from '@chakra-ui/layout';
@@ -29,6 +29,15 @@ export default function Home() {
     getTotalUniqueVisitors().then((totalUniqueVisitors) => {
       store.setTotalUniqueVisitors(totalUniqueVisitors);
     });
+  }, []);
+
+  // Listen to realtime changes in the unique visitors table
+  React.useEffect(() => {
+    const listener = createUniqueVisitorsListener(store);
+
+    return () => {
+      listener.unsubscribe();
+    };
   }, []);
 
   const CustomTypeAnimation = React.useCallback(
@@ -72,9 +81,6 @@ export default function Home() {
       </FadeIn>
 
       <Flex direction="column" h="100%">
-        {/* Navigation bar */}
-        <Navbar />
-
         {/* Full page blur */}
         {store.showLanguagesMenu && <FullPageBlur />}
 
