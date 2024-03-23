@@ -3,6 +3,7 @@
 import { LocalStorage } from '@/services/local-storage';
 import { i18n } from '@/services/localization';
 import { Mixpanel } from '@/services/mixpanel';
+import { addUniqueVisitor } from '@/services/supabase-database/adders/unique_visitors';
 import theme from '@/theme';
 import { useStore } from '@/zustand/store';
 import { ChakraProvider } from '@chakra-ui/react';
@@ -20,6 +21,16 @@ export function Providers(props: ProvidersProps) {
     // Initialize Mixpanel
     Mixpanel.init();
   }, []);
+
+  // Track unique visitors
+  React.useEffect(() => {
+    const mixpanelDistinctIdFull = Mixpanel.getDistinctId();
+
+    // If the Mixpanel distinct ID is not set, bail out
+    if (!mixpanelDistinctIdFull) return;
+
+    addUniqueVisitor(mixpanelDistinctIdFull.split(':')[1]);
+  }, [Mixpanel.mixpanelClient]);
 
   // Set the language from local storage on load if it exists
   React.useEffect(() => {

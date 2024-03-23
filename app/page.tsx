@@ -6,6 +6,7 @@ import FadeIn from '@/components/FadeIn';
 import FullPageBlur from '@/components/FullPageBlur';
 import Navbar from '@/components/Navbar';
 import { i18n } from '@/services/localization';
+import { getTotalUniqueVisitors } from '@/services/supabase-database/getters/unique_visitors';
 import { useStore } from '@/zustand/store';
 import { useColorMode } from '@chakra-ui/color-mode';
 import { Box, Center, Flex, Heading, Stack, Text } from '@chakra-ui/layout';
@@ -22,6 +23,13 @@ const defaultWaitInterval = 3000;
 export default function Home() {
   const { colorMode } = useColorMode();
   const store = useStore();
+
+  // Set the total unique visitors on page load
+  React.useEffect(() => {
+    getTotalUniqueVisitors().then((totalUniqueVisitors) => {
+      store.setTotalUniqueVisitors(totalUniqueVisitors);
+    });
+  }, []);
 
   const CustomTypeAnimation = React.useCallback(
     () => (
