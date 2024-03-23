@@ -6,8 +6,10 @@ import { Routes } from '@/constants/routes';
 import { useColorMode } from '@chakra-ui/color-mode';
 import { Image } from '@chakra-ui/image';
 import { Box, Container, Divider, Flex, Link, Spacer } from '@chakra-ui/layout';
+import { Icon } from '@chakra-ui/react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Moon, Sun } from 'lucide-react';
+import { BsMoonFill } from 'react-icons/bs';
+import { FaSun } from 'react-icons/fa';
 
 /**
  * Navigation bar component.
@@ -52,28 +54,27 @@ export default function Navbar() {
 
           {/* Theme toggle */}
           <Box
-            borderRadius={6}
-            padding={1}
             _hover={{
               cursor: 'pointer'
             }}
           >
             <motion.div
+              onClick={() => toggleColorMode()}
+              style={{ maxHeight: '2rem' }}
               whileHover={{ scale: 1.2, rotate: 90 }}
               whileTap={{
                 scale: 0.8,
                 rotate: -90
               }}
-              onClick={() => toggleColorMode()}
             >
               <AnimatePresence>
                 {colorMode === 'dark' ? (
                   <FadeIn>
-                    <Sun color="#DBC300" fill="#DBC300" size={32} />
+                    <Icon as={FaSun} color="#DBC300" boxSize={8} />
                   </FadeIn>
                 ) : (
                   <FadeIn>
-                    <Moon fill="#2D3748" size={32} />
+                    <Icon as={BsMoonFill} color="#2D3748" boxSize={7} />
                   </FadeIn>
                 )}
               </AnimatePresence>

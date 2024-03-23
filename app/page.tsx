@@ -11,10 +11,11 @@ import { createUniqueVisitorsListener } from '@/services/supabase-database/realt
 import { useStore } from '@/zustand/store';
 import { useColorMode } from '@chakra-ui/color-mode';
 import { Box, Center, Flex, Heading, Stack, Text } from '@chakra-ui/layout';
-import { Avatar, Button } from '@chakra-ui/react';
+import { Avatar, Button, Icon } from '@chakra-ui/react';
 import Lottie from 'lottie-react';
-import { CircleUserRound, PocketKnife } from 'lucide-react';
 import React from 'react';
+import { IoMdContact } from 'react-icons/io';
+import { LuPocketKnife } from 'react-icons/lu';
 import { TypeAnimation } from 'react-type-animation';
 import { Balancer } from 'react-wrap-balancer';
 
@@ -141,7 +142,7 @@ export default function Home() {
                   >
                     <AnimatedPressIn>
                       <Button
-                        leftIcon={<PocketKnife />}
+                        leftIcon={<Icon as={LuPocketKnife} boxSize={5} />}
                         size={{ base: 'md', lg: 'lg' }}
                         variant="solid"
                       >
@@ -151,7 +152,7 @@ export default function Home() {
 
                     <AnimatedPressIn>
                       <Button
-                        rightIcon={<CircleUserRound />}
+                        rightIcon={<Icon as={IoMdContact} boxSize={6} />}
                         size={{ base: 'md', lg: 'lg' }}
                         variant="outline"
                       >

@@ -1,6 +1,5 @@
 'use client';
 
-import AnimatedPressIn from '@/components/AnimatedPressIn';
 import FadeIn from '@/components/FadeIn';
 import { SocialUrls } from '@/constants/business';
 import { openUrlInNewTab, shortenNumber } from '@/helpers';
@@ -16,6 +15,7 @@ import {
   StatNumber,
   useColorMode
 } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 import { BsFacebook, BsTwitterX } from 'react-icons/bs';
 
 export default function Footer() {
@@ -44,31 +44,37 @@ export default function Footer() {
 
         <FadeIn>
           <Flex alignItems="center" gap={2}>
-            <AnimatedPressIn>
+            <motion.div
+              onClick={() => openUrlInNewTab(SocialUrls.facebook)}
+              style={{ maxHeight: '1.25rem' }}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{
+                scale: 0.8
+              }}
+            >
               <Icon
                 as={BsFacebook}
                 boxSize={5}
                 color={colorMode === 'dark' ? 'white' : 'gray.700'}
                 cursor="pointer"
-                onClick={() => openUrlInNewTab(SocialUrls.facebook)}
-                _hover={{
-                  color: colorMode === 'dark' ? 'gray.300' : 'gray.500'
-                }}
               />
-            </AnimatedPressIn>
+            </motion.div>
 
-            <AnimatedPressIn>
+            <motion.div
+              onClick={() => openUrlInNewTab(SocialUrls.twitter)}
+              style={{ maxHeight: '1.25rem' }}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{
+                scale: 0.8
+              }}
+            >
               <Icon
                 as={BsTwitterX}
                 boxSize={5}
                 color={colorMode === 'dark' ? 'white' : 'gray.700'}
                 cursor="pointer"
-                onClick={() => openUrlInNewTab(SocialUrls.twitter)}
-                _hover={{
-                  color: colorMode === 'dark' ? 'gray.300' : 'gray.500'
-                }}
               />
-            </AnimatedPressIn>
+            </motion.div>
           </Flex>
         </FadeIn>
       </Flex>
