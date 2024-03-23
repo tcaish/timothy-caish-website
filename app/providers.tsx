@@ -24,12 +24,8 @@ export function Providers(props: ProvidersProps) {
 
   // Track unique visitors
   React.useEffect(() => {
-    const mixpanelDistinctIdFull = Mixpanel.getDistinctId();
-
-    // If the Mixpanel distinct ID is not set, bail out
-    if (!mixpanelDistinctIdFull) return;
-
-    addUniqueVisitor(mixpanelDistinctIdFull.split(':')[1]);
+    const mixpanelDeviceId = Mixpanel.getDeviceId();
+    mixpanelDeviceId && addUniqueVisitor(mixpanelDeviceId);
   }, [Mixpanel.mixpanelClient]);
 
   // Set the language from local storage on load if it exists
@@ -44,6 +40,8 @@ export function Providers(props: ProvidersProps) {
        * shows the correct language, but on light mode, it does not do this
        * extra rerender, so the language does not change on initial load of
        * page. This line is needed to trigger a rerender.
+       * (It's stupid, I know. I'm not knowledgable enough on this specific
+       * issue to fix it properly.)
        */
       store.setShowLanguagesMenu(false);
     }

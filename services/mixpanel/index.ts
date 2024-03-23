@@ -24,9 +24,11 @@ export class Mixpanel {
   }
 
   /**
-   * Returns the distinct ID of the current user.
+   * Returns the device ID for the current user.
    */
-  static getDistinctId(): string | undefined {
-    return this.mixpanelClient && this.mixpanelClient.get_distinct_id();
+  static getDeviceId(): string | undefined {
+    return (
+      this.mixpanelClient && this.mixpanelClient.get_property('$device_id')
+    );
   }
 }
