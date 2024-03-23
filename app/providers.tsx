@@ -2,6 +2,7 @@
 
 import { LocalStorage } from '@/services/local-storage';
 import { i18n } from '@/services/localization';
+import { Mixpanel } from '@/services/mixpanel';
 import theme from '@/theme';
 import { useStore } from '@/zustand/store';
 import { ChakraProvider } from '@chakra-ui/react';
@@ -13,6 +14,12 @@ type ProvidersProps = {
 
 export function Providers(props: ProvidersProps) {
   const store = useStore();
+
+  // Initialize any services
+  React.useEffect(() => {
+    // Initialize Mixpanel
+    Mixpanel.init();
+  }, []);
 
   // Set the language from local storage on load if it exists
   React.useEffect(() => {
