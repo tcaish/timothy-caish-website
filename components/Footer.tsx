@@ -4,6 +4,8 @@ import FadeIn from '@/components/FadeIn';
 import { SocialUrls } from '@/constants/business';
 import { openUrlInNewTab, shortenNumber } from '@/helpers';
 import { i18n } from '@/services/localization';
+import { getTotalUniqueVisitors } from '@/services/supabase-database/getters/unique_visitors';
+import { createUniqueVisitorsListener } from '@/services/supabase-database/realtime-listeners/unique_visitors';
 import { useStore } from '@/zustand/store';
 import {
   Box,
@@ -18,11 +20,28 @@ import {
   useColorMode
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
+import React from 'react';
 import { BsFacebook, BsTwitterX } from 'react-icons/bs';
 
 export default function Footer() {
   const { colorMode } = useColorMode();
   const store = useStore();
+
+  // Set the total unique visitors on page load
+  React.useEffect(() => {
+    getTotalUniqueVisitors().then((totalUniqueVisitors) => {
+      store.setTotalUniqueVisitors(totalUniqueVisitors);
+    });
+  }, []);
+
+  // Listen to realtime changes in the unique visitors table
+  React.useEffect(() => {
+    const listener = createUniqueVisitorsListener(store).subscribe();
+
+    return () => {
+      listener.unsubscribe();
+    };
+  }, []);
 
   return (
     <Container maxW="container.xl">

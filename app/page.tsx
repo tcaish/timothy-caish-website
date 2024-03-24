@@ -6,8 +6,6 @@ import AnimatedPressIn from '@/components/AnimatedPressIn';
 import FadeIn from '@/components/FadeIn';
 import FullPageBlur from '@/components/FullPageBlur';
 import { i18n } from '@/services/localization';
-import { getTotalUniqueVisitors } from '@/services/supabase-database/getters/unique_visitors';
-import { createUniqueVisitorsListener } from '@/services/supabase-database/realtime-listeners/unique_visitors';
 import { useStore } from '@/zustand/store';
 import { useColorMode } from '@chakra-ui/color-mode';
 import { Box, Center, Flex, Heading, Stack, Text } from '@chakra-ui/layout';
@@ -24,22 +22,6 @@ const defaultWaitInterval = 3000;
 export default function Home() {
   const { colorMode } = useColorMode();
   const store = useStore();
-
-  // Set the total unique visitors on page load
-  React.useEffect(() => {
-    getTotalUniqueVisitors().then((totalUniqueVisitors) => {
-      store.setTotalUniqueVisitors(totalUniqueVisitors);
-    });
-  }, []);
-
-  // Listen to realtime changes in the unique visitors table
-  React.useEffect(() => {
-    const listener = createUniqueVisitorsListener(store).subscribe();
-
-    return () => {
-      listener.unsubscribe();
-    };
-  }, []);
 
   const CustomTypeAnimation = React.useCallback(
     () => (
