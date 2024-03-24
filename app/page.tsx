@@ -120,11 +120,7 @@ export default function Home() {
                 </Balancer>
 
                 {/* Description and CTA */}
-                <Box
-                  mt={4}
-                  mx={{ base: 4, sm: 10, lg: 0 }}
-                  textAlign={{ base: 'center', lg: 'end' }}
-                >
+                <Box mt={4} textAlign={{ base: 'center', lg: 'end' }}>
                   <Balancer>
                     <Text
                       color={colorMode === 'dark' ? 'gray.300' : 'gray.700'}
