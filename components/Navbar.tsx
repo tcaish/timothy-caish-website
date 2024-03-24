@@ -7,7 +7,7 @@ import { Routes } from '@/constants/routes';
 import { useColorMode } from '@chakra-ui/color-mode';
 import { Image } from '@chakra-ui/image';
 import { Box, Container, Divider, Flex, Link, Spacer } from '@chakra-ui/layout';
-import { Icon, Text } from '@chakra-ui/react';
+import { Icon, Text, useColorModeValue } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { BsMoonFill } from 'react-icons/bs';
 import { FaSun } from 'react-icons/fa';
@@ -28,11 +28,10 @@ export default function Navbar() {
               <FadeIn>
                 <Image
                   alt="Timothy Caish Logo"
-                  src={
-                    colorMode === 'dark'
-                      ? '/assets/logo/logo__dark.png'
-                      : '/assets/logo/logo__light.png'
-                  }
+                  src={useColorModeValue(
+                    '/assets/logo/logo__light.png',
+                    '/assets/logo/logo__dark.png'
+                  )}
                   w={{ base: '100px', md: '150px' }}
                 />
               </FadeIn>
@@ -51,7 +50,7 @@ export default function Navbar() {
                     <Link href={route.path} key={route.name}>
                       <AnimatedPressIn>
                         <Text
-                          color={colorMode === 'dark' ? 'gray.300' : 'gray.700'}
+                          color={useColorModeValue('gray.700', 'gray.300')}
                           fontWeight="semibold"
                         >
                           {route.name}
@@ -106,7 +105,7 @@ export default function Navbar() {
       </Container>
 
       <FadeIn>
-        <Divider borderColor={colorMode === 'dark' ? 'gray.600' : 'gray.200'} />
+        <Divider borderColor={useColorModeValue('gray.200', 'gray.600')} />
       </FadeIn>
     </nav>
   );

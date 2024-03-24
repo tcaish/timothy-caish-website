@@ -17,14 +17,13 @@ import {
   StatHelpText,
   StatNumber,
   Text,
-  useColorMode
+  useColorModeValue
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import React from 'react';
 import { BsFacebook, BsTwitterX } from 'react-icons/bs';
 
 export default function Footer() {
-  const { colorMode } = useColorMode();
   const store = useStore();
 
   // Set the total unique visitors on page load
@@ -50,7 +49,7 @@ export default function Footer() {
         <FadeIn>
           <Stat>
             <StatNumber
-              color={colorMode === 'dark' ? 'gray.300' : 'gray.700'}
+              color={useColorModeValue('gray.700', 'gray.300')}
               fontSize="lg"
             >
               {shortenNumber(store.totalUniqueVisitors)}
@@ -77,7 +76,7 @@ export default function Footer() {
                 <Icon
                   as={BsFacebook}
                   boxSize={5}
-                  color={colorMode === 'dark' ? 'gray.300' : 'gray.700'}
+                  color={useColorModeValue('gray.700', 'gray.300')}
                   cursor="pointer"
                 />
               </motion.div>
@@ -93,7 +92,7 @@ export default function Footer() {
                 <Icon
                   as={BsTwitterX}
                   boxSize={5}
-                  color={colorMode === 'dark' ? 'gray.300' : 'gray.700'}
+                  color={useColorModeValue('gray.700', 'gray.300')}
                   cursor="pointer"
                 />
               </motion.div>
@@ -101,7 +100,7 @@ export default function Footer() {
 
             <Box mb={2}>
               <Text
-                color={colorMode === 'dark' ? 'gray.300' : 'gray.700'}
+                color={useColorModeValue('gray.700', 'gray.300')}
                 fontSize="sm"
               >
                 © {new Date().getFullYear()} Timothy Caish

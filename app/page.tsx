@@ -7,9 +7,8 @@ import FadeIn from '@/components/FadeIn';
 import FullPageBlur from '@/components/FullPageBlur';
 import { i18n } from '@/services/localization';
 import { useStore } from '@/zustand/store';
-import { useColorMode } from '@chakra-ui/color-mode';
 import { Box, Center, Flex, Heading, Stack, Text } from '@chakra-ui/layout';
-import { Avatar, Button, Icon } from '@chakra-ui/react';
+import { Avatar, Button, Icon, useColorModeValue } from '@chakra-ui/react';
 import Lottie from 'lottie-react';
 import React from 'react';
 import { IoMdContact } from 'react-icons/io';
@@ -20,7 +19,6 @@ import { Balancer } from 'react-wrap-balancer';
 const defaultWaitInterval = 3000;
 
 export default function Home() {
-  const { colorMode } = useColorMode();
   const store = useStore();
 
   const CustomTypeAnimation = React.useCallback(
@@ -85,7 +83,7 @@ export default function Home() {
                 {/* Greeting */}
                 <Balancer>
                   <Heading
-                    color={colorMode === 'dark' ? 'white' : 'gray.700'}
+                    color={useColorModeValue('gray.700', 'white')}
                     size="2xl"
                   >
                     {i18n.t('hello_world')}
@@ -94,7 +92,7 @@ export default function Home() {
 
                 {/* Type animation */}
                 <Balancer>
-                  <Heading color={colorMode === 'dark' ? 'white' : 'gray.700'}>
+                  <Heading color={useColorModeValue('gray.700', 'white')}>
                     <CustomTypeAnimation />
                   </Heading>
                 </Balancer>
@@ -103,7 +101,7 @@ export default function Home() {
                 <Box mt={4} textAlign={{ base: 'center', lg: 'end' }}>
                   <Balancer>
                     <Text
-                      color={colorMode === 'dark' ? 'gray.300' : 'gray.700'}
+                      color={useColorModeValue('gray.700', 'gray.300')}
                       fontSize={{ base: 'md', md: 'lg' }}
                     >
                       {i18n.t('with_blend_of_creativity')}

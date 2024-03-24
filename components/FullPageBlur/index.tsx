@@ -1,18 +1,17 @@
 import { useStore } from '@/zustand/store';
-import { Box, useColorMode } from '@chakra-ui/react';
+import { Box, useColorModeValue } from '@chakra-ui/react';
 import './index.scss';
 
 /**
  * Full page blur component.
  */
 export default function FullPageBlur() {
-  const { colorMode } = useColorMode();
   const store = useStore();
 
   return (
     <Box
       className="full-page-blur"
-      id={colorMode === 'dark' ? 'full-page-blur-dark' : 'full-page-blur-light'}
+      id={useColorModeValue('full-page-blur-light', 'full-page-blur-dark')}
       onClick={() => store.setShowLanguagesMenu(false)}
     />
   );

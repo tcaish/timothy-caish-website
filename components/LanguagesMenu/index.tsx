@@ -5,7 +5,7 @@ import {
   languageCodes
 } from '@/services/localization';
 import { useStore } from '@/zustand/store';
-import { Avatar, Box, Tooltip, useColorMode } from '@chakra-ui/react';
+import { Avatar, Box, Tooltip, useColorModeValue } from '@chakra-ui/react';
 import { AnimatePresence, motion } from 'framer-motion';
 import './index.scss';
 
@@ -15,7 +15,6 @@ import './index.scss';
  * to change the language of the website.
  */
 export default function LanguagesMenu() {
-  const { colorMode } = useColorMode();
   const store = useStore();
 
   const currentLocale = i18n.locale;
@@ -116,8 +115,8 @@ export default function LanguagesMenu() {
             >
               <Box mt={3} onClick={() => handleLanguageSelected(languageCode)}>
                 <Tooltip
-                  bg={colorMode === 'dark' ? 'gray.600' : 'gray.200'}
-                  color={colorMode === 'dark' ? 'white' : 'gray.700'}
+                  bg={useColorModeValue('gray.200', 'gray.600')}
+                  color={useColorModeValue('gray.700', 'white')}
                   hasArrow={true}
                   label={getLanguageTextForLanguageCode(languageCode)}
                   placement="left"
