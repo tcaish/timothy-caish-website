@@ -77,9 +77,7 @@ export default function Home() {
 
   return (
     <>
-      <FadeIn duration={5}>
-        <AnimatedBackground />
-      </FadeIn>
+      <AnimatedBackground shouldFadeIn={true} />
 
       <Flex direction="column" h="100%">
         {/* Full page blur */}
