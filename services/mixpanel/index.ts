@@ -10,7 +10,8 @@ export class Mixpanel {
   static init() {
     // Do not initialize Mixpanel in a development environment or if the
     // token is not set.
-    if (!process.env.NEXT_PUBLIC_MIXPANEL_PUBLIC_TOKEN) return;
+    if (isDevelopmentEnv || !process.env.NEXT_PUBLIC_MIXPANEL_PUBLIC_TOKEN)
+      return;
 
     this.mixpanelClient = mixpanel.init(
       process.env.NEXT_PUBLIC_MIXPANEL_PUBLIC_TOKEN,
