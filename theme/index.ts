@@ -39,6 +39,14 @@ const components: Record<string, StyleConfig> = {
         }
       }
     }
+  },
+  Link: {
+    baseStyle: {
+      _hover: {
+        opacity: 0.7,
+        textDecoration: 'none'
+      }
+    }
   }
 };
 

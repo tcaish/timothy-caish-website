@@ -1,13 +1,14 @@
 'use client';
 
+import AnimatedPressIn from '@/components/AnimatedPressIn';
 import FadeIn from '@/components/FadeIn';
 import LanguagesMenu from '@/components/LanguagesMenu';
 import { Routes } from '@/constants/routes';
 import { useColorMode } from '@chakra-ui/color-mode';
 import { Image } from '@chakra-ui/image';
 import { Box, Container, Divider, Flex, Link, Spacer } from '@chakra-ui/layout';
-import { Icon } from '@chakra-ui/react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { Icon, Text } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 import { BsMoonFill } from 'react-icons/bs';
 import { FaSun } from 'react-icons/fa';
 
@@ -21,9 +22,9 @@ export default function Navbar() {
     <nav>
       <Container maxW="container.xl" paddingY="8px">
         <Flex alignItems="center">
-          {/* Logo */}
+          {/* Left side - logo */}
           <Box>
-            <Link href={Routes.Home}>
+            <Link href={Routes.Home.path}>
               <FadeIn>
                 <Image
                   alt="Timothy Caish Logo"
@@ -40,50 +41,73 @@ export default function Navbar() {
 
           <Spacer />
 
-          {/* Languages menu */}
-          <Box
-            me={4}
-            _hover={{
-              cursor: 'pointer'
-            }}
-          >
+          {/* Middle - links */}
+          <Box display={{ base: 'none', lg: 'flex' }}>
             <FadeIn>
-              <LanguagesMenu />
+              <Flex alignItems="center" me={4} gap={4}>
+                {Object.values(Routes)
+                  .filter((r) => r.name !== Routes.Home.name)
+                  .map((route) => (
+                    <Link href={route.path} key={route.name}>
+                      <AnimatedPressIn>
+                        <Text
+                          color={colorMode === 'dark' ? 'gray.300' : 'gray.700'}
+                          fontWeight="semibold"
+                        >
+                          {route.name}
+                        </Text>
+                      </AnimatedPressIn>
+                    </Link>
+                  ))}
+              </Flex>
             </FadeIn>
           </Box>
 
-          {/* Theme toggle */}
-          <Box
-            _hover={{
-              cursor: 'pointer'
-            }}
-          >
-            <motion.div
-              onClick={() => toggleColorMode()}
-              style={{ maxHeight: '2rem' }}
-              whileHover={{ scale: 1.2, rotate: 90 }}
-              whileTap={{
-                scale: 0.8,
-                rotate: -90
-              }}
-            >
-              <AnimatePresence>
-                {colorMode === 'dark' ? (
-                  <FadeIn>
+          <Spacer />
+
+          {/* Right side */}
+          <FadeIn>
+            <Flex>
+              {/* Languages menu */}
+              <Box
+                me={4}
+                _hover={{
+                  cursor: 'pointer'
+                }}
+              >
+                <LanguagesMenu />
+              </Box>
+
+              {/* Theme toggle */}
+              <Box
+                _hover={{
+                  cursor: 'pointer'
+                }}
+              >
+                <motion.div
+                  onClick={() => toggleColorMode()}
+                  style={{ maxHeight: '2rem' }}
+                  whileHover={{ scale: 1.2, rotate: 90 }}
+                  whileTap={{
+                    scale: 0.8,
+                    rotate: -90
+                  }}
+                >
+                  {colorMode === 'dark' ? (
                     <Icon as={FaSun} color="#DBC300" boxSize={8} />
-                  </FadeIn>
-                ) : (
-                  <FadeIn>
+                  ) : (
                     <Icon as={BsMoonFill} color="#2D3748" boxSize={7} />
-                  </FadeIn>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          </Box>
+                  )}
+                </motion.div>
+              </Box>
+            </Flex>
+          </FadeIn>
         </Flex>
       </Container>
 
-      <Divider borderColor={colorMode === 'dark' ? 'gray.600' : 'gray.200'} />
+      <FadeIn>
+        <Divider borderColor={colorMode === 'dark' ? 'gray.600' : 'gray.200'} />
+      </FadeIn>
     </nav>
   );
 }
