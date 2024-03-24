@@ -6,6 +6,7 @@ import { openUrlInNewTab, shortenNumber } from '@/helpers';
 import { i18n } from '@/services/localization';
 import { useStore } from '@/zustand/store';
 import {
+  Box,
   Container,
   Flex,
   Icon,
@@ -13,6 +14,7 @@ import {
   Stat,
   StatHelpText,
   StatNumber,
+  Text,
   useColorMode
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
@@ -43,38 +45,49 @@ export default function Footer() {
         <Spacer />
 
         <FadeIn>
-          <Flex alignItems="center" gap={2}>
-            <motion.div
-              onClick={() => openUrlInNewTab(SocialUrls.facebook)}
-              style={{ maxHeight: '1.25rem' }}
-              whileHover={{ scale: 1.2 }}
-              whileTap={{
-                scale: 0.8
-              }}
-            >
-              <Icon
-                as={BsFacebook}
-                boxSize={5}
-                color={colorMode === 'dark' ? 'white' : 'gray.700'}
-                cursor="pointer"
-              />
-            </motion.div>
+          <Flex alignItems="end" direction="column" gap={1}>
+            <Flex alignItems="center" gap={2}>
+              <motion.div
+                onClick={() => openUrlInNewTab(SocialUrls.facebook)}
+                style={{ maxHeight: '1.25rem' }}
+                whileHover={{ scale: 1.2 }}
+                whileTap={{
+                  scale: 0.8
+                }}
+              >
+                <Icon
+                  as={BsFacebook}
+                  boxSize={5}
+                  color={colorMode === 'dark' ? 'gray.300' : 'gray.700'}
+                  cursor="pointer"
+                />
+              </motion.div>
 
-            <motion.div
-              onClick={() => openUrlInNewTab(SocialUrls.twitter)}
-              style={{ maxHeight: '1.25rem' }}
-              whileHover={{ scale: 1.2 }}
-              whileTap={{
-                scale: 0.8
-              }}
-            >
-              <Icon
-                as={BsTwitterX}
-                boxSize={5}
-                color={colorMode === 'dark' ? 'white' : 'gray.700'}
-                cursor="pointer"
-              />
-            </motion.div>
+              <motion.div
+                onClick={() => openUrlInNewTab(SocialUrls.twitter)}
+                style={{ maxHeight: '1.25rem' }}
+                whileHover={{ scale: 1.2 }}
+                whileTap={{
+                  scale: 0.8
+                }}
+              >
+                <Icon
+                  as={BsTwitterX}
+                  boxSize={5}
+                  color={colorMode === 'dark' ? 'gray.300' : 'gray.700'}
+                  cursor="pointer"
+                />
+              </motion.div>
+            </Flex>
+
+            <Box mb={2}>
+              <Text
+                color={colorMode === 'dark' ? 'gray.300' : 'gray.700'}
+                fontSize="sm"
+              >
+                © {new Date().getFullYear()} Timothy Caish
+              </Text>
+            </Box>
           </Flex>
         </FadeIn>
       </Flex>
