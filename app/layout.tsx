@@ -28,7 +28,9 @@ export default function RootLayout(props: RootLayoutProps) {
             {props.children}
 
             {/* Footer */}
-            <Footer />
+            <Flex display={{ base: 'none', lg: 'flex' }}>
+              <Footer />
+            </Flex>
           </Flex>
         </Providers>
       </body>
