@@ -1,12 +1,11 @@
 'use client';
 
-import AnimatedPressIn from '@/components/AnimatedPressIn';
 import LanguagesMenu from '@/components/LanguagesMenu';
 import { Routes } from '@/constants/routes';
 import { useColorMode } from '@chakra-ui/color-mode';
 import { Image } from '@chakra-ui/image';
 import { Box, Container, Divider, Flex, Link, Spacer } from '@chakra-ui/layout';
-import { Icon, Text, useColorModeValue } from '@chakra-ui/react';
+import { Icon, useColorModeValue } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { BsMoonFill } from 'react-icons/bs';
 import { FaSun } from 'react-icons/fa';
@@ -19,7 +18,7 @@ export default function Navbar() {
 
   return (
     <nav>
-      <Container maxW="container.xl" paddingY="8px">
+      <Container maxW="container.xl" paddingY={2}>
         <Flex alignItems="center">
           {/* Left side - logo */}
           <Box>
@@ -33,28 +32,6 @@ export default function Navbar() {
                 w={{ base: '100px', md: '150px' }}
               />
             </Link>
-          </Box>
-
-          <Spacer />
-
-          {/* Middle - links */}
-          <Box display={{ base: 'none', lg: 'flex' }}>
-            <Flex alignItems="center" me={4} gap={4}>
-              {Object.values(Routes)
-                .filter((r) => r.name !== Routes.Home.name)
-                .map((route) => (
-                  <Link href={route.path} key={route.name}>
-                    <AnimatedPressIn>
-                      <Text
-                        color={useColorModeValue('gray.700', 'gray.300')}
-                        fontWeight="semibold"
-                      >
-                        {route.name}
-                      </Text>
-                    </AnimatedPressIn>
-                  </Link>
-                ))}
-            </Flex>
           </Box>
 
           <Spacer />
