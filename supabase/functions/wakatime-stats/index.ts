@@ -1,4 +1,5 @@
 import { WakaTimeAllTimeStats } from "../_shared/constants/types.ts";
+import { corsHeaders } from "../_shared/cors.ts";
 
 /**
  * This function fetches all time WakaTime stats for the current user.
@@ -20,7 +21,10 @@ Deno.serve(async () => {
       JSON.stringify({
         error: `Failed to fetch WakaTime stats: ${wakaTimeStatsRes.statusText}`,
       }),
-      { status: wakaTimeStatsRes.status },
+      {
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+        status: wakaTimeStatsRes.status,
+      },
     );
   }
 
@@ -31,7 +35,10 @@ Deno.serve(async () => {
   if (!wakaTimeStats) {
     return new Response(
       JSON.stringify({ error: "Failed to fetch WakaTime stats JSON" }),
-      { status: 500 },
+      {
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+        status: 500,
+      },
     );
   }
 
@@ -48,6 +55,6 @@ Deno.serve(async () => {
 
   return new Response(
     JSON.stringify(wakaTimeStats),
-    { headers: { "Content-Type": "application/json" } },
+    { headers: { ...corsHeaders, "Content-Type": "application/json" } },
   );
 });

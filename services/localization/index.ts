@@ -1,15 +1,15 @@
-import { getUserLocale } from 'get-user-locale';
-import { I18n } from 'i18n-js';
+import { getUserLocale } from "get-user-locale";
+import { I18n } from "i18n-js";
 
 // Translations
-import German from './languages/de.json';
-import English from './languages/en.json';
-import Spanish from './languages/es.json';
-import French from './languages/fr.json';
-import Japanese from './languages/ja.json';
-import Portuguese from './languages/pt.json';
-import Russian from './languages/ru.json';
-import Chinese from './languages/zh.json';
+import German from "./languages/de.json";
+import English from "./languages/en.json";
+import Spanish from "./languages/es.json";
+import French from "./languages/fr.json";
+import Japanese from "./languages/ja.json";
+import Portuguese from "./languages/pt.json";
+import Russian from "./languages/ru.json";
+import Chinese from "./languages/zh.json";
 
 export const i18n = new I18n();
 i18n.enableFallback = true;
@@ -22,7 +22,7 @@ i18n.translations = {
   ja: Japanese,
   pt: Portuguese,
   ru: Russian,
-  zh: Chinese
+  zh: Chinese,
 };
 
 // --------------------------------------------- //
@@ -30,20 +30,20 @@ i18n.translations = {
 // --------------------------------------------- //
 
 export const languageCodes = {
-  de: 'de',
-  en: 'en',
-  es: 'es',
-  fr: 'fr',
-  ja: 'ja',
-  pt: 'pt',
-  ru: 'ru',
-  zh: 'zh'
+  de: "de",
+  en: "en",
+  es: "es",
+  fr: "fr",
+  ja: "ja",
+  pt: "pt",
+  ru: "ru",
+  zh: "zh",
 };
 
 // Returns the language name as text given a language code
 export function getLanguageTextForLanguageCode(languageCode?: string) {
   const languages = Languages();
-  languageCode = languageCode ?? i18n.locale.split('-')[0];
+  languageCode = languageCode ?? i18n.locale.split("-")[0];
 
   switch (languageCode) {
     case languages.chinese.code:
@@ -73,35 +73,35 @@ export const Languages = () => {
   return {
     chinese: {
       code: languageCodes.zh,
-      text: i18n.t('chinese')
+      text: i18n.t("chinese"),
     },
     english: {
       code: languageCodes.en,
-      text: i18n.t('english')
+      text: i18n.t("english"),
     },
     french: {
       code: languageCodes.fr,
-      text: i18n.t('french')
+      text: i18n.t("french"),
     },
     german: {
       code: languageCodes.de,
-      text: i18n.t('german')
+      text: i18n.t("german"),
     },
     japanese: {
       code: languageCodes.ja,
-      text: i18n.t('japanese')
+      text: i18n.t("japanese"),
     },
     portuguese: {
       code: languageCodes.pt,
-      text: i18n.t('portuguese')
+      text: i18n.t("portuguese"),
     },
     russian: {
       code: languageCodes.ru,
-      text: i18n.t('russian')
+      text: i18n.t("russian"),
     },
     spanish: {
       code: languageCodes.es,
-      text: i18n.t('spanish')
-    }
+      text: i18n.t("spanish"),
+    },
   };
 };

@@ -1,15 +1,16 @@
 'use client';
 
 import DeveloperJson from '@/assets/lottie/developer.json';
-import AnimatedBackground from '@/components/AnimatedBackground';
 import AnimatedPressIn from '@/components/AnimatedPressIn';
 import FadeIn from '@/components/FadeIn';
-import FullPageBlur from '@/components/FullPageBlur';
+import PageContainer from '@/components/PageContainer';
+import { Routes } from '@/constants/routes';
 import { i18n } from '@/services/localization';
 import { useStore } from '@/zustand/store';
 import { Box, Center, Flex, Heading, Stack, Text } from '@chakra-ui/layout';
 import { Avatar, Button, Icon, useColorModeValue } from '@chakra-ui/react';
 import Lottie from 'lottie-react';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 import { IoMdContact } from 'react-icons/io';
 import { LuPocketKnife } from 'react-icons/lu';
@@ -19,6 +20,7 @@ import { Balancer } from 'react-wrap-balancer';
 const defaultWaitInterval = 3000;
 
 export default function Home() {
+  const router = useRouter();
   const store = useStore();
 
   const CustomTypeAnimation = React.useCallback(
@@ -52,16 +54,13 @@ export default function Home() {
         speed={60}
       />
     ),
-    [i18n.locale]
+    [store.locale]
   );
 
   return (
-    <>
-      <AnimatedBackground shouldFadeIn={true} />
-
+    <PageContainer>
       <Flex direction="column" h="100%">
         {/* Full page blur */}
-        {store.showLanguagesMenu && <FullPageBlur />}
 
         {/* Main content */}
         <Flex
@@ -82,17 +81,12 @@ export default function Home() {
 
                 {/* Greeting */}
                 <Balancer>
-                  <Heading
-                    color={useColorModeValue('gray.700', 'white')}
-                    size="2xl"
-                  >
-                    {i18n.t('hello_world')}
-                  </Heading>
+                  <Heading size="2xl">{i18n.t('hello_world')}</Heading>
                 </Balancer>
 
                 {/* Type animation */}
                 <Balancer>
-                  <Heading color={useColorModeValue('gray.700', 'white')}>
+                  <Heading>
                     <CustomTypeAnimation />
                   </Heading>
                 </Balancer>
@@ -117,6 +111,7 @@ export default function Home() {
                     <AnimatedPressIn>
                       <Button
                         leftIcon={<Icon as={LuPocketKnife} boxSize={5} />}
+                        onClick={() => router.push(Routes.Skillset.path)}
                         size={{ base: 'md', lg: 'lg' }}
                         variant="solid"
                       >
@@ -152,7 +147,7 @@ export default function Home() {
           </Center>
         </Flex>
       </Flex>
-    </>
+    </PageContainer>
   );
 }
 

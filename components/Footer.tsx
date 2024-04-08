@@ -2,7 +2,7 @@
 
 import FadeIn from '@/components/FadeIn';
 import { SocialUrls } from '@/constants/business';
-import { openUrlInNewTab, shortenNumber } from '@/helpers';
+import { openUrlInNewTab } from '@/helpers';
 import { i18n } from '@/services/localization';
 import { getTotalUniqueVisitors } from '@/services/supabase-database/getters/unique_visitors';
 import { createUniqueVisitorsListener } from '@/services/supabase-database/realtime-listeners/unique_visitors';
@@ -21,7 +21,7 @@ import {
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import React from 'react';
-import { BsFacebook, BsTwitterX } from 'react-icons/bs';
+import { BsGithub } from 'react-icons/bs';
 
 export default function Footer() {
   const store = useStore();
@@ -52,9 +52,9 @@ export default function Footer() {
               color={useColorModeValue('gray.700', 'gray.300')}
               fontSize="lg"
             >
-              {shortenNumber(store.totalUniqueVisitors)}
+              {store.totalUniqueVisitors.toLocaleString(store.locale)}
             </StatNumber>
-            <StatHelpText fontSize="xs">
+            <StatHelpText fontSize="sm">
               {i18n.t('total_unique_visitors')}
             </StatHelpText>
           </Stat>
@@ -66,7 +66,7 @@ export default function Footer() {
           <Flex alignItems="end" direction="column" gap={1}>
             <Flex alignItems="center" gap={2}>
               <motion.div
-                onClick={() => openUrlInNewTab(SocialUrls.facebook)}
+                onClick={() => openUrlInNewTab(SocialUrls.Github)}
                 style={{ maxHeight: '1.25rem' }}
                 whileHover={{ scale: 1.2 }}
                 whileTap={{
@@ -74,23 +74,7 @@ export default function Footer() {
                 }}
               >
                 <Icon
-                  as={BsFacebook}
-                  boxSize={5}
-                  color={useColorModeValue('gray.700', 'gray.300')}
-                  cursor="pointer"
-                />
-              </motion.div>
-
-              <motion.div
-                onClick={() => openUrlInNewTab(SocialUrls.twitter)}
-                style={{ maxHeight: '1.25rem' }}
-                whileHover={{ scale: 1.2 }}
-                whileTap={{
-                  scale: 0.8
-                }}
-              >
-                <Icon
-                  as={BsTwitterX}
+                  as={BsGithub}
                   boxSize={5}
                   color={useColorModeValue('gray.700', 'gray.300')}
                   cursor="pointer"

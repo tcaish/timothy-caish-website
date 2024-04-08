@@ -1,3 +1,18 @@
+export type Skill = {
+  alt: string;
+  color: string;
+  description: string;
+  link: string;
+  source: string;
+  title: string;
+};
+
+export interface StatisticType {
+  subtitle?: string;
+  title?: string;
+  value?: number;
+}
+
 export type WakaTimeAllTimeStats = {
   data: {
     best_day: {
@@ -5,13 +20,10 @@ export type WakaTimeAllTimeStats = {
       text: string;
       total_seconds: number;
     };
-    categories?: Record<string, string>[]; // Marked optional so we can delete it in the function
-    created_at?: string; // Marked optional so we can delete it in the function
     daily_average_including_other_language: number;
     daily_average: number;
     days_including_holidays: number;
     days_minus_holidays: number;
-    dependencies?: Record<string, string>[]; // Marked optional so we can delete it in the function
     editors: {
       decimal: string;
       digital: string;
@@ -45,11 +57,7 @@ export type WakaTimeAllTimeStats = {
       text: string;
       total_seconds: number;
     }[];
-    machines?: Record<string, string>[]; // Marked optional so we can delete it in the function
-    modified_at?: string; // Marked optional so we can delete it in the function
-    operating_systems?: Record<string, string>[]; // Marked optional so we can delete it in the function
     percent_calculated: number;
-    projects?: Record<string, string>[]; // Marked optional so we can delete it in the function
     range: string;
     start: string;
     status: string;
@@ -57,8 +65,6 @@ export type WakaTimeAllTimeStats = {
     timezone: string;
     total_seconds_including_other_language: number;
     total_seconds: number;
-    user_id?: string; // Marked optional so we can delete it in the function
-    username?: string; // Marked optional so we can delete it in the function
     writes_only: boolean;
   };
 };

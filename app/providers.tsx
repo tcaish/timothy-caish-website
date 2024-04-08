@@ -7,6 +7,7 @@ import { addUniqueVisitor } from '@/services/supabase-database/adders/unique_vis
 import theme from '@/theme';
 import { useStore } from '@/zustand/store';
 import { ChakraProvider } from '@chakra-ui/react';
+import { ThemeProvider } from 'next-themes';
 import React from 'react';
 
 type ProvidersProps = {
@@ -34,16 +35,7 @@ export function Providers(props: ProvidersProps) {
 
     if (storedLanguage) {
       i18n.locale = storedLanguage;
-
-      /**
-       * In dark mode, it does an extra rerender, so the page rerenders and
-       * shows the correct language, but on light mode, it does not do this
-       * extra rerender, so the language does not change on initial load of
-       * page. This line is needed to trigger a rerender.
-       * (It's stupid, I know. I'm not knowledgable enough on this specific
-       * issue to fix it properly.)
-       */
-      store.setShowLanguagesMenu(false);
+      store.setLocale(storedLanguage);
     }
   }, []);
 
@@ -60,5 +52,9 @@ export function Providers(props: ProvidersProps) {
     };
   }, []);
 
-  return <ChakraProvider theme={theme}>{props.children}</ChakraProvider>;
+  return (
+    <ThemeProvider defaultTheme="light" enableSystem={true}>
+      <ChakraProvider theme={theme}>{props.children}</ChakraProvider>
+    </ThemeProvider>
+  );
 }
