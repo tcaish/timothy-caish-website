@@ -60,8 +60,6 @@ export default function Home() {
   return (
     <PageContainer>
       <Flex direction="column" h="100%">
-        {/* Full page blur */}
-
         {/* Main content */}
         <Flex
           direction={{ base: 'column', lg: 'row' }}
