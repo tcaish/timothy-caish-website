@@ -4,6 +4,7 @@ import NotFoundJson from '@/assets/lottie/not_found.json';
 import AnimatedPressIn from '@/components/AnimatedPressIn';
 import PageContainer from '@/components/PageContainer';
 import { Routes } from '@/constants/routes';
+import { i18n } from '@/services/localization';
 import { Box, Button, Center, Icon, Text } from '@chakra-ui/react';
 import Lottie from 'lottie-react';
 import { useRouter } from 'next/navigation';
@@ -23,12 +24,7 @@ export default function NotFound() {
         </Box>
 
         <Box px={{ base: 12, md: 200 }}>
-          <Text fontSize="lg">
-            Oops! Looks like you've discovered the great digital void.
-            Unfortunately, the page you're looking for has vanished into
-            cyberspace. But don't worry! Our best digital detectives are on the
-            case. In the meantime, let's get you home.
-          </Text>
+          <Text fontSize="lg">{i18n.t('not_found_desc')}</Text>
 
           <AnimatedPressIn>
             <Button
@@ -38,7 +34,7 @@ export default function NotFound() {
               size="md"
               variant="outline"
             >
-              Go Home
+              {i18n.t('go_home')}
             </Button>
           </AnimatedPressIn>
         </Box>

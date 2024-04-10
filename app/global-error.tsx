@@ -27,12 +27,7 @@ export default function GlobalError() {
               </Box>
 
               <Box px={{ base: 12, md: 200 }}>
-                <Text fontSize="lg">
-                  Ah, you've stumbled upon our exclusive 500 Club - a place we
-                  didn't think you'd find (and frankly, hoped you wouldn't).
-                  While our tech team works their magic to fix what's amiss,
-                  let's get you back to safety.
-                </Text>
+                <Text fontSize="lg">{i18n.t('error_desc')}</Text>
 
                 <AnimatedPressIn>
                   <Button
@@ -42,7 +37,7 @@ export default function GlobalError() {
                     size="md"
                     variant="outline"
                   >
-                    Go Home
+                    {i18n.t('go_home')}
                   </Button>
                 </AnimatedPressIn>
               </Box>
