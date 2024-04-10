@@ -76,6 +76,7 @@ export default function Navbar() {
                       bg={colorMode === 'light' ? 'gray.200' : 'gray.600'} // Using colorMode here because we will get React hooks error if we use useColorModeValue
                       color={colorMode === 'light' ? 'gray.700' : 'white'} // Using colorMode here because we will get React hooks error if we use useColorModeValue
                       hasArrow={true}
+                      key={route.name}
                       label={inDevText}
                       placement="bottom"
                     >
