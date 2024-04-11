@@ -109,6 +109,7 @@ export default function SkillCards() {
         {skills.map((skill, index) => (
           <motion.div
             initial="hidden"
+            key={index}
             transition={{
               delay: index * 0.1,
               duration: 1,
