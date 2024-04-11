@@ -1,6 +1,6 @@
 import { Providers } from '@/app/providers';
 import Footer from '@/components/Footer';
-import Navbar from '@/components/Navbar';
+import NavigationBar from '@/components/Navigation';
 import { generateMetaData } from '@/helpers';
 import { i18n } from '@/services/localization';
 import { Flex } from '@chakra-ui/react';
@@ -23,7 +23,7 @@ export default function RootLayout(props: RootLayoutProps) {
         <Providers>
           <Flex direction="column" h="100%">
             {/* Navigation bar */}
-            <Navbar />
+            <NavigationBar />
 
             {props.children}
 

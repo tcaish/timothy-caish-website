@@ -27,7 +27,7 @@ import { TbMenuDeep } from 'react-icons/tb';
 /**
  * Navigation bar component.
  */
-export default function Navbar() {
+export default function NavigationBar() {
   const { colorMode, toggleColorMode } = useColorMode();
   const mobileNavbarDisclosure = useDisclosure();
   const store = useStore();
