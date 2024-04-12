@@ -6,6 +6,8 @@ import { Mixpanel } from '@/services/mixpanel';
 import { addUniqueVisitor } from '@/services/supabase-database/adders/unique_visitors';
 import theme from '@/theme';
 import { useStore } from '@/zustand/store';
+import Bugsnag from '@bugsnag/js';
+import BugsnagPluginReact from '@bugsnag/plugin-react';
 import { ChakraProvider } from '@chakra-ui/react';
 import { ThemeProvider } from 'next-themes';
 import React from 'react';
@@ -19,6 +21,15 @@ export function Providers(props: ProvidersProps) {
 
   // Initialize any services
   React.useEffect(() => {
+    // Initialize Bugsnag
+    if (!Bugsnag.isStarted() && process.env.NEXT_PUBLIC_BUGSNAG_API_KEY) {
+      Bugsnag.start({
+        apiKey: process.env.NEXT_PUBLIC_BUGSNAG_API_KEY,
+        enabledReleaseStages: ['production'],
+        plugins: [new BugsnagPluginReact()]
+      });
+    }
+
     // Initialize Mixpanel
     Mixpanel.init();
   }, []);
