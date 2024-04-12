@@ -109,11 +109,11 @@ export default function Home() {
                     <AnimatedPressIn>
                       <Button
                         leftIcon={<Icon as={LuPocketKnife} boxSize={5} />}
-                        onClick={() => router.push(Routes.Skillset.path)}
+                        onClick={() => router.push(Routes.Expertise.path)}
                         size={{ base: 'md', lg: 'lg' }}
                         variant="solid"
                       >
-                        {i18n.t('my_skillset')}
+                        {i18n.t('areas_of_expertise')}
                       </Button>
                     </AnimatedPressIn>
 

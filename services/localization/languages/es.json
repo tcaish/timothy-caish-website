@@ -1,4 +1,5 @@
 {
+  "areas_of_expertise": "Áreas de especialización",
   "average_daily_hours_coding": "Codificación de horas diarias promedio",
   "aws_desc": "Amazon Web Services (AWS) es una plataforma de computación en la nube integral y en evolución proporcionada por Amazon. Ofrece una combinación de ofertas de infraestructura como servicio (IaaS), plataforma como servicio (PaaS) y software como servicio (SaaS). Los servicios de AWS pueden ofrecer a las organizaciones herramientas como potencia informática, almacenamiento de bases de datos y servicios de entrega de contenido.",
   "can_integrate_with_aws": "puedo integrarme con AWS",
@@ -33,7 +34,6 @@
   "love_what_i_do": "¡Amo lo que hago!",
   "minutes_short": "mins",
   "more_areas_of_expertise": "Más áreas de especialización",
-  "my_skillset": "Mis habilidades",
   "nextjs_desc": "Next.js es un marco web de desarrollo front-end de React de código abierto creado por Vercel (anteriormente conocido como Zeit) que permite funciones como la representación del lado del servidor y la generación de sitios web estáticos para aplicaciones web basadas en React. Está diseñado para facilitar a los desarrolladores la creación de aplicaciones web rápidas, escalables y fáciles de usar con React.",
   "not_found_desc": "¡Ups! Parece que has descubierto el gran vacío digital. Lamentablemente, la página que busca ha desaparecido en el ciberespacio. ¡Pero no te preocupes! Nuestros mejores detectives digitales están en el caso. Mientras tanto, te llevaremos a casa.",
   "not_including_today": "Sin incluir hoy",

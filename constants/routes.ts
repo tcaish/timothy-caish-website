@@ -1,19 +1,19 @@
 export const Routes = {
   Home: {
-    name: 'Home',
-    path: '/'
+    name: "Home",
+    path: "/",
   },
 
-  Skillset: {
-    name: 'Skillset',
-    path: '/skillset'
+  Expertise: {
+    name: "Expertise",
+    path: "/expertise",
   },
   Portfolio: {
-    name: 'Portfolio',
-    path: '/portfolio'
+    name: "Portfolio",
+    path: "/portfolio",
   },
   Contact: {
-    name: 'Contact',
-    path: '/contact'
-  }
+    name: "Contact",
+    path: "/contact",
+  },
 };

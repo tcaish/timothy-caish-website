@@ -12,7 +12,7 @@ import { useStore } from '@/zustand/store';
 import { Container, Flex, Heading, Text } from '@chakra-ui/react';
 import React from 'react';
 
-export default function Skillset() {
+export default function Expertise() {
   const store = useStore();
 
   const [dailyCodingStatsSubtitle, setDailyCodingStatsSubtitle] =

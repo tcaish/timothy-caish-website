@@ -3,11 +3,12 @@ import { Flex } from '@chakra-ui/react';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = generateMetaData({
-  title: 'My Skillset',
-  description: 'A list of my skills and technologies I use.'
+  title: 'Expertise',
+  description:
+    "With years of experience, I specialize in creating responsive, user-friendly websites and innovative mobile apps tailored to meet business needs. Explore my areas of expertise and let's bring your digital vision to life!"
 });
 
-export default function SkillsetLayout({
+export default function ExpertiseLayout({
   children
 }: {
   children: React.ReactNode;
