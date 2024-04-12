@@ -78,7 +78,7 @@ export default function NavigationBar() {
             {/* Middle - links */}
             <Box display={{ base: 'none', lg: 'flex' }}>
               <Flex alignItems="center" me={4} gap={4}>
-                {Object.values(Routes)
+                {Object.values(routes)
                   .filter((r) => r.name !== routes.Home.name)
                   .map((route) => {
                     return route.name === routes.Contact.name ||
