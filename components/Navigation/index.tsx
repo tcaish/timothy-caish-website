@@ -151,7 +151,7 @@ export default function NavigationBar() {
                   {colorMode === 'dark' ? (
                     <Icon as={FaSun} color="#DBC300" boxSize={8} />
                   ) : (
-                    <Icon as={BsMoonFill} color="#2D3748" boxSize={8} />
+                    <Icon as={BsMoonFill} color="gray.700" boxSize={8} />
                   )}
                 </motion.div>
               </Box>
@@ -166,7 +166,10 @@ export default function NavigationBar() {
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.8 }}
                 >
-                  <TbMenuDeep color="#2D3748" size={35} />
+                  <TbMenuDeep
+                    color={useColorModeValue('#2D3748', 'white')}
+                    size={35}
+                  />
                 </motion.div>
               </Box>
             </Flex>
