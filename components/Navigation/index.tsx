@@ -72,7 +72,7 @@ export default function NavigationBar() {
               </Link>
             </Box>
 
-            <Spacer />
+            <Spacer display={{ base: 'none', lg: 'flex' }} />
 
             {/* Middle - links */}
             <Box display={{ base: 'none', lg: 'flex' }}>
@@ -151,7 +151,7 @@ export default function NavigationBar() {
                   {colorMode === 'dark' ? (
                     <Icon as={FaSun} color="#DBC300" boxSize={8} />
                   ) : (
-                    <Icon as={BsMoonFill} color="#2D3748" boxSize={7} />
+                    <Icon as={BsMoonFill} color="#2D3748" boxSize={8} />
                   )}
                 </motion.div>
               </Box>
@@ -166,7 +166,7 @@ export default function NavigationBar() {
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.8 }}
                 >
-                  <TbMenuDeep size={35} />
+                  <TbMenuDeep color="#2D3748" size={35} />
                 </motion.div>
               </Box>
             </Flex>
