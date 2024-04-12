@@ -15,6 +15,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 export default function GlobalError() {
   const router = useRouter();
+  const routes = Routes();
 
   return (
     <html lang={i18n.locale}>
@@ -33,7 +34,7 @@ export default function GlobalError() {
                   <Button
                     leftIcon={<Icon as={FaArrowLeft} boxSize={5} />}
                     mt={4}
-                    onClick={() => router.push(Routes.Home.path)}
+                    onClick={() => router.push(routes.Home.path)}
                     size="md"
                     variant="outline"
                   >

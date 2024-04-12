@@ -30,6 +30,7 @@ import { TbMenuDeep } from 'react-icons/tb';
 export default function NavigationBar() {
   const { colorMode, toggleColorMode } = useColorMode();
   const mobileNavbarDisclosure = useDisclosure();
+  const routes = Routes();
   const store = useStore();
   const { theme, setTheme } = useTheme();
 
@@ -60,7 +61,7 @@ export default function NavigationBar() {
           <Flex alignItems="center">
             {/* Left side - logo */}
             <Box>
-              <Link href={Routes.Home.path}>
+              <Link href={routes.Home.path}>
                 <Image
                   alt="Timothy Caish Logo"
                   src={useColorModeValue(
@@ -78,10 +79,10 @@ export default function NavigationBar() {
             <Box display={{ base: 'none', lg: 'flex' }}>
               <Flex alignItems="center" me={4} gap={4}>
                 {Object.values(Routes)
-                  .filter((r) => r.name !== Routes.Home.name)
+                  .filter((r) => r.name !== routes.Home.name)
                   .map((route) => {
-                    return route.name === Routes.Contact.name ||
-                      route.name === Routes.Portfolio.name ? (
+                    return route.name === routes.Contact.name ||
+                      route.name === routes.Portfolio.name ? (
                       <Tooltip
                         bg={colorMode === 'light' ? 'gray.200' : 'gray.600'} // Using colorMode here because we will get React hooks error if we use useColorModeValue
                         color={colorMode === 'light' ? 'gray.700' : 'white'} // Using colorMode here because we will get React hooks error if we use useColorModeValue
@@ -102,8 +103,8 @@ export default function NavigationBar() {
                         <AnimatedPressIn>
                           <Text
                             color={
-                              route.name === Routes.Contact.name ||
-                              route.name === Routes.Portfolio.name
+                              route.name === routes.Contact.name ||
+                              route.name === routes.Portfolio.name
                                 ? useColorModeValue('gray.300', 'gray.600')
                                 : useColorModeValue('gray.700', 'gray.300')
                             }

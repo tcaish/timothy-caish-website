@@ -40,6 +40,12 @@
   "portuguese": "Portuguese",
   "postgresql_desc": "PostgreSQL, often simply Postgres, is an advanced, open-source object-relational database system known for its reliability, robustness, and performance, especially when managing complex data workloads. PostgreSQL has been developed and improved over more than 30 years of engineering, boasting a strong reputation for its architecture, data integrity, and extensive feature set.",
   "react_desc": "React is a JavaScript library for building fast and interactive user interfaces for web applications. It is component-based, allowing developers to create large web applications that can change data, without reloading the page. React Native extends React's approach to mobile app development. Unlike tools that generate mobile app versions of a web app through webviews, React Native produces truly native apps for both Android and iOS platforms. It uses the same design as React, letting you compose a rich mobile UI from declarative components. With React Native, you write your UI using JavaScript and React, but the framework translates your components into platform-native components, allowing your app to access and use native platform capabilities.",
+  "routes": {
+    "contact": "Contact",
+    "expertise": "Expertise",
+    "home": "Home",
+    "portfolio": "Portfolio"
+  },
   "russian": "Russian",
   "since_date": " Since %{date}",
   "since_elipsis": "Since...",

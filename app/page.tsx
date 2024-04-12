@@ -21,6 +21,7 @@ const defaultWaitInterval = 3000;
 
 export default function Home() {
   const router = useRouter();
+  const routes = Routes();
   const store = useStore();
 
   const CustomTypeAnimation = React.useCallback(
@@ -109,7 +110,7 @@ export default function Home() {
                     <AnimatedPressIn>
                       <Button
                         leftIcon={<Icon as={LuPocketKnife} boxSize={5} />}
-                        onClick={() => router.push(Routes.Expertise.path)}
+                        onClick={() => router.push(routes.Expertise.path)}
                         size={{ base: 'md', lg: 'lg' }}
                         variant="solid"
                       >

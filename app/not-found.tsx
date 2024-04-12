@@ -12,6 +12,7 @@ import { FaArrowLeft } from 'react-icons/fa';
 
 export default function NotFound() {
   const router = useRouter();
+  const routes = Routes();
 
   return (
     <PageContainer>
@@ -30,7 +31,7 @@ export default function NotFound() {
             <Button
               leftIcon={<Icon as={FaArrowLeft} boxSize={5} />}
               mt={4}
-              onClick={() => router.push(Routes.Home.path)}
+              onClick={() => router.push(routes.Home.path)}
               size="md"
               variant="outline"
             >
