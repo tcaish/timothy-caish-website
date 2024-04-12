@@ -44,10 +44,13 @@ export default function Footer() {
 
   return (
     <Container maxW="container.xl">
-      <Flex alignItems="center">
+      <Flex
+        alignItems={{ base: 'end', lg: 'center' }}
+        direction={{ base: 'column', lg: 'row' }}
+      >
         {/* Total unique visitors */}
         <FadeIn>
-          <Stat>
+          <Stat textAlign={{ base: 'end', lg: 'unset' }}>
             <StatNumber
               color={useColorModeValue('gray.700', 'gray.300')}
               fontSize="lg"
@@ -63,7 +66,12 @@ export default function Footer() {
         <Spacer />
 
         <FadeIn>
-          <Flex alignItems="end" direction="column" gap={1}>
+          <Flex
+            alignItems="end"
+            direction="column"
+            gap={1}
+            mt={{ base: 2, lg: 'unset' }}
+          >
             <Flex alignItems="center" gap={2}>
               <motion.div
                 onClick={() => openUrlInNewTab(SocialUrls.Github)}

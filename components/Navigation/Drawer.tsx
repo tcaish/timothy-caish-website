@@ -1,6 +1,7 @@
 'use client';
 
 import AnimatedPressIn from '@/components/AnimatedPressIn';
+import Footer from '@/components/Footer';
 import { Routes } from '@/constants/routes';
 import { i18n } from '@/services/localization';
 import { Link } from '@chakra-ui/next-js';
@@ -9,6 +10,7 @@ import {
   DrawerBody,
   DrawerCloseButton,
   DrawerContent,
+  DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
   Flex,
@@ -33,7 +35,7 @@ export default function NavigationDrawer(props: NavigationDrawerProps) {
       placement="right"
       size="xs"
     >
-      <DrawerOverlay />
+      <DrawerOverlay backdropFilter="blur(10px)" bg="blackAlpha.300" />
 
       <DrawerContent>
         <DrawerCloseButton />
@@ -85,6 +87,10 @@ export default function NavigationDrawer(props: NavigationDrawerProps) {
             })}
           </Flex>
         </DrawerBody>
+
+        <DrawerFooter>
+          <Footer />
+        </DrawerFooter>
       </DrawerContent>
     </Drawer>
   );
