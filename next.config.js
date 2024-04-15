@@ -5,17 +5,7 @@ const {
 
 module.exports = {
   productionBrowserSourceMaps: true,
-  webpack(config, { buildId, isServer, webpack }) {
-    // Avoid including '@bugsnag/plugin-aws-lambda' module in the client side bundle
-    // See https://arunoda.me/blog/ssr-and-server-only-modules
-    // if (!isServer) {
-    //   config.plugins.push(
-    //     new webpack.IgnorePlugin({
-    //       resourceRegExp: /@bugsnag\/plugin-aws-lambda/
-    //     })
-    //   );
-    // }
-
+  webpack(config, { buildId }) {
     // Upload source maps on production build
     if (
       process.env.NEXT_PUBLIC_BUGSNAG_API_KEY &&
@@ -33,7 +23,6 @@ module.exports = {
         new BugsnagSourceMapUploaderPlugin({
           apiKey: process.env.NEXT_PUBLIC_BUGSNAG_API_KEY,
           appVersion: buildId,
-          // publicPath: 'https://timothy-caish.vercel.app/_next/',
           overwrite: true
         })
       );

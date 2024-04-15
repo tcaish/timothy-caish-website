@@ -26,7 +26,20 @@ export function Providers(props: ProvidersProps) {
       Bugsnag.start({
         apiKey: process.env.NEXT_PUBLIC_BUGSNAG_API_KEY,
         enabledReleaseStages: ['production'],
-        plugins: [new BugsnagPluginReact()]
+        plugins: [new BugsnagPluginReact()],
+        onError: (event) => {
+          // Ignore the errors below
+          if (
+            event.errors[0].errorMessage.includes(
+              'ResizeObserver loop completed with undelivered notifications'
+            ) ||
+            event.errors[0].errorMessage.includes('while hydrating')
+          ) {
+            return false;
+          }
+
+          return true;
+        }
       });
     }
 
