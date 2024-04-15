@@ -10,53 +10,39 @@ import { useStore } from '@/zustand/store';
 import { Box, Center, Flex, Heading, Stack, Text } from '@chakra-ui/layout';
 import { Avatar, Button, Icon, useColorModeValue } from '@chakra-ui/react';
 import Lottie from 'lottie-react';
+import dynamic from 'next/dynamic';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 import { IoMdContact } from 'react-icons/io';
 import { LuPocketKnife } from 'react-icons/lu';
-import { TypeAnimation } from 'react-type-animation';
 import { Balancer } from 'react-wrap-balancer';
 
-const defaultWaitInterval = 3000;
+// We have to dynamically import the custo type animation component, which is
+// not supported in server-side rendering.
+const CustomTypeAnimation = dynamic(
+  () => import('@/components/CustomTypeAnimation'),
+  {
+    ssr: false
+  }
+);
 
 export default function Home() {
   const router = useRouter();
   const routes = Routes();
   const store = useStore();
 
-  const CustomTypeAnimation = React.useCallback(
-    () => (
-      <TypeAnimation
-        deletionSpeed={80}
-        preRenderFirstString={true}
-        sequence={[
-          i18n.t('create_websites'),
-          2000,
-          i18n.t('create_websites_with_react'),
-          defaultWaitInterval,
-          i18n.t('create_websites_with_nextjs'),
-          defaultWaitInterval,
-          i18n.t('create_websites_with_chakra'),
-          defaultWaitInterval,
-          i18n.t('create_mobile_apps'),
-          defaultWaitInterval,
-          i18n.t('create_mobile_apps_with_react_native'),
-          defaultWaitInterval,
-          i18n.t('create_mobile_apps_with_expo'),
-          defaultWaitInterval,
-          i18n.t('can_integrate_with_supabase'),
-          defaultWaitInterval,
-          i18n.t('can_integrate_with_firebase'),
-          defaultWaitInterval,
-          i18n.t('can_integrate_with_aws'),
-          defaultWaitInterval,
-          `${i18n.t('love_what_i_do')} 🚀🌈`
-        ]}
-        speed={60}
-      />
-    ),
-    [store.locale]
-  );
+  const [contactButtonText, setContactButtonText] = React.useState('');
+  const [description, setDescription] = React.useState('');
+  const [expertiseButtonText, setExpertiseButtonText] = React.useState('');
+  const [heading, setHeading] = React.useState('');
+
+  // Update the text content when the language changes
+  React.useEffect(() => {
+    setContactButtonText(i18n.t('contact_me'));
+    setDescription(i18n.t('with_blend_of_creativity'));
+    setExpertiseButtonText(i18n.t('areas_of_expertise'));
+    setHeading(i18n.t('hello_world'));
+  }, [store.locale]);
 
   return (
     <PageContainer>
@@ -80,7 +66,7 @@ export default function Home() {
 
                 {/* Greeting */}
                 <Balancer>
-                  <Heading size="2xl">{i18n.t('hello_world')}</Heading>
+                  <Heading size="2xl">{heading}</Heading>
                 </Balancer>
 
                 {/* Type animation */}
@@ -97,7 +83,7 @@ export default function Home() {
                       color={useColorModeValue('gray.700', 'gray.300')}
                       fontSize={{ base: 'md', md: 'lg' }}
                     >
-                      {i18n.t('with_blend_of_creativity')}
+                      {description}
                     </Text>
                   </Balancer>
 
@@ -114,7 +100,7 @@ export default function Home() {
                         size={{ base: 'md', lg: 'lg' }}
                         variant="solid"
                       >
-                        {i18n.t('areas_of_expertise')}
+                        {expertiseButtonText}
                       </Button>
                     </AnimatedPressIn>
 
@@ -124,7 +110,7 @@ export default function Home() {
                         size={{ base: 'md', lg: 'lg' }}
                         variant="outline"
                       >
-                        {i18n.t('contact_me')}
+                        {contactButtonText}
                       </Button>
                     </AnimatedPressIn>
                   </Stack>
