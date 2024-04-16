@@ -1,7 +1,7 @@
 'use client';
 
-import TopEditorsChart from '@/components/charts/TopEditorsChart';
-import TopLanguagesChart from '@/components/charts/TopLanguagesChart';
+import TopEditorsChart from '@/components/Charts/TopEditorsChart';
+import TopLanguagesChart from '@/components/Charts/TopLanguagesChart';
 import PageContainer from '@/components/PageContainer';
 import SkillCards from '@/components/SkillCards';
 import Statistic from '@/components/Statistic';
