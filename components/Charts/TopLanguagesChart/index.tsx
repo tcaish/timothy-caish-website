@@ -1,4 +1,4 @@
-import ChartContainer from '@/components/Charts/ChartContainer';
+import ChartContainer from '@/components/charts/ChartContainer';
 import { i18n } from '@/services/localization';
 import { useStore } from '@/zustand/store';
 import { Flex, Spinner } from '@chakra-ui/react';
