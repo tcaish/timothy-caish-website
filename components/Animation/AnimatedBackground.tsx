@@ -1,4 +1,4 @@
-import FadeIn from '@/components/FadeIn';
+import FadeIn from '@/components/Animation/FadeIn';
 import { Box, useColorModeValue } from '@chakra-ui/react';
 import DrifterStars from '@devil7softwares/react-drifter-stars';
 

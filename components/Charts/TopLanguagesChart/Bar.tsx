@@ -1,4 +1,4 @@
-import FadeIn from '@/components/FadeIn';
+import FadeIn from '@/components/Animation/FadeIn';
 import { i18n } from '@/services/localization';
 import { useStore } from '@/zustand/store';
 import {

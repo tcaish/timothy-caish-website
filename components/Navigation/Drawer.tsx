@@ -1,6 +1,6 @@
 'use client';
 
-import AnimatedPressIn from '@/components/AnimatedPressIn';
+import AnimatedPressIn from '@/components/Animation/AnimatedPressIn';
 import Footer from '@/components/Footer';
 import { Routes } from '@/constants/routes';
 import { i18n } from '@/services/localization';

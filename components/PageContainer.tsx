@@ -1,4 +1,4 @@
-import AnimatedBackground from '@/components/AnimatedBackground';
+import AnimatedBackground from '@/components/Animation/AnimatedBackground';
 import FullPageBlur from '@/components/FullPageBlur';
 import { useStore } from '@/zustand/store';
 

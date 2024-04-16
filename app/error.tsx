@@ -1,7 +1,7 @@
 'use client';
 
 import ErrorJson from '@/assets/lottie/error.json';
-import AnimatedPressIn from '@/components/AnimatedPressIn';
+import AnimatedPressIn from '@/components/Animation/AnimatedPressIn';
 import PageContainer from '@/components/PageContainer';
 import { Routes } from '@/constants/routes';
 import { i18n } from '@/services/localization';

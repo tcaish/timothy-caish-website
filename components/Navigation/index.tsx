@@ -1,6 +1,6 @@
 'use client';
 
-import AnimatedPressIn from '@/components/AnimatedPressIn';
+import AnimatedPressIn from '@/components/Animation/AnimatedPressIn';
 import LanguagesMenu from '@/components/LanguagesMenu';
 import NavigationDrawer from '@/components/Navigation/Drawer';
 import { Routes } from '@/constants/routes';
