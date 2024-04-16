@@ -32,6 +32,13 @@ const components: Record<string, StyleConfig> = {
           backgroundColor: "primary.700",
         },
       },
+      solid_secondary: {
+        backgroundColor: "gray.700",
+        color: "white",
+        _hover: {
+          backgroundColor: "gray.500",
+        },
+      },
     },
   },
   Heading: {
