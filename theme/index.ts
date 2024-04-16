@@ -72,5 +72,6 @@ const config: ThemeConfig = {
 };
 
 const theme = extendTheme({ colors, components, config });
+console.log("");
 
 export default theme;
