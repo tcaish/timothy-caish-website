@@ -14,7 +14,6 @@ import {
   ModalHeader,
   ModalOverlay
 } from '@chakra-ui/react';
-import { motion } from 'framer-motion';
 
 export default function SkillCards() {
   const store = useStore();
@@ -107,29 +106,16 @@ export default function SkillCards() {
       {/* Skill cards */}
       <Flex gap={4} grow={1} wrap="wrap">
         {skills.map((skill, index) => (
-          <motion.div
-            initial="hidden"
+          <Flex
+            basis="310px"
+            cursor="pointer"
+            grow={1}
             key={index}
-            transition={{
-              delay: index * 0.1,
-              duration: 1,
-              ease: 'easeInOut',
-              type: 'tween'
-            }}
-            style={{
-              cursor: 'pointer',
-              display: 'flex',
-              flex: '1 1 310px',
-              minHeight: '230px'
-            }}
-            variants={{
-              hidden: { opacity: 0 },
-              visible: { opacity: 1 }
-            }}
-            whileInView="visible"
+            minH="230px"
+            shrink={1}
           >
             <SkillCard index={index} key={index} skill={skill} />
-          </motion.div>
+          </Flex>
         ))}
       </Flex>
 

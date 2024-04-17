@@ -13,11 +13,9 @@ type SkillCardProps = {
 export default function SkillCard(props: SkillCardProps) {
   const store = useStore();
 
+  const [isOtherCardHovered, setIsOtherCardHovered] = React.useState(false);
   const [isTapped, setIsTapped] = React.useState(false);
-
-  const isThisCardHovered = store.skillCardIndexHovered === props.index;
-  const isOtherCardHovered =
-    store.skillCardIndexHovered != null && !isThisCardHovered;
+  const [isThisCardHovered, setIsThisCardHovered] = React.useState(false);
 
   // Animation variables
   const containerVariants: Variants = {
@@ -46,6 +44,15 @@ export default function SkillCard(props: SkillCardProps) {
       opacity: 0.2
     }
   };
+
+  // Update the card's hover state when global states change
+  React.useEffect(() => {
+    const isThisCardHoveredTemp = store.skillCardIndexHovered === props.index;
+    setIsThisCardHovered(isThisCardHoveredTemp);
+    setIsOtherCardHovered(
+      store.skillCardIndexHovered != null && !isThisCardHoveredTemp
+    );
+  }, [store.skillCardIndexHovered]);
 
   // Handle what happens when the user stops hovering over the card
   function handleOnHoverEnd() {
