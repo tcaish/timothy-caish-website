@@ -106,6 +106,7 @@ export default function Home() {
 
                     <AnimatedPressIn>
                       <Button
+                        onClick={() => router.push(routes.Contact.path)}
                         rightIcon={<Icon as={IoMdContact} boxSize={6} />}
                         size={{ base: 'md', lg: 'lg' }}
                         variant="outline"
