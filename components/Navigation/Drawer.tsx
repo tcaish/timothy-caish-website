@@ -1,6 +1,6 @@
 'use client';
 
-import AnimatedPressIn from '@/components/Animation/AnimatedPressIn';
+import AnimatedPressIn from '@/components/animation/AnimatedPressIn';
 import Footer from '@/components/Footer';
 import { Routes } from '@/constants/routes';
 import { i18n } from '@/services/localization';
@@ -45,8 +45,7 @@ export default function NavigationDrawer(props: NavigationDrawerProps) {
         <DrawerBody>
           <Flex alignItems="center" direction="column" me={4} gap={4}>
             {Object.values(routes).map((route) => {
-              return route.name === routes.Contact.name ||
-                route.name === routes.Portfolio.name ? (
+              return route.name === routes.Portfolio.name ? (
                 <Tooltip
                   bg={colorMode === 'light' ? 'gray.200' : 'gray.600'} // Using colorMode here because we will get React hooks error if we use useColorModeValue
                   color={colorMode === 'light' ? 'gray.700' : 'white'} // Using colorMode here because we will get React hooks error if we use useColorModeValue
@@ -72,7 +71,6 @@ export default function NavigationDrawer(props: NavigationDrawerProps) {
                   <AnimatedPressIn>
                     <Heading
                       color={
-                        route.name === routes.Contact.name ||
                         route.name === routes.Portfolio.name
                           ? useColorModeValue('gray.300', 'gray.600')
                           : useColorModeValue('gray.700', 'gray.300')

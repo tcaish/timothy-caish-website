@@ -1,4 +1,5 @@
 import { opaqueDarkBgColor, opaqueLightBgColor } from '@/constants/colors';
+import { BORDER_RADIUS_DEFAULT } from '@/constants/settings';
 import { Skill } from '@/constants/types';
 import { useStore } from '@/zustand/store';
 import { Flex, Heading, useColorModeValue } from '@chakra-ui/react';
@@ -77,7 +78,7 @@ export default function SkillCard(props: SkillCardProps) {
       onTap={handleOnTap}
       onTapStart={() => setIsTapped(true)}
       style={{
-        borderRadius: 8,
+        borderRadius: BORDER_RADIUS_DEFAULT,
         width: '100%',
         zIndex: isThisCardHovered ? 1 : 0
       }}

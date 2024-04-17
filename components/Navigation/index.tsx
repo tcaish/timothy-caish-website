@@ -1,15 +1,16 @@
 'use client';
 
-import AnimatedPressIn from '@/components/Animation/AnimatedPressIn';
+import LogoDark from '@/assets/logo/logo__dark.png';
+import LogoLight from '@/assets/logo/logo__light.png';
 import LanguagesMenu from '@/components/LanguagesMenu';
 import NavigationDrawer from '@/components/Navigation/Drawer';
+import AnimatedPressIn from '@/components/animation/AnimatedPressIn';
 import { Routes } from '@/constants/routes';
 import { i18n } from '@/services/localization';
 import { useStore } from '@/zustand/store';
 import { useColorMode } from '@chakra-ui/color-mode';
-import { Image } from '@chakra-ui/image';
 import { Box, Container, Divider, Flex, Spacer } from '@chakra-ui/layout';
-import { Link } from '@chakra-ui/next-js';
+import { Image, Link } from '@chakra-ui/next-js';
 import {
   Icon,
   Text,
@@ -64,10 +65,7 @@ export default function NavigationBar() {
               <Link href={routes.Home.path}>
                 <Image
                   alt="Timothy Caish Logo"
-                  src={useColorModeValue(
-                    '/assets/logo/logo__light.png',
-                    '/assets/logo/logo__dark.png'
-                  )}
+                  src={useColorModeValue(LogoLight, LogoDark)}
                   w={{ base: '100px', md: '150px' }}
                 />
               </Link>
@@ -81,8 +79,7 @@ export default function NavigationBar() {
                 {Object.values(routes)
                   .filter((r) => r.name !== routes.Home.name)
                   .map((route) => {
-                    return route.name === routes.Contact.name ||
-                      route.name === routes.Portfolio.name ? (
+                    return route.name === routes.Portfolio.name ? (
                       <Tooltip
                         bg={colorMode === 'light' ? 'gray.200' : 'gray.600'} // Using colorMode here because we will get React hooks error if we use useColorModeValue
                         color={colorMode === 'light' ? 'gray.700' : 'white'} // Using colorMode here because we will get React hooks error if we use useColorModeValue
@@ -103,7 +100,6 @@ export default function NavigationBar() {
                         <AnimatedPressIn>
                           <Text
                             color={
-                              route.name === routes.Contact.name ||
                               route.name === routes.Portfolio.name
                                 ? useColorModeValue('gray.300', 'gray.600')
                                 : useColorModeValue('gray.700', 'gray.300')

@@ -1,6 +1,6 @@
 'use client';
 
-import FadeIn from '@/components/Animation/FadeIn';
+import FadeIn from '@/components/animation/FadeIn';
 import { SocialUrls } from '@/constants/business';
 import { openUrlInNewTab } from '@/helpers';
 import { i18n } from '@/services/localization';

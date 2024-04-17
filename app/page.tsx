@@ -1,8 +1,8 @@
 'use client';
 
 import DeveloperJson from '@/assets/lottie/developer.json';
-import AnimatedPressIn from '@/components/Animation/AnimatedPressIn';
-import FadeIn from '@/components/Animation/FadeIn';
+import AnimatedPressIn from '@/components/animation/AnimatedPressIn';
+import FadeIn from '@/components/animation/FadeIn';
 import PageContainer from '@/components/PageContainer';
 import { Routes } from '@/constants/routes';
 import { i18n } from '@/services/localization';
@@ -20,7 +20,7 @@ import { Balancer } from 'react-wrap-balancer';
 // We have to dynamically import the custo type animation component, which is
 // not supported in server-side rendering.
 const CustomTypeAnimation = dynamic(
-  () => import('@/components/Animation/CustomTypeAnimation'),
+  () => import('@/components/animation/CustomTypeAnimation'),
   {
     ssr: false
   }

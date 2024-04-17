@@ -1,4 +1,5 @@
 import { opaqueDarkBgColor, opaqueLightBgColor } from '@/constants/colors';
+import { BORDER_RADIUS_DEFAULT } from '@/constants/settings';
 import { Flex, Heading, Text, useColorModeValue } from '@chakra-ui/react';
 
 type ChartContainerProps = {
@@ -11,7 +12,7 @@ export default function ChartContainer(props: ChartContainerProps) {
   return (
     <Flex
       bg={useColorModeValue(opaqueLightBgColor, opaqueDarkBgColor)}
-      borderRadius={8}
+      borderRadius={BORDER_RADIUS_DEFAULT}
       direction="column"
       flexGrow={1}
       minH="491px"

@@ -1,4 +1,5 @@
-import FadeIn from '@/components/Animation/FadeIn';
+import FadeIn from '@/components/animation/FadeIn';
+import { BORDER_RADIUS_DEFAULT } from '@/constants/settings';
 import { i18n } from '@/services/localization';
 import { useStore } from '@/zustand/store';
 import {
@@ -71,7 +72,7 @@ export default function Bar(props: {
           duration: 1
         }}
         style={{
-          borderRadius: 8,
+          borderRadius: BORDER_RADIUS_DEFAULT,
           height: height,
           position: 'absolute',
           zIndex: 0
