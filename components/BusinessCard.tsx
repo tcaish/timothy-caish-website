@@ -78,6 +78,7 @@ export default function BusinessCard(props: BusinessCardProps) {
         }`}
         borderRadius={12}
         h="auto"
+        priority={true}
         src={props.side === 'back' ? BusinessCardBackImg : BusinessCardFrontImg}
         w="100%"
       />

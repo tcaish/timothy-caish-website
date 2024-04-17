@@ -65,6 +65,7 @@ export default function NavigationBar() {
               <Link href={routes.Home.path}>
                 <Image
                   alt="Timothy Caish Logo"
+                  priority={true}
                   src={useColorModeValue(LogoLight, LogoDark)}
                   w={{ base: '100px', md: '150px' }}
                 />
