@@ -1,5 +1,7 @@
 'use client';
 
+import { isDevelopmentEnv } from '@/constants/device';
+import { createSha512Hash, getIpv6Address } from '@/helpers';
 import { LocalStorage } from '@/services/local-storage';
 import { i18n } from '@/services/localization';
 import { Mixpanel } from '@/services/mixpanel';
@@ -49,9 +51,19 @@ export function Providers(props: ProvidersProps) {
 
   // Track unique visitors
   React.useEffect(() => {
-    const mixpanelDeviceId = Mixpanel.getDeviceId();
-    mixpanelDeviceId && addUniqueVisitor(mixpanelDeviceId);
-  }, [Mixpanel.mixpanelClient]);
+    async function trackUniqueVisitor() {
+      const ipv6Address = await getIpv6Address();
+
+      // If we couldn't fetch the IPV6 address
+      if (!ipv6Address) return;
+
+      const hashedIpv6Address = createSha512Hash(ipv6Address);
+      addUniqueVisitor(hashedIpv6Address);
+    }
+
+    // Only track unique visitors in production
+    if (!isDevelopmentEnv) trackUniqueVisitor();
+  }, []);
 
   // Set the language from local storage on load if it exists
   React.useEffect(() => {

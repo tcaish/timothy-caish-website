@@ -1,4 +1,5 @@
 import { isDevelopmentEnv } from "@/constants/device";
+import Crypto from "crypto";
 import { Metadata } from "next";
 
 // Converts seconds to hours and minutes
@@ -11,6 +12,15 @@ export function convertSecondsToHoursAndMinutes(seconds: number) {
     hours,
     minutes,
   };
+}
+
+/**
+ * Create a SHA512 hash from the given string.
+ * @param str The string to hash.
+ * @returns The hashed string.
+ */
+export function createSha512Hash(str: string): string {
+  return Crypto.createHash("sha512").update(str).digest("hex");
 }
 
 // Generates the metadata used on a page
@@ -83,6 +93,18 @@ export function generateMetaData(meta?: {
       url: domain,
     },
   };
+}
+
+/**
+ * Get the user's IPV6 address.
+ * @returns The user's IPV6 address.
+ */
+export async function getIpv6Address(): Promise<string | null> {
+  const ip = await fetch("https://api6.ipify.org?format=json")
+    .then((response) => response.json())
+    .then((data) => data.ip)
+    .catch(() => null);
+  return ip;
 }
 
 /**
