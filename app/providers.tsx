@@ -26,6 +26,19 @@ export function Providers(props: ProvidersProps) {
       Bugsnag.start({
         apiKey: process.env.NEXT_PUBLIC_BUGSNAG_API_KEY,
         enabledReleaseStages: ['production'],
+        onError: (event) => {
+          // Ignore these error messages:
+          // - ResizeObserver loop completed with undelivered notifications.
+          if (
+            event.errors[0].errorMessage.includes(
+              'ResizeObserver loop completed'
+            )
+          ) {
+            return false;
+          }
+
+          return true;
+        },
         plugins: [new BugsnagPluginReact()]
       });
     }
@@ -51,17 +64,17 @@ export function Providers(props: ProvidersProps) {
   }, []);
 
   // Listen for window resize events
-  // React.useEffect(() => {
-  //   function handleResize() {
-  //     store.setWindowWidth(window.innerWidth);
-  //   }
+  React.useEffect(() => {
+    function handleResize() {
+      store.setWindowWidth(window.innerWidth);
+    }
 
-  //   window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResize);
 
-  //   return () => {
-  //     window.removeEventListener('resize', handleResize);
-  //   };
-  // }, []);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <ThemeProvider defaultTheme="light" enableSystem={true}>
