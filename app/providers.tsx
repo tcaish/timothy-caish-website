@@ -51,17 +51,17 @@ export function Providers(props: ProvidersProps) {
   }, []);
 
   // Listen for window resize events
-  React.useEffect(() => {
-    function handleResize() {
-      store.setWindowWidth(window.innerWidth);
-    }
+  // React.useEffect(() => {
+  //   function handleResize() {
+  //     store.setWindowWidth(window.innerWidth);
+  //   }
 
-    window.addEventListener('resize', handleResize);
+  //   window.addEventListener('resize', handleResize);
 
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener('resize', handleResize);
+  //   };
+  // }, []);
 
   return (
     <ThemeProvider defaultTheme="light" enableSystem={true}>
