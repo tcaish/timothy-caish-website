@@ -8,6 +8,7 @@ import { Mixpanel } from '@/services/mixpanel';
 import { addUniqueVisitor } from '@/services/supabase-database/adders/unique_visitors';
 import theme from '@/theme';
 import { useStore } from '@/zustand/store';
+import { Error } from '@bugsnag/core/types/event';
 import Bugsnag from '@bugsnag/js';
 import BugsnagPluginReact from '@bugsnag/plugin-react';
 import { ChakraProvider } from '@chakra-ui/react';
@@ -29,13 +30,17 @@ export function Providers(props: ProvidersProps) {
         apiKey: process.env.NEXT_PUBLIC_BUGSNAG_API_KEY,
         enabledReleaseStages: ['production'],
         onError: (event) => {
-          // Ignore these error messages:
-          // - ResizeObserver loop completed with undelivered notifications.
-          if (
-            event.errors[0].errorMessage.includes(
-              'ResizeObserver loop completed'
-            )
-          ) {
+          const errorsToIgnore = [
+            'ResizeObserver loop completed',
+            'ResizeObserver loop limit exceeded'
+          ];
+          const errorFilter = (errorToCheck: Error) =>
+            errorsToIgnore.some((errorToIgnore) =>
+              errorToCheck.errorMessage.includes(errorToIgnore)
+            );
+
+          // If the error is in the ignore list, don't send it to Bugsnag
+          if (event.errors.filter(errorFilter).length > 0) {
             return false;
           }
 
