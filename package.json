@@ -22,7 +22,7 @@
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
     "@supabase/ssr": "^0.1.0",
-    "@supabase/supabase-js": "^2.39.8",
+    "@supabase/supabase-js": "^2.43.1",
     "echarts": "^5.5.0",
     "framer-motion": "^11.1.7",
     "get-user-locale": "^2.3.1",
