@@ -12,3 +12,11 @@ Technologies used:
 - i18n (Localization)
 - BugSnag (Bug monitoring)
 - Mixpanel (Analytics)
+
+### Run Locally
+
+1. Fork the repo
+2. `cd` into the folder
+3. `yarn` or `npm i` to install packages
+4.  Create a Supabase project and Mixpanel account
+5.  
