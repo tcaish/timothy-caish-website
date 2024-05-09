@@ -18,5 +18,5 @@ Technologies used:
 1. Fork the repo
 2. `cd` into the folder
 3. `yarn` or `npm i` to install packages
-4.  Create a Supabase project and Mixpanel account
-5.  
+4.  `yarn start` or `npm start`
+5. If you want to use your own Supabase, Mixpanel, or BugSnag accounts, you can update the `.env` appropriately
