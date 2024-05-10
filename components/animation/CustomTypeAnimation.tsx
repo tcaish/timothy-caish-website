@@ -35,7 +35,7 @@ export default function CustomTypeAnimation() {
           defaultWaitInterval,
           i18n.t('can_integrate_with_aws'),
           defaultWaitInterval,
-          `${i18n.t('love_what_i_do')} 🚀🌈`
+          `${i18n.t('love_what_i_do')} 🚀✨`
         ]}
         speed={60}
       />
