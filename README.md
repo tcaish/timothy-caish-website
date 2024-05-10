@@ -1,4 +1,4 @@
-# Portfolio Website for Timothy Caish
+# Portfolio Website
 
 This is a website I built for myself that shows off my talents as a web developer!
 
