@@ -11,13 +11,7 @@ import { useStore } from '@/zustand/store';
 import { useColorMode } from '@chakra-ui/color-mode';
 import { Box, Container, Divider, Flex, Spacer } from '@chakra-ui/layout';
 import { Image, Link } from '@chakra-ui/next-js';
-import {
-  Icon,
-  Text,
-  Tooltip,
-  useColorModeValue,
-  useDisclosure
-} from '@chakra-ui/react';
+import { Icon, Text, useColorModeValue, useDisclosure } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
 import React from 'react';
@@ -56,7 +50,7 @@ export default function NavigationBar() {
   }
 
   return (
-    <>
+    <React.Fragment>
       <nav>
         <Container maxW="container.xl" paddingY={2}>
           <Flex alignItems="center">
@@ -79,40 +73,18 @@ export default function NavigationBar() {
               <Flex alignItems="center" me={4} gap={4}>
                 {Object.values(routes)
                   .filter((r) => r.name !== routes.Home.name)
-                  .map((route) => {
-                    return route.name === routes.Portfolio.name ? (
-                      <Tooltip
-                        bg={colorMode === 'light' ? 'gray.200' : 'gray.600'} // Using colorMode here because we will get React hooks error if we use useColorModeValue
-                        color={colorMode === 'light' ? 'gray.700' : 'white'} // Using colorMode here because we will get React hooks error if we use useColorModeValue
-                        hasArrow={true}
-                        key={route.name}
-                        label={inDevText}
-                        placement="bottom"
-                      >
+                  .map((route) => (
+                    <Link href={route.path} key={route.name}>
+                      <AnimatedPressIn>
                         <Text
-                          color={useColorModeValue('gray.300', 'gray.600')}
+                          color={useColorModeValue('gray.700', 'gray.300')}
                           fontWeight="semibold"
                         >
                           {route.name}
                         </Text>
-                      </Tooltip>
-                    ) : (
-                      <Link href={route.path} key={route.name}>
-                        <AnimatedPressIn>
-                          <Text
-                            color={
-                              route.name === routes.Portfolio.name
-                                ? useColorModeValue('gray.300', 'gray.600')
-                                : useColorModeValue('gray.700', 'gray.300')
-                            }
-                            fontWeight="semibold"
-                          >
-                            {route.name}
-                          </Text>
-                        </AnimatedPressIn>
-                      </Link>
-                    );
-                  })}
+                      </AnimatedPressIn>
+                    </Link>
+                  ))}
               </Flex>
             </Box>
 
@@ -181,6 +153,6 @@ export default function NavigationBar() {
         isOpen={mobileNavbarDisclosure.isOpen}
         onClose={mobileNavbarDisclosure.onClose}
       />
-    </>
+    </React.Fragment>
   );
 }
