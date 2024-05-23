@@ -101,7 +101,11 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
         <Flex alignItems="center" flex={1} flexWrap="wrap">
           <Box>
             {props.learn_more_url ? (
-              <Link href={props.learn_more_url} target="_blank">
+              <Link
+                href={props.learn_more_url}
+                target="_blank"
+                title={props.learn_more_url}
+              >
                 <Heading
                   color={useColorModeValue('blue.500', 'blue.200')}
                   size="md"
