@@ -40,10 +40,12 @@
   "loading": "加载中...",
   "love_what_i_do": "我喜欢我所做的事！",
   "minutes_short": "分钟",
+  "mobile_app": "移动应用",
   "more_areas_of_expertise": "更多专业领域",
   "nextjs_desc": "Next.js 是 Vercel（以前称为 Zeit）创建的开源 React 前端开发 Web 框架，它支持服务器端渲染和为基于 React 的 Web 应用程序生成静态网站等功能。它旨在让开发人员能够轻松地使用 React 构建快速、可扩展且用户友好的 Web 应用程序。",
   "not_found_desc": "哎呀！看来您已经发现了巨大的数字空白。不幸的是，您正在寻找的页面已经消失在网络空间中。但别担心！我们最好的数字侦探正在处理此案。与此同时，我们送你回家。",
   "not_including_today": "不包括今天",
+  "npm_package": "NPM包",
   "portfolio_descriptions": {
     "react-cookies-consent": "引入一个全面且可定制的解决方案，用于在 React 应用程序中管理 cookie 同意！我们的软件包包括一组强大的组件，旨在使 cookie 同意的实施变得简单并符合用户偏好。"
   },
@@ -67,5 +69,6 @@
   "top_languages__description": "以下是我使用时间最多的六种语言（按小时降序排列）。",
   "total_hours_coding": "编码总时间",
   "total_unique_visitors": "独立访客总数",
+  "website": "网站",
   "with_blend_of_creativity": "凭借创造力和技术专长的结合，我作为一名出色的全栈开发人员，将想法转化为动态的移动和 Web 应用程序，从而增强用户参与度并推动业务发展。"
 }

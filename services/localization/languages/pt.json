@@ -40,10 +40,12 @@
   "loading": "Carregando...",
   "love_what_i_do": "eu amo o que faço!",
   "minutes_short": "mins",
+  "mobile_app": "Aplicativo móvel",
   "more_areas_of_expertise": "Mais áreas de especialização",
   "nextjs_desc": "Next.js é uma estrutura web de desenvolvimento front-end React de código aberto criada por Vercel (anteriormente conhecido como Zeit) que permite funcionalidades como renderização no lado do servidor e geração de sites estáticos para aplicativos web baseados em React. Ele foi projetado para facilitar aos desenvolvedores a criação de aplicativos da web rápidos, escaláveis ​​e fáceis de usar com React.",
   "not_found_desc": "Ops! Parece que você descobriu o grande vazio digital. Infelizmente, a página que você procura desapareceu no ciberespaço. Mas não se preocupe! Nossos melhores detetives digitais estão cuidando do caso. Enquanto isso, vamos levar você para casa.",
   "not_including_today": "Não incluindo hoje",
+  "npm_package": "Pacote NPM",
   "portfolio_descriptions": {
     "react-cookies-consent": "Apresentando uma solução abrangente e personalizável para gerenciar o consentimento de cookies em seus aplicativos React! Nosso pacote inclui um conjunto de componentes poderosos projetados para tornar a implementação do consentimento de cookies simples e compatível com as preferências do usuário."
   },
@@ -67,5 +69,6 @@
   "top_languages__description": "Estes são os seis principais idiomas com os quais passei mais tempo, em ordem decrescente por horas.",
   "total_hours_coding": "Codificação total de horas",
   "total_unique_visitors": "Total de visitantes únicos",
+  "website": "Local na rede Internet",
   "with_blend_of_creativity": "Com uma mistura de criatividade e conhecimento técnico, me destaquei como desenvolvedor full stack, transformando ideias em aplicativos móveis e web dinâmicos que melhoram o envolvimento do usuário e impulsionam os negócios."
 }

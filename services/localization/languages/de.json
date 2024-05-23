@@ -40,10 +40,12 @@
   "loading": "Wird geladen...",
   "love_what_i_do": "Ich liebe, was ich tue!",
   "minutes_short": "Min.",
+  "mobile_app": "App",
   "more_areas_of_expertise": "Weitere Fachgebiete",
   "nextjs_desc": "Next.js ist ein Open-Source-React-Frontend-Entwicklungs-Webframework von Vercel (früher bekannt als Zeit), das Funktionen wie serverseitiges Rendering und die Generierung statischer Websites für React-basierte Webanwendungen ermöglicht. Es wurde entwickelt, um Entwicklern das Erstellen schneller, skalierbarer und benutzerfreundlicher Webanwendungen mit React zu erleichtern.",
   "not_found_desc": "Hoppla! Sieht so aus, als hätten Sie die große digitale Leere entdeckt. Leider ist die von Ihnen gesuchte Seite im Cyberspace verschwunden. Aber keine Sorge! Unsere besten digitalen Detektive sind an dem Fall beteiligt. In der Zwischenzeit bringen wir Sie nach Hause.",
   "not_including_today": "Ohne heute",
+  "npm_package": "NPM-Paket",
   "portfolio_descriptions": {
     "react-cookies-consent": "Wir stellen eine umfassende und anpassbare Lösung für die Verwaltung der Cookie-Zustimmung in Ihren React-Anwendungen vor! Unser Paket umfasst eine Reihe leistungsstarker Komponenten, die die Implementierung der Cookie-Einwilligung unkompliziert und im Einklang mit den Benutzerpräferenzen gestalten sollen."
   },
@@ -68,5 +70,6 @@
   "top_languages__description": "Dies sind die sechs Sprachen, mit denen ich am meisten Zeit verbracht habe, in absteigender Reihenfolge nach Stunden.",
   "total_hours_coding": "Codierung der Gesamtstunden",
   "total_unique_visitors": "Insgesamt einzigartige Besucher",
+  "website": "Webseite",
   "with_blend_of_creativity": "Mit einer Mischung aus Kreativität und technischem Fachwissen brilliere ich als Full-Stack-Entwickler, der Ideen in dynamische Mobil- und Webanwendungen umwandelt, die das Engagement der Benutzer steigern und Unternehmen voranbringen."
 }

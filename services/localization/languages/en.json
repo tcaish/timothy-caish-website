@@ -40,10 +40,12 @@
   "loading": "Loading...",
   "love_what_i_do": "love what I do!",
   "minutes_short": "mins",
+  "mobile_app": "Mobile App",
   "more_areas_of_expertise": "More Areas of Expertise",
   "nextjs_desc": "Next.js is an open-source React front-end development web framework created by Vercel (formerly known as Zeit) that enables functionality such as server-side rendering and generating static websites for React-based web applications. It's designed to make it easy for developers to build fast, scalable, and user-friendly web applications with React.",
   "not_found_desc": "Oops! Looks like you've discovered the great digital void. Unfortunately, the page you're looking for has vanished into cyberspace. But don't worry! Our best digital detectives are on the case. In the meantime, let's get you home.",
   "not_including_today": "Not including today",
+  "npm_package": "NPM Package",
   "portfolio_descriptions": {
     "react-cookies-consent": "Introducing a comprehensive and customizable solution for managing cookie consent in your React applications! Our package includes a set of powerful components designed to make the implementation of cookie consent straightforward and compliant with user preferences."
   },
@@ -68,5 +70,6 @@
   "top_languages__description": "These are the top six languages I've spent the most time with in descending order by hours.",
   "total_hours_coding": "Total Hours Coding",
   "total_unique_visitors": "Total unique visitors",
+  "website": "Website",
   "with_blend_of_creativity": "With a blend of creativity and technical expertise, I excel as a full stack developer, transforming ideas into dynamic mobile and web applications that enhance user engagement and propel businesses forward."
 }

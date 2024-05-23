@@ -24,6 +24,40 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
   const store = useStore();
 
   /**
+   * Component that shows the type of the portfolio item as a badge.
+   */
+  function PortfolioItemType(): React.ReactNode {
+    let bgColor = '#38A169';
+    let text = '';
+
+    switch (props.type) {
+      case 'app':
+        bgColor = '#00B5D8';
+        text = i18n.t('mobile_app');
+        break;
+      case 'npm':
+        bgColor = '#CB3837';
+        text = i18n.t('npm_package');
+        break;
+      case 'website':
+        text = i18n.t('website');
+        break;
+    }
+
+    return (
+      <Box
+        backgroundColor={bgColor}
+        borderTopRightRadius={BORDER_RADIUS_DEFAULT}
+        px={2}
+        position="absolute"
+        right={0}
+      >
+        <Text>{text}</Text>
+      </Box>
+    );
+  }
+
+  /**
    * Gets the release date of the portfolio item.
    * @returns {string} The release date of the portfolio item.
    */
@@ -61,7 +95,9 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
       borderRadius={BORDER_RADIUS_DEFAULT}
       maxW="md"
     >
-      <CardHeader>
+      <PortfolioItemType />
+
+      <CardHeader mt={2}>
         <Flex alignItems="center" flex={1} flexWrap="wrap">
           <Box>
             <Heading size="md">{props.title}</Heading>
