@@ -4,7 +4,7 @@ import { BORDER_RADIUS_DEFAULT } from '@/constants/settings';
 import { Tables } from '@/constants/types/supabase';
 import { i18n } from '@/services/localization';
 import { useStore } from '@/zustand/store';
-import { Image } from '@chakra-ui/next-js';
+import { Image, Link } from '@chakra-ui/next-js';
 import {
   Box,
   Button,
@@ -100,7 +100,19 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
       <CardHeader mt={2}>
         <Flex alignItems="center" flex={1} flexWrap="wrap">
           <Box>
-            <Heading size="md">{props.title}</Heading>
+            {props.learn_more_url ? (
+              <Link href={props.learn_more_url} target="_blank">
+                <Heading
+                  color={useColorModeValue('blue.500', 'blue.200')}
+                  size="md"
+                >
+                  {props.title}
+                </Heading>
+              </Link>
+            ) : (
+              <Heading size="md">{props.title}</Heading>
+            )}
+
             <Text>{getReleaseDate()}</Text>
           </Box>
         </Flex>
