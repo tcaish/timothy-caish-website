@@ -1,20 +1,23 @@
-import { motion } from 'framer-motion';
+import { MotionBox } from '@/components/animation/MotionBox';
+import { ChakraProps } from '@chakra-ui/react';
 
-type AnimatedPressInProps = {
+interface AnimatedPressInProps extends ChakraProps {
   children: React.ReactNode;
-  maxHeight?: string;
-};
+}
 
 /**
  * AnimatedPressIn is a component that scales down the children when pressed.
  */
 export default function AnimatedPressIn(props: AnimatedPressInProps) {
+  const { children, maxHeight, ...rest } = props;
+
   return (
-    <motion.div
-      style={{ maxHeight: props.maxHeight ?? 'unset' }}
+    <MotionBox
+      maxHeight={maxHeight ?? 'unset'}
       whileTap={{ scale: 0.8 }}
+      {...rest}
     >
-      {props.children}
-    </motion.div>
+      {children}
+    </MotionBox>
   );
 }
