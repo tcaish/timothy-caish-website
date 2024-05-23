@@ -1,5 +1,6 @@
+import { MotionBox } from '@/components/animation/MotionBox';
 import { useStore } from '@/zustand/store';
-import { Box, useColorModeValue } from '@chakra-ui/react';
+import { useColorModeValue } from '@chakra-ui/react';
 import './index.scss';
 
 /**
@@ -9,9 +10,12 @@ export default function FullPageBlur() {
   const store = useStore();
 
   return (
-    <Box
+    <MotionBox
+      animate={{ opacity: 1 }}
       className="full-page-blur"
+      exit={{ opacity: 0 }}
       id={useColorModeValue('full-page-blur-light', 'full-page-blur-dark')}
+      initial={{ opacity: 0 }}
       onClick={() => store.setShowLanguagesMenu(false)}
     />
   );

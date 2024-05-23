@@ -1,6 +1,7 @@
 import AnimatedBackground from '@/components/animation/AnimatedBackground';
 import FullPageBlur from '@/components/FullPageBlur';
 import { useStore } from '@/zustand/store';
+import { AnimatePresence } from 'framer-motion';
 
 type PageContainerProps = {
   children: React.ReactNode;
@@ -13,7 +14,9 @@ export default function PageContainer(props: PageContainerProps) {
     <>
       <AnimatedBackground shouldFadeIn={true} />
 
-      {store.showLanguagesMenu && <FullPageBlur />}
+      <AnimatePresence>
+        {store.showLanguagesMenu && <FullPageBlur />}
+      </AnimatePresence>
 
       {props.children}
     </>
