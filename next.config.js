@@ -4,6 +4,9 @@ const {
 } = require('webpack-bugsnag-plugins');
 
 module.exports = {
+  images: {
+    domains: ['raw.githubusercontent.com']
+  },
   productionBrowserSourceMaps: true,
   webpack(config, { buildId }) {
     // Upload source maps on production build
