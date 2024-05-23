@@ -11,6 +11,8 @@
   "chakra_ui_desc": "Chakra UI ist eine moderne, zugängliche und benutzerfreundliche React-UI-Bibliothek, die eine Reihe wiederverwendbarer und zusammensetzbarer React-Komponenten bereitstellt. Ziel ist es, Entwicklern das Erstellen schöner, reaktionsfähiger und zugänglicher Benutzeroberflächen für ihre Webanwendungen zu erleichtern. Die Chakra-Benutzeroberfläche ist auf Barrierefreiheit ausgelegt und stellt sicher, dass damit erstellte Anwendungen für ein möglichst breites Publikum zugänglich sind, auch für Menschen mit Behinderungen.",
   "chinese": "Chinesisch",
   "coding_stats_disclaimer": "Die Daten auf dieser Seite stammen aus meinem Wakatime-Profil und werden täglich aktualisiert. Die Statistiken hier zeigen nur die von Wakatime verfolgten Codierungsaktivitäten, die im Jahr 2023 mit der Verfolgung begonnen haben, und umfassen möglicherweise nicht alle von mir durchgeführten Codierungen. Dies dient nur dem Spaß und um zu zeigen, wo ich die meiste Zeit verbringe, also nehmen Sie es mit Vorsicht!",
+  "coming_soon": "Demnächst",
+  "comment": "Kommentieren",
   "contact_me": "Kontaktiere mich",
   "create_mobile_apps": "Ich erstelle mobile Apps",
   "create_mobile_apps_with_expo": "Ich erstelle mobile Apps mit Expo",
@@ -34,6 +36,7 @@
   "in_development": "In Entwicklung",
   "japanese": "Japanisch",
   "learn_more": "Erfahren Sie mehr",
+  "like": "Gefällt mir",
   "loading": "Wird geladen...",
   "love_what_i_do": "Ich liebe, was ich tue!",
   "minutes_short": "Min.",
@@ -41,9 +44,13 @@
   "nextjs_desc": "Next.js ist ein Open-Source-React-Frontend-Entwicklungs-Webframework von Vercel (früher bekannt als Zeit), das Funktionen wie serverseitiges Rendering und die Generierung statischer Websites für React-basierte Webanwendungen ermöglicht. Es wurde entwickelt, um Entwicklern das Erstellen schneller, skalierbarer und benutzerfreundlicher Webanwendungen mit React zu erleichtern.",
   "not_found_desc": "Hoppla! Sieht so aus, als hätten Sie die große digitale Leere entdeckt. Leider ist die von Ihnen gesuchte Seite im Cyberspace verschwunden. Aber keine Sorge! Unsere besten digitalen Detektive sind an dem Fall beteiligt. In der Zwischenzeit bringen wir Sie nach Hause.",
   "not_including_today": "Ohne heute",
+  "portfolio_descriptions": {
+    "react-cookies-consent": "Wir stellen eine umfassende und anpassbare Lösung für die Verwaltung der Cookie-Zustimmung in Ihren React-Anwendungen vor! Unser Paket umfasst eine Reihe leistungsstarker Komponenten, die die Implementierung der Cookie-Einwilligung unkompliziert und im Einklang mit den Benutzerpräferenzen gestalten sollen."
+  },
   "portuguese": "Portugiesisch",
   "postgresql_desc": "PostgreSQL, oft einfach Postgres, ist ein fortschrittliches, objektrelationales Open-Source-Datenbanksystem, das für seine Zuverlässigkeit, Robustheit und Leistung bekannt ist, insbesondere bei der Verwaltung komplexer Daten-Workloads. PostgreSQL wurde im Laufe von mehr als 30 Jahren Ingenieursarbeit entwickelt und verbessert und genießt einen guten Ruf für seine Architektur, Datenintegrität und seinen umfangreichen Funktionsumfang.",
   "react_desc": "React ist eine JavaScript-Bibliothek zum Erstellen schneller und interaktiver Benutzeroberflächen für Webanwendungen. Es ist komponentenbasiert und ermöglicht es Entwicklern, große Webanwendungen zu erstellen, die Daten ändern können, ohne die Seite neu laden zu müssen. React Native erweitert den Ansatz von React zur Entwicklung mobiler Apps. Im Gegensatz zu Tools, die mobile App-Versionen einer Web-App über Webviews generieren, erstellt React Native wirklich native Apps sowohl für Android- als auch für iOS-Plattformen. Es verwendet das gleiche Design wie React, sodass Sie aus deklarativen Komponenten eine umfangreiche mobile Benutzeroberfläche erstellen können. Mit React Native schreiben Sie Ihre Benutzeroberfläche mit JavaScript und React, aber das Framework übersetzt Ihre Komponenten in plattformnative Komponenten, sodass Ihre App auf native Plattformfunktionen zugreifen und diese nutzen kann.",
+  "released": "Veröffentlicht",
   "routes": {
     "contact": "Kontakt",
     "expertise": "Sachverstand",

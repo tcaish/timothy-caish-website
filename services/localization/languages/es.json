@@ -11,6 +11,8 @@
   "chakra_ui_desc": "Chakra UI es una biblioteca de React UI moderna, accesible y fácil de usar que proporciona un conjunto de componentes de React reutilizables y componibles. Su objetivo es facilitar a los desarrolladores la creación de interfaces de usuario hermosas, receptivas y accesibles para sus aplicaciones web. La interfaz de usuario de Chakra está diseñada teniendo en cuenta la accesibilidad, lo que garantiza que las aplicaciones creadas con ella sean accesibles para una audiencia lo más amplia posible, incluidas las personas con discapacidades.",
   "chinese": "Chino",
   "coding_stats_disclaimer": "Los datos de esta página provienen de mi perfil de Wakatime y se actualizan diariamente. Las estadísticas aquí solo muestran la actividad de codificación rastreada por Wakatime, que comenzó a rastrearse en 2023 y es posible que no incluya toda la codificación que hago. Esto es sólo por diversión y para mostrar dónde paso la mayor parte de mi tiempo, ¡así que tómalo con cautela!",
+  "coming_soon": "Muy pronto",
+  "comment": "Comentar",
   "contact_me": "Contáctame",
   "create_mobile_apps": "creo aplicaciones móviles",
   "create_mobile_apps_with_expo": "creo aplicaciones móviles con Expo",
@@ -34,6 +36,7 @@
   "in_development": "En desarrollo",
   "japanese": "Japonés",
   "learn_more": "Aprende más",
+  "like": "Me gusta",
   "loading": "Cargando...",
   "love_what_i_do": "¡Amo lo que hago!",
   "minutes_short": "mins",
@@ -41,9 +44,13 @@
   "nextjs_desc": "Next.js es un marco web de desarrollo front-end de React de código abierto creado por Vercel (anteriormente conocido como Zeit) que permite funciones como la representación del lado del servidor y la generación de sitios web estáticos para aplicaciones web basadas en React. Está diseñado para facilitar a los desarrolladores la creación de aplicaciones web rápidas, escalables y fáciles de usar con React.",
   "not_found_desc": "¡Ups! Parece que has descubierto el gran vacío digital. Lamentablemente, la página que busca ha desaparecido en el ciberespacio. ¡Pero no te preocupes! Nuestros mejores detectives digitales están en el caso. Mientras tanto, te llevaremos a casa.",
   "not_including_today": "Sin incluir hoy",
+  "portfolio_descriptions": {
+    "react-cookies-consent": "¡Presentamos una solución integral y personalizable para administrar el consentimiento de cookies en sus aplicaciones React! Nuestro paquete incluye un conjunto de potentes componentes diseñados para que la implementación del consentimiento de cookies sea sencilla y cumpla con las preferencias del usuario."
+  },
   "portuguese": "Portugués",
   "postgresql_desc": "PostgreSQL, a menudo simplemente Postgres, es un sistema avanzado de base de datos relacional de objetos de código abierto conocido por su confiabilidad, solidez y rendimiento, especialmente cuando se administran cargas de trabajo de datos complejas. PostgreSQL se ha desarrollado y mejorado a lo largo de más de 30 años de ingeniería y cuenta con una sólida reputación por su arquitectura, integridad de datos y amplio conjunto de funciones.",
   "react_desc": "React es una biblioteca de JavaScript para crear interfaces de usuario rápidas e interactivas para aplicaciones web. Está basado en componentes, lo que permite a los desarrolladores crear grandes aplicaciones web que pueden cambiar datos sin recargar la página. React Native amplía el enfoque de React al desarrollo de aplicaciones móviles. A diferencia de las herramientas que generan versiones de aplicaciones móviles de una aplicación web a través de vistas web, React Native produce aplicaciones verdaderamente nativas para plataformas Android e iOS. Utiliza el mismo diseño que React, lo que le permite componer una interfaz de usuario móvil enriquecida a partir de componentes declarativos. Con React Native, usted escribe su interfaz de usuario usando JavaScript y React, pero el marco traduce sus componentes en componentes nativos de la plataforma, lo que permite que su aplicación acceda y utilice las capacidades de la plataforma nativa.",
+  "released": "Publicado",
   "routes": {
     "contact": "Contacto",
     "expertise": "Pericia",

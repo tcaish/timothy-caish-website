@@ -11,6 +11,8 @@
   "chakra_ui_desc": "Chakra UI is a modern, accessible, and simple-to-use React UI library that provides a set of reusable and composable React components. It aims to make it easier for developers to build beautiful, responsive, and accessible user interfaces for their web applications. Chakra UI is designed with accessibility in mind, ensuring that applications built with it are accessible to as wide an audience as possible, including people with disabilities.",
   "chinese": "Chinese",
   "coding_stats_disclaimer": "The data on this page comes from my Wakatime profile and is updated daily. The statistics here only show the coding activity tracked by Wakatime, which started tracking in 2023 and may not include all the coding I do. This is only for fun and to show where I spend most of my time, so take it with a grain of salt!",
+  "coming_soon": "Coming Soon",
+  "comment": "Comment",
   "contact_me": "Contact Me",
   "create_mobile_apps": "create mobile apps",
   "create_mobile_apps_with_expo": "create mobile apps with Expo",
@@ -34,6 +36,7 @@
   "in_development": "In development",
   "japanese": "Japanese",
   "learn_more": "Learn More",
+  "like": "Like",
   "loading": "Loading...",
   "love_what_i_do": "love what I do!",
   "minutes_short": "mins",
@@ -41,9 +44,13 @@
   "nextjs_desc": "Next.js is an open-source React front-end development web framework created by Vercel (formerly known as Zeit) that enables functionality such as server-side rendering and generating static websites for React-based web applications. It's designed to make it easy for developers to build fast, scalable, and user-friendly web applications with React.",
   "not_found_desc": "Oops! Looks like you've discovered the great digital void. Unfortunately, the page you're looking for has vanished into cyberspace. But don't worry! Our best digital detectives are on the case. In the meantime, let's get you home.",
   "not_including_today": "Not including today",
+  "portfolio_descriptions": {
+    "react-cookies-consent": "Introducing a comprehensive and customizable solution for managing cookie consent in your React applications! Our package includes a set of powerful components designed to make the implementation of cookie consent straightforward and compliant with user preferences."
+  },
   "portuguese": "Portuguese",
   "postgresql_desc": "PostgreSQL, often simply Postgres, is an advanced, open-source object-relational database system known for its reliability, robustness, and performance, especially when managing complex data workloads. PostgreSQL has been developed and improved over more than 30 years of engineering, boasting a strong reputation for its architecture, data integrity, and extensive feature set.",
   "react_desc": "React is a JavaScript library for building fast and interactive user interfaces for web applications. It is component-based, allowing developers to create large web applications that can change data, without reloading the page. React Native extends React's approach to mobile app development. Unlike tools that generate mobile app versions of a web app through webviews, React Native produces truly native apps for both Android and iOS platforms. It uses the same design as React, letting you compose a rich mobile UI from declarative components. With React Native, you write your UI using JavaScript and React, but the framework translates your components into platform-native components, allowing your app to access and use native platform capabilities.",
+  "released": "Released",
   "routes": {
     "contact": "Contact",
     "expertise": "Expertise",

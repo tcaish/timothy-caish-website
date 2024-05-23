@@ -11,6 +11,8 @@
   "chakra_ui_desc": "Chakra UI é uma biblioteca React UI moderna, acessível e simples de usar que fornece um conjunto de componentes React reutilizáveis ​​e combináveis. O objetivo é tornar mais fácil para os desenvolvedores criarem interfaces de usuário bonitas, responsivas e acessíveis para seus aplicativos da web. O Chakra UI foi projetado tendo em mente a acessibilidade, garantindo que os aplicativos criados com ele sejam acessíveis ao maior público possível, incluindo pessoas com deficiência.",
   "chinese": "Chinês",
   "coding_stats_disclaimer": "Os dados desta página vêm do meu perfil Wakatime e são atualizados diariamente. As estatísticas aqui mostram apenas a atividade de codificação monitorada pelo Wakatime, que começou a rastrear em 2023 e pode não incluir toda a codificação que faço. Isso é apenas para me divertir e para mostrar onde passo a maior parte do tempo, então aceite com cautela!",
+  "coming_soon": "Em breve",
+  "comment": "Comente",
   "contact_me": "Contate-me",
   "create_mobile_apps": "eu crio aplicativos móveis",
   "create_mobile_apps_with_expo": "eu crio aplicativos móveis com Expo",
@@ -34,6 +36,7 @@
   "in_development": "Em desenvolvimento",
   "japanese": "Japonês",
   "learn_more": "Saber mais",
+  "like": "Curtir",
   "loading": "Carregando...",
   "love_what_i_do": "eu amo o que faço!",
   "minutes_short": "mins",
@@ -41,9 +44,13 @@
   "nextjs_desc": "Next.js é uma estrutura web de desenvolvimento front-end React de código aberto criada por Vercel (anteriormente conhecido como Zeit) que permite funcionalidades como renderização no lado do servidor e geração de sites estáticos para aplicativos web baseados em React. Ele foi projetado para facilitar aos desenvolvedores a criação de aplicativos da web rápidos, escaláveis ​​e fáceis de usar com React.",
   "not_found_desc": "Ops! Parece que você descobriu o grande vazio digital. Infelizmente, a página que você procura desapareceu no ciberespaço. Mas não se preocupe! Nossos melhores detetives digitais estão cuidando do caso. Enquanto isso, vamos levar você para casa.",
   "not_including_today": "Não incluindo hoje",
+  "portfolio_descriptions": {
+    "react-cookies-consent": "Apresentando uma solução abrangente e personalizável para gerenciar o consentimento de cookies em seus aplicativos React! Nosso pacote inclui um conjunto de componentes poderosos projetados para tornar a implementação do consentimento de cookies simples e compatível com as preferências do usuário."
+  },
   "portuguese": "Português",
   "postgresql_desc": "PostgreSQL, muitas vezes simplesmente Postgres, é um sistema de banco de dados relacional de objeto avançado e de código aberto, conhecido por sua confiabilidade, robustez e desempenho, especialmente ao gerenciar cargas de trabalho de dados complexas. O PostgreSQL foi desenvolvido e aprimorado ao longo de mais de 30 anos de engenharia, ostentando uma forte reputação por sua arquitetura, integridade de dados e amplo conjunto de recursos.",
   "react_desc": "React é uma biblioteca JavaScript para construção de interfaces de usuário rápidas e interativas para aplicações web. É baseado em componentes, permitindo aos desenvolvedores criar grandes aplicações web que podem alterar dados, sem recarregar a página. React Native estende a abordagem do React para desenvolvimento de aplicativos móveis. Ao contrário das ferramentas que geram versões de aplicativos móveis de um aplicativo da web por meio de webviews, o React Native produz aplicativos verdadeiramente nativos para plataformas Android e iOS. Ele usa o mesmo design do React, permitindo compor uma UI móvel rica a partir de componentes declarativos. Com React Native, você escreve sua UI usando JavaScript e React, mas a estrutura traduz seus componentes em componentes nativos da plataforma, permitindo que seu aplicativo acesse e use recursos nativos da plataforma.",
+  "released": "Lançado",
   "routes": {
     "contact": "Contato",
     "expertise": "Perícia",

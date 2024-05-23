@@ -2,6 +2,7 @@ import AnimatedPressIn from '@/components/animation/AnimatedPressIn';
 import { opaqueDarkBgColor, opaqueLightBgColor } from '@/constants/colors';
 import { BORDER_RADIUS_DEFAULT } from '@/constants/settings';
 import { Tables } from '@/constants/types/supabase';
+import { i18n } from '@/services/localization';
 import { useStore } from '@/zustand/store';
 import { Image } from '@chakra-ui/next-js';
 import {
@@ -28,17 +29,30 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
    */
   function getReleaseDate(): string {
     if (props.release_date) {
-      return `Released: ${new Date(props.release_date).toLocaleDateString(
-        store.locale,
-        {
-          day: 'numeric',
-          month: 'long',
-          year: 'numeric'
-        }
-      )}`;
+      return `${i18n.t('released')}: ${new Date(
+        props.release_date
+      ).toLocaleDateString(store.locale, {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      })}`;
     }
 
-    return 'Coming soon';
+    return i18n.t('coming_soon');
+  }
+
+  /**
+   * Gets the description of the portfolio item based on the title coming from
+   * the database.
+   * @returns {string} The description of the portfolio item.
+   */
+  function getDescription(): string {
+    switch (props.title) {
+      case 'react-cookies-consent':
+        return i18n.t('portfolio_descriptions.react-cookies-consent');
+      default:
+        return '';
+    }
   }
 
   return (
@@ -57,11 +71,11 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
       </CardHeader>
 
       <CardBody pt={0}>
-        <Text>{props.description}</Text>
+        <Text>{getDescription()}</Text>
       </CardBody>
 
       <Image
-        alt={`${props.title} cover`}
+        alt={props.title}
         height={200}
         priority={true}
         src={props.image_url}
@@ -69,22 +83,14 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
         width={500}
       />
 
-      <CardFooter
-        flexWrap="wrap"
-        justify="space-between"
-        sx={{
-          '& > button': {
-            minW: '136px'
-          }
-        }}
-      >
+      <CardFooter flexWrap="wrap" justify="space-between">
         <AnimatedPressIn display="flex" flex={1} justifyContent="center">
           <Button
             flex={1}
             leftIcon={<Icon as={BiLike} boxSize={6} />}
             variant="ghost"
           >
-            Like
+            {i18n.t('like')}
           </Button>
         </AnimatedPressIn>
 
@@ -94,7 +100,7 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
             leftIcon={<Icon as={BiChat} boxSize={6} />}
             variant="ghost"
           >
-            Comment
+            {i18n.t('comment')}
           </Button>
         </AnimatedPressIn>
       </CardFooter>

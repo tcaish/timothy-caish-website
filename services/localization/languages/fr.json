@@ -11,6 +11,8 @@
   "chakra_ui_desc": "Chakra UI est une bibliothèque d'interface utilisateur React moderne, accessible et simple à utiliser qui fournit un ensemble de composants React réutilisables et composables. Il vise à permettre aux développeurs de créer plus facilement des interfaces utilisateur belles, réactives et accessibles pour leurs applications Web. Chakra UI est conçu dans un souci d'accessibilité, garantissant que les applications créées avec celui-ci sont accessibles à un public aussi large que possible, y compris les personnes handicapées.",
   "chinese": "chinois",
   "coding_stats_disclaimer": "Les données de cette page proviennent de mon profil Wakatime et sont mises à jour quotidiennement. Les statistiques ici montrent uniquement l'activité de codage suivie par Wakatime, qui a commencé à suivre en 2023 et peuvent ne pas inclure tout le codage que je fais. C'est uniquement pour m'amuser et pour montrer où je passe le plus clair de mon temps, alors prenez-le avec précaution!",
+  "coming_soon": "À venir",
+  "comment": "Commentez",
   "contact_me": "Contactez moi",
   "create_mobile_apps": "je crée des applications mobiles",
   "create_mobile_apps_with_expo": "je crée des applications mobiles avec Expo",
@@ -34,6 +36,7 @@
   "in_development": "En développement",
   "japanese": "japonais",
   "learn_more": "Apprendre encore plus",
+  "like": "J'aime",
   "loading": "Chargement...",
   "love_what_i_do": "j'aime ce que je fais !",
   "minutes_short": "mins",
@@ -41,9 +44,13 @@
   "nextjs_desc": "Next.js est un framework Web de développement frontal React open source créé par Vercel (anciennement connu sous le nom de Zeit) qui permet des fonctionnalités telles que le rendu côté serveur et la génération de sites Web statiques pour les applications Web basées sur React. Il est conçu pour permettre aux développeurs de créer facilement des applications Web rapides, évolutives et conviviales avec React.",
   "not_found_desc": "Oops! On dirait que vous avez découvert le grand vide numérique. Malheureusement, la page que vous recherchez a disparu dans le cyberespace. Mais ne vous inquiétez pas ! Nos meilleurs détectives numériques sont sur l'affaire. En attendant, rentrons à la maison.",
   "not_including_today": "Sans compter aujourd'hui",
+  "portfolio_descriptions": {
+    "react-cookies-consent": "Présentation d'une solution complète et personnalisable pour gérer le consentement aux cookies dans vos applications React ! Notre package comprend un ensemble de composants puissants conçus pour rendre la mise en œuvre du consentement aux cookies simple et conforme aux préférences de l'utilisateur."
+  },
   "portuguese": "portugais",
   "postgresql_desc": "PostgreSQL, souvent simplement Postgres, est un système de base de données relationnelle objet open source avancé, connu pour sa fiabilité, sa robustesse et ses performances, en particulier lors de la gestion de charges de travail de données complexes. PostgreSQL a été développé et amélioré au cours de plus de 30 ans d'ingénierie, bénéficiant d'une solide réputation pour son architecture, l'intégrité de ses données et son ensemble complet de fonctionnalités.",
   "react_desc": "React est une bibliothèque JavaScript permettant de créer des interfaces utilisateur rapides et interactives pour les applications Web. Il est basé sur des composants, permettant aux développeurs de créer de grandes applications Web capables de modifier les données, sans recharger la page. React Native étend l'approche de React au développement d'applications mobiles. Contrairement aux outils qui génèrent des versions d'applications mobiles d'une application Web via des vues Web, React Native produit des applications véritablement natives pour les plates-formes Android et iOS. Il utilise la même conception que React, vous permettant de composer une interface utilisateur mobile riche à partir de composants déclaratifs. Avec React Native, vous écrivez votre interface utilisateur à l'aide de JavaScript et de React, mais le framework traduit vos composants en composants natifs de la plate-forme, permettant à votre application d'accéder et d'utiliser les fonctionnalités natives de la plate-forme.",
+  "released": "Sortie",
   "routes": {
     "contact": "Contact",
     "expertise": "Compétence",
