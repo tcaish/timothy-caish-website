@@ -52,7 +52,7 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
         position="absolute"
         right={0}
       >
-        <Text>{text}</Text>
+        <Text color="white">{text}</Text>
       </Box>
     );
   }
@@ -122,6 +122,7 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
       <CardFooter flexWrap="wrap" justify="space-between">
         <AnimatedPressIn display="flex" flex={1} justifyContent="center">
           <Button
+            color={useColorModeValue('gray.700', 'white')}
             flex={1}
             leftIcon={<Icon as={BiLike} boxSize={6} />}
             variant="ghost"
@@ -132,6 +133,7 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
 
         <AnimatedPressIn display="flex" flex={1} justifyContent="center">
           <Button
+            color={useColorModeValue('gray.700', 'white')}
             flex={1}
             leftIcon={<Icon as={BiChat} boxSize={6} />}
             variant="ghost"
