@@ -22,10 +22,14 @@ export default function Portfolio() {
 
   return (
     <PageContainer>
-      <Center>
-        <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} px={4} spacing={4}>
-          {portfolioItems.map((portfolioItem) => (
-            <PortfolioCard {...portfolioItem} />
+      <Center flex={1} px={{ base: 2, sm: 0 }} py={{ base: 4, sm: 0 }}>
+        <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={4}>
+          {portfolioItems.map((portfolioItem, index) => (
+            <>
+              <PortfolioCard key={index} {...portfolioItem} />
+              <PortfolioCard key={index} {...portfolioItem} />
+              <PortfolioCard key={index} {...portfolioItem} />
+            </>
           ))}
         </SimpleGrid>
       </Center>
