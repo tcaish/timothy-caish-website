@@ -3,7 +3,6 @@ import ConfettiExplosion from '@/components/animation/ConfettiExplosion';
 import { opaqueDarkBgColor, opaqueLightBgColor } from '@/constants/colors';
 import { BORDER_RADIUS_DEFAULT, LocalStorageKeys } from '@/constants/settings';
 import { Tables } from '@/constants/types/supabase';
-import { formatNumber } from '@/helpers';
 import { i18n } from '@/services/localization';
 import { updatePortfolioItemTotalLikes } from '@/services/supabase-database/adders/portfolio_items';
 import { useStore } from '@/zustand/store';
@@ -230,7 +229,7 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
               boxSize={5}
               color={useColorModeValue('gray.700', 'white')}
             />
-            <Text>{formatNumber(store.locale, totalLikes)}</Text>
+            <Text>{totalLikes.toLocaleString(store.locale)}</Text>
           </Stack>
 
           <Stack direction="row" alignItems="center" spacing={3}>
@@ -239,7 +238,7 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
               boxSize={5}
               color={useColorModeValue('gray.700', 'white')}
             />
-            <Text>{formatNumber(store.locale, 12354)}</Text>
+            <Text>{(15426).toLocaleString(store.locale)}</Text>
           </Stack>
         </Stack>
 
