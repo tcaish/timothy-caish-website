@@ -47,7 +47,7 @@
   "not_including_today": "不包括今天",
   "npm_package": "NPM包",
   "portfolio_descriptions": {
-    "react-cookies-consent": "引入一个全面且可定制的解决方案，用于在 React 应用程序中管理 cookie 同意！我们的软件包包括一组强大的组件，旨在使 cookie 同意的实施变得简单并符合用户偏好。"
+    "id-1": "引入一个全面且可定制的解决方案，用于在 React 应用程序中管理 cookie 同意！我们的软件包包括一组强大的组件，旨在使 cookie 同意的实施变得简单并符合用户偏好。"
   },
   "portuguese": "葡萄牙语",
   "postgresql_desc": "PostgreSQL（通常简称为 Postgres）是一种先进的开源对象关系数据库系统，以其可靠性、稳健性和性能而闻名，尤其是在管理复杂的数据工作负载时。 PostgreSQL 经过 30 多年的工程开发和改进，以其架构、数据完整性和广泛的功能集而享有盛誉。",

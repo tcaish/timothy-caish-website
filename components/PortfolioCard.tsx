@@ -75,20 +75,6 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
     return i18n.t('coming_soon');
   }
 
-  /**
-   * Gets the description of the portfolio item based on the title coming from
-   * the database.
-   * @returns {string} The description of the portfolio item.
-   */
-  function getDescription(): string {
-    switch (props.title) {
-      case 'react-cookies-consent':
-        return i18n.t('portfolio_descriptions.react-cookies-consent');
-      default:
-        return '';
-    }
-  }
-
   return (
     <Card
       bg={useColorModeValue(opaqueLightBgColor, opaqueDarkBgColor)}
@@ -123,7 +109,7 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
       </CardHeader>
 
       <CardBody pt={0}>
-        <Text>{getDescription()}</Text>
+        <Text>{i18n.t(`portfolio_descriptions.id-${props.id}`)}</Text>
       </CardBody>
 
       <Image

@@ -47,7 +47,7 @@
   "not_including_today": "Sans compter aujourd'hui",
   "npm_package": "Forfait NPM",
   "portfolio_descriptions": {
-    "react-cookies-consent": "Présentation d'une solution complète et personnalisable pour gérer le consentement aux cookies dans vos applications React ! Notre package comprend un ensemble de composants puissants conçus pour rendre la mise en œuvre du consentement aux cookies simple et conforme aux préférences de l'utilisateur."
+    "id-1": "Présentation d'une solution complète et personnalisable pour gérer le consentement aux cookies dans vos applications React ! Notre package comprend un ensemble de composants puissants conçus pour rendre la mise en œuvre du consentement aux cookies simple et conforme aux préférences de l'utilisateur."
   },
   "portuguese": "portugais",
   "postgresql_desc": "PostgreSQL, souvent simplement Postgres, est un système de base de données relationnelle objet open source avancé, connu pour sa fiabilité, sa robustesse et ses performances, en particulier lors de la gestion de charges de travail de données complexes. PostgreSQL a été développé et amélioré au cours de plus de 30 ans d'ingénierie, bénéficiant d'une solide réputation pour son architecture, l'intégrité de ses données et son ensemble complet de fonctionnalités.",
