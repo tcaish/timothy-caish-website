@@ -5,6 +5,7 @@ import { BORDER_RADIUS_DEFAULT } from '@/constants/settings';
 import { Tables } from '@/constants/types/supabase';
 import { formatNumber } from '@/helpers';
 import { i18n } from '@/services/localization';
+import { updatePortfolioItemTotalLikes } from '@/services/supabase-database/adders/portfolio_items';
 import { useStore } from '@/zustand/store';
 import { Image, Link } from '@chakra-ui/next-js';
 import {
@@ -33,6 +34,8 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
   const [totalLikes, setTotalLikes] = React.useState(props.total_likes);
 
   const likeButtonRef = React.useRef<HTMLButtonElement>(null);
+
+  const executeDatabaseActionTimer = React.useRef<NodeJS.Timeout | null>(null);
 
   /**
    * Component that shows the type of the portfolio item as a badge.
@@ -100,6 +103,19 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
       setLiked(false);
       setTotalLikes(totalLikes - 1);
     }
+
+    // If there is a timer running, clear it
+    if (executeDatabaseActionTimer.current) {
+      clearTimeout(executeDatabaseActionTimer.current);
+    }
+
+    // Execute the database action after 2 seconds to prevent spamming
+    executeDatabaseActionTimer.current = setTimeout(() => {
+      updatePortfolioItemTotalLikes(
+        liked ? 'decrement' : 'increment',
+        props.id
+      );
+    }, 2000);
   }
 
   return (
