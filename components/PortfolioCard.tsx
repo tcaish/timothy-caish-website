@@ -1,10 +1,9 @@
 import AnimatedPressIn from '@/components/animation/AnimatedPressIn';
 import ConfettiExplosion from '@/components/animation/ConfettiExplosion';
 import { opaqueDarkBgColor, opaqueLightBgColor } from '@/constants/colors';
-import { BORDER_RADIUS_DEFAULT } from '@/constants/settings';
+import { BORDER_RADIUS_DEFAULT, LocalStorageKeys } from '@/constants/settings';
 import { Tables } from '@/constants/types/supabase';
 import { formatNumber } from '@/helpers';
-import { LocalStorage } from '@/services/local-storage';
 import { i18n } from '@/services/localization';
 import { updatePortfolioItemTotalLikes } from '@/services/supabase-database/adders/portfolio_items';
 import { useStore } from '@/zustand/store';
@@ -32,7 +31,7 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
 
   const likedInLocalStorage =
     localStorage
-      .getItem(LocalStorage.Keys.PortfolioItemLikes)
+      .getItem(LocalStorageKeys.PortfolioItemLikes)
       ?.includes(`id-${props.id}`) || false;
 
   const [liked, setLiked] = React.useState(likedInLocalStorage);
@@ -84,12 +83,12 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
    */
   function addLikedPortfolioItemToLocalStorage() {
     const jsonValue = JSON.parse(
-      localStorage.getItem(LocalStorage.Keys.PortfolioItemLikes) || '{}'
+      localStorage.getItem(LocalStorageKeys.PortfolioItemLikes) || '{}'
     );
     jsonValue[`id-${props.id}`] = 'true';
 
     localStorage.setItem(
-      LocalStorage.Keys.PortfolioItemLikes,
+      LocalStorageKeys.PortfolioItemLikes,
       JSON.stringify(jsonValue)
     );
   }
@@ -160,12 +159,12 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
    */
   function removeLikedPortfolioItemFromLocalStorage() {
     const jsonValue = JSON.parse(
-      localStorage.getItem(LocalStorage.Keys.PortfolioItemLikes) || '{}'
+      localStorage.getItem(LocalStorageKeys.PortfolioItemLikes) || '{}'
     );
     delete jsonValue[`id-${props.id}`];
 
     localStorage.setItem(
-      LocalStorage.Keys.PortfolioItemLikes,
+      LocalStorageKeys.PortfolioItemLikes,
       JSON.stringify(jsonValue)
     );
   }

@@ -1,8 +1,8 @@
 'use client';
 
 import { isDevelopmentEnv } from '@/constants/device';
+import { LocalStorageKeys } from '@/constants/settings';
 import { createSha512Hash, getIpv6Address } from '@/helpers';
-import { LocalStorage } from '@/services/local-storage';
 import { i18n } from '@/services/localization';
 import { Mixpanel } from '@/services/mixpanel';
 import { addUniqueVisitor } from '@/services/supabase-database/adders/unique_visitors';
@@ -72,7 +72,7 @@ export function Providers(props: ProvidersProps) {
 
   // Set the language from local storage on load if it exists
   React.useEffect(() => {
-    const storedLanguage = LocalStorage.get(LocalStorage.Keys.Language);
+    const storedLanguage = localStorage.getItem(LocalStorageKeys.Language);
 
     if (storedLanguage) {
       i18n.locale = storedLanguage;
