@@ -17,6 +17,7 @@ export type Database = {
           learn_more_url: string | null
           release_date: string | null
           title: string
+          total_likes: number
           type: string
         }
         Insert: {
@@ -26,6 +27,7 @@ export type Database = {
           learn_more_url?: string | null
           release_date?: string | null
           title: string
+          total_likes?: number
           type: string
         }
         Update: {
@@ -35,6 +37,7 @@ export type Database = {
           learn_more_url?: string | null
           release_date?: string | null
           title?: string
+          total_likes?: number
           type?: string
         }
         Relationships: []
