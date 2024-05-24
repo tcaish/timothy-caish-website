@@ -108,6 +108,14 @@ export async function getIpv6Address(): Promise<string | null> {
 }
 
 /**
+ * @param locale The locale to format the number in.
+ * @param number The number to format.
+ * @returns The formatted number.
+ */
+export const formatNumber = (locale: string, number: number): string =>
+  new Intl.NumberFormat(locale).format(number);
+
+/**
  * Opens a URL in a new tab.
  * @param url The URL to open in a new tab.
  */
