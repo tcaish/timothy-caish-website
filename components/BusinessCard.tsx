@@ -27,6 +27,7 @@ import { FaLink } from 'react-icons/fa';
 import { PiBuildingsFill } from 'react-icons/pi';
 
 type BusinessCardProps = {
+  cursor?: 'pointer' | 'default';
   side: 'back' | 'front';
 };
 
@@ -88,7 +89,7 @@ export default function BusinessCard(props: BusinessCardProps) {
   return (
     <MotionBox
       borderRadius={12}
-      cursor="pointer"
+      cursor={props.cursor || 'pointer'}
       onMouseLeave={() => {
         businessCardX.set(0);
         businessCardY.set(0);
@@ -102,7 +103,7 @@ export default function BusinessCard(props: BusinessCardProps) {
         rotateX: businessCardX,
         rotateY: businessCardY
       }}
-      w={{ base: '95%', md: '50%' }}
+      w={{ base: '95%', md: '750px' }}
       whileTap={{ scale: 0.9 }}
     >
       {props.side === 'back' ? (

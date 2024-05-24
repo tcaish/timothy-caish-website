@@ -14,7 +14,7 @@ export default function Contact() {
         w="100%"
       >
         <Center>
-          <BusinessCard side="front" />
+          <BusinessCard cursor="default" side="front" />
         </Center>
 
         <Center>
