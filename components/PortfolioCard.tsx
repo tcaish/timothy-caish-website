@@ -4,6 +4,7 @@ import { opaqueDarkBgColor, opaqueLightBgColor } from '@/constants/colors';
 import { BORDER_RADIUS_DEFAULT } from '@/constants/settings';
 import { Tables } from '@/constants/types/supabase';
 import { formatNumber } from '@/helpers';
+import { LocalStorage } from '@/services/local-storage';
 import { i18n } from '@/services/localization';
 import { updatePortfolioItemTotalLikes } from '@/services/supabase-database/adders/portfolio_items';
 import { useStore } from '@/zustand/store';
@@ -29,7 +30,14 @@ import { BiChat, BiLike, BiSolidChat, BiSolidLike } from 'react-icons/bi';
 export default function PortfolioCard(props: Tables<'portfolio_items'>) {
   const store = useStore();
 
-  const [liked, setLiked] = React.useState(false);
+  const likedInLocalStorage =
+    localStorage
+      .getItem(LocalStorage.Keys.PortfolioItemLikes)
+      ?.includes(`id-${props.id}`) || false;
+
+  const [liked, setLiked] = React.useState(likedInLocalStorage);
+  const [previouslyLikedValue, setPreviouslyLikedValue] =
+    React.useState(likedInLocalStorage);
   const [showConfetti, setShowConfetti] = React.useState(false);
   const [totalLikes, setTotalLikes] = React.useState(props.total_likes);
 
@@ -72,6 +80,21 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
   }
 
   /**
+   * Adds the liked portfolio item to local storage.
+   */
+  function addLikedPortfolioItemToLocalStorage() {
+    const jsonValue = JSON.parse(
+      localStorage.getItem(LocalStorage.Keys.PortfolioItemLikes) || '{}'
+    );
+    jsonValue[`id-${props.id}`] = 'true';
+
+    localStorage.setItem(
+      LocalStorage.Keys.PortfolioItemLikes,
+      JSON.stringify(jsonValue)
+    );
+  }
+
+  /**
    * Gets the release date of the portfolio item.
    * @returns {string} The release date of the portfolio item.
    */
@@ -93,8 +116,10 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
    * Handles what happens when the like button is clicked.
    */
   function handleLikeButtonClicked() {
+    const userLikedItem = !liked;
+
     // If it is not liked
-    if (!liked) {
+    if (userLikedItem) {
       if (!showConfetti) setShowConfetti(true);
 
       setLiked(true);
@@ -109,13 +134,40 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
       clearTimeout(executeDatabaseActionTimer.current);
     }
 
+    // If the user didn't previously like or dislike the item before changing
+    // their reaction, do nothing to avoid spamming
+    if (previouslyLikedValue === userLikedItem) return;
+
     // Execute the database action after 2 seconds to prevent spamming
-    executeDatabaseActionTimer.current = setTimeout(() => {
-      updatePortfolioItemTotalLikes(
-        liked ? 'decrement' : 'increment',
+    executeDatabaseActionTimer.current = setTimeout(async () => {
+      const success = await updatePortfolioItemTotalLikes(
+        userLikedItem ? 'increment' : 'decrement',
         props.id
       );
+
+      // If the action was successful
+      if (success) {
+        userLikedItem
+          ? addLikedPortfolioItemToLocalStorage()
+          : removeLikedPortfolioItemFromLocalStorage();
+        setPreviouslyLikedValue(userLikedItem);
+      }
     }, 2000);
+  }
+
+  /**
+   * Removes the liked portfolio item from local storage.
+   */
+  function removeLikedPortfolioItemFromLocalStorage() {
+    const jsonValue = JSON.parse(
+      localStorage.getItem(LocalStorage.Keys.PortfolioItemLikes) || '{}'
+    );
+    delete jsonValue[`id-${props.id}`];
+
+    localStorage.setItem(
+      LocalStorage.Keys.PortfolioItemLikes,
+      JSON.stringify(jsonValue)
+    );
   }
 
   return (
@@ -174,18 +226,26 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
           spacing={8}
         >
           <Stack direction="row" alignItems="center" spacing={3}>
-            <Icon as={BiSolidLike} boxSize={5} />
+            <Icon
+              as={BiSolidLike}
+              boxSize={5}
+              color={useColorModeValue('gray.700', 'white')}
+            />
             <Text>{formatNumber(store.locale, totalLikes)}</Text>
           </Stack>
 
           <Stack direction="row" alignItems="center" spacing={3}>
-            <Icon as={BiSolidChat} boxSize={5} />
+            <Icon
+              as={BiSolidChat}
+              boxSize={5}
+              color={useColorModeValue('gray.700', 'white')}
+            />
             <Text>{formatNumber(store.locale, 12354)}</Text>
           </Stack>
         </Stack>
 
         <CardFooter
-          borderTopColor="gray.500"
+          borderTopColor={useColorModeValue('gray.300', 'gray.500')}
           borderTopWidth={1}
           flexWrap="wrap"
           justify="space-between"

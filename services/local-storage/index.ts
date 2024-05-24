@@ -3,7 +3,8 @@
  */
 export class LocalStorage {
   static Keys = {
-    Language: 'timothy-caish-website-language'
+    Language: "language",
+    PortfolioItemLikes: "portfolio-item-likes",
   };
 
   /**
