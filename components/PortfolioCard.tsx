@@ -1,3 +1,4 @@
+import PortfolioCardTitle from '@/components/PortfolioCardTitle';
 import AnimatedPressIn from '@/components/animation/AnimatedPressIn';
 import ConfettiExplosion from '@/components/animation/ConfettiExplosion';
 import { opaqueDarkBgColor, opaqueLightBgColor } from '@/constants/colors';
@@ -6,7 +7,7 @@ import { Tables } from '@/constants/types/supabase';
 import { i18n } from '@/services/localization';
 import { updatePortfolioItemTotalLikes } from '@/services/supabase-database/adders/portfolio_items';
 import { useStore } from '@/zustand/store';
-import { Image, Link } from '@chakra-ui/next-js';
+import { Image } from '@chakra-ui/next-js';
 import {
   Box,
   Button,
@@ -15,7 +16,6 @@ import {
   CardFooter,
   CardHeader,
   Flex,
-  Heading,
   Icon,
   Stack,
   Text,
@@ -188,22 +188,10 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
         <CardHeader mt={2}>
           <Flex alignItems="center" flex={1} flexWrap="wrap">
             <Box>
-              {props.learn_more_url ? (
-                <Link
-                  href={props.learn_more_url}
-                  target="_blank"
-                  title={props.learn_more_url}
-                >
-                  <Heading
-                    color={useColorModeValue('primary.500', 'primary.200')}
-                    size="md"
-                  >
-                    {props.title}
-                  </Heading>
-                </Link>
-              ) : (
-                <Heading size="md">{props.title}</Heading>
-              )}
+              <PortfolioCardTitle
+                learn_more_url={props.learn_more_url}
+                title={props.title}
+              />
 
               <Text>{getReleaseDate()}</Text>
             </Box>
