@@ -1,4 +1,5 @@
 import { WakaTimeAllTimeStats } from "@/constants/types";
+import { Tables } from "@/constants/types/supabase";
 import { languageCodes } from "@/services/localization";
 import { create } from "zustand";
 
@@ -14,6 +15,9 @@ export type ZustandStore = {
 
   portfolioItemIdSelected: number | null;
   setPortfolioItemIdSelected: (id: number | null) => void;
+
+  portfolioItems: Tables<"portfolio_items">[];
+  setPortfolioItems: (items: Tables<"portfolio_items">[]) => void;
 
   showLanguagesMenu: boolean;
   setShowLanguagesMenu: (enabled: boolean) => void;
@@ -48,6 +52,9 @@ export const useStore = create<ZustandStore>()((set) => ({
 
   portfolioItemIdSelected: null,
   setPortfolioItemIdSelected: (id) => set({ portfolioItemIdSelected: id }),
+
+  portfolioItems: [],
+  setPortfolioItems: (items) => set({ portfolioItems: items }),
 
   showLanguagesMenu: false,
   setShowLanguagesMenu: (enabled) => set({ showLanguagesMenu: enabled }),

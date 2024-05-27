@@ -4,7 +4,6 @@ import PageContainer from '@/components/PageContainer';
 import PortfolioCard from '@/components/PortfolioCard';
 import PortfolioCardCommentsModal from '@/components/PortfolioCardCommentsModal';
 import PortfolioCardSkeleton from '@/components/PortfolioCardSkeleton';
-import { Tables } from '@/constants/types/supabase';
 import { getPortfolioItems } from '@/services/supabase-database/getters/portfolio_items';
 import { useStore } from '@/zustand/store';
 import { Center, SimpleGrid } from '@chakra-ui/react';
@@ -14,9 +13,6 @@ export default function Portfolio() {
   const store = useStore();
 
   const [isLoading, setIsLoading] = React.useState(false);
-  const [portfolioItems, setPortfolioItems] = React.useState<
-    Tables<'portfolio_items'>[]
-  >([]);
 
   // Fetch the portfolio items
   React.useEffect(() => {
@@ -24,7 +20,7 @@ export default function Portfolio() {
       setIsLoading(true);
 
       const response = await getPortfolioItems();
-      setPortfolioItems(response);
+      store.setPortfolioItems(response);
 
       setIsLoading(false);
     })();
@@ -51,7 +47,7 @@ export default function Portfolio() {
             </React.Fragment>
           )}
 
-          {portfolioItems.map((portfolioItem, index) => (
+          {store.portfolioItems.map((portfolioItem, index) => (
             <PortfolioCard key={index} {...portfolioItem} />
           ))}
         </SimpleGrid>
