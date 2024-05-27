@@ -39,6 +39,13 @@ const components: Record<string, StyleConfig> = {
           backgroundColor: "gray.500",
         },
       },
+      text: {
+        height: "auto",
+        _hover: {
+          opacity: 0.7,
+          textDecoration: "none",
+        },
+      },
     },
   },
   Heading: {

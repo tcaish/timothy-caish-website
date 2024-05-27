@@ -2,13 +2,17 @@
 
 import PageContainer from '@/components/PageContainer';
 import PortfolioCard from '@/components/PortfolioCard';
+import PortfolioCardCommentsModal from '@/components/PortfolioCardCommentsModal';
 import PortfolioCardSkeleton from '@/components/PortfolioCardSkeleton';
 import { Tables } from '@/constants/types/supabase';
 import { getPortfolioItems } from '@/services/supabase-database/getters/portfolio_items';
+import { useStore } from '@/zustand/store';
 import { Center, SimpleGrid } from '@chakra-ui/react';
 import React from 'react';
 
 export default function Portfolio() {
+  const store = useStore();
+
   const [isLoading, setIsLoading] = React.useState(false);
   const [portfolioItems, setPortfolioItems] = React.useState<
     Tables<'portfolio_items'>[]
@@ -25,6 +29,15 @@ export default function Portfolio() {
       setIsLoading(false);
     })();
   }, []);
+
+  /**
+   * Handles what happens when the user closes the portfolio card comments
+   * modal.
+   */
+  function handleClosePortfolioCardCommentsModal() {
+    store.setPortfolioCardCommentsModalIsOpen(false);
+    store.setPortfolioItemIdSelected(null);
+  }
 
   return (
     <PageContainer>
@@ -43,6 +56,11 @@ export default function Portfolio() {
           ))}
         </SimpleGrid>
       </Center>
+
+      <PortfolioCardCommentsModal
+        isOpen={store.portfolioCardCommentsModalIsOpen}
+        onClose={handleClosePortfolioCardCommentsModal}
+      />
     </PageContainer>
   );
 }

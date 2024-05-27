@@ -111,6 +111,14 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
   }
 
   /**
+   * Handles what happens when the comments button is clicked.
+   */
+  function handleCommentsButtonClicked() {
+    store.setPortfolioItemIdSelected(props.id);
+    store.setPortfolioCardCommentsModalIsOpen(true);
+  }
+
+  /**
    * Handles what happens when the like button is clicked.
    */
   function handleLikeButtonClicked() {
@@ -232,14 +240,16 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
             <Text>{totalLikes.toLocaleString(store.locale)}</Text>
           </Stack>
 
-          <Stack direction="row" alignItems="center" spacing={3}>
-            <Icon
-              as={BiSolidChat}
-              boxSize={5}
-              color={useColorModeValue('gray.700', 'white')}
-            />
-            <Text>{(15426).toLocaleString(store.locale)}</Text>
-          </Stack>
+          <Button onClick={handleCommentsButtonClicked} variant="text">
+            <Stack direction="row" alignItems="center" spacing={3}>
+              <Icon
+                as={BiSolidChat}
+                boxSize={5}
+                color={useColorModeValue('gray.700', 'white')}
+              />
+              <Text>{(15426).toLocaleString(store.locale)}</Text>
+            </Stack>
+          </Button>
         </Stack>
 
         <CardFooter

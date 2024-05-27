@@ -9,6 +9,12 @@ export type ZustandStore = {
   locale: string;
   setLocale: (locale: string) => void;
 
+  portfolioCardCommentsModalIsOpen: boolean;
+  setPortfolioCardCommentsModalIsOpen: (enabled: boolean) => void;
+
+  portfolioItemIdSelected: number | null;
+  setPortfolioItemIdSelected: (id: number | null) => void;
+
   showLanguagesMenu: boolean;
   setShowLanguagesMenu: (enabled: boolean) => void;
 
@@ -35,6 +41,13 @@ export const useStore = create<ZustandStore>()((set) => ({
 
   locale: languageCodes.en,
   setLocale: (locale) => set({ locale }),
+
+  portfolioCardCommentsModalIsOpen: false,
+  setPortfolioCardCommentsModalIsOpen: (enabled) =>
+    set({ portfolioCardCommentsModalIsOpen: enabled }),
+
+  portfolioItemIdSelected: null,
+  setPortfolioItemIdSelected: (id) => set({ portfolioItemIdSelected: id }),
 
   showLanguagesMenu: false,
   setShowLanguagesMenu: (enabled) => set({ showLanguagesMenu: enabled }),
