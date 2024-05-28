@@ -1,4 +1,4 @@
-import GhostJson from '@/assets/lottie/ghost.json';
+import PortfolioCardComments from '@/components-features/portfolio/PortfolioCardComments';
 import PortfolioCardTitle from '@/components-features/portfolio/PortfolioCardTitle';
 import { i18n } from '@/services/localization';
 import { useStore } from '@/zustand/store';
@@ -12,11 +12,8 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
-  Stack,
-  Text,
   useColorModeValue
 } from '@chakra-ui/react';
-import Lottie from 'lottie-react';
 
 type PortfolioCardCommentsModalProps = {
   isOpen: boolean;
@@ -31,26 +28,6 @@ export default function PortfolioCardCommentsModal(
   const portfolioItem = store.portfolioItems.find(
     (item) => item.id === store.portfolioItemIdSelected
   );
-
-  /**
-   * Component that shows a message when there are no comments for a portfolio
-   * item.
-   * @returns {React.ReactNode} The component that shows the message.
-   */
-  function EmptyComments(): React.ReactNode {
-    return (
-      <Stack
-        alignItems="center"
-        direction="column"
-        gap={0}
-        justifyContent="center"
-        textAlign="center"
-      >
-        <Lottie animationData={GhostJson} style={styles.ghost_lottie} />
-        <Text mt={0}>{i18n.t('no_comments_yet')}</Text>
-      </Stack>
-    );
-  }
 
   return (
     <Modal isOpen={props.isOpen} onClose={props.onClose}>
@@ -71,7 +48,7 @@ export default function PortfolioCardCommentsModal(
         <ModalCloseButton title={i18n.t('close')} />
 
         <ModalBody>
-          <EmptyComments />
+          <PortfolioCardComments />
         </ModalBody>
 
         <ModalFooter>
@@ -90,10 +67,3 @@ export default function PortfolioCardCommentsModal(
     </Modal>
   );
 }
-
-const styles = {
-  ghost_lottie: {
-    width: '60%',
-    height: '100%'
-  }
-};
