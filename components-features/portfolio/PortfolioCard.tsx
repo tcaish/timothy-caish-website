@@ -6,6 +6,7 @@ import { BORDER_RADIUS_DEFAULT, LocalStorageKeys } from '@/constants/settings';
 import { Tables } from '@/constants/types/supabase';
 import { i18n } from '@/services/localization';
 import { updatePortfolioItemTotalLikes } from '@/services/supabase-database/adders/portfolio_items';
+import { getPortfolioItemCommentsCount } from '@/services/supabase-database/getters/portfolio_item_comments';
 import { useStore } from '@/zustand/store';
 import { Image } from '@chakra-ui/next-js';
 import {
@@ -17,6 +18,7 @@ import {
   CardHeader,
   Flex,
   Icon,
+  Spinner,
   Stack,
   Text,
   useColorModeValue
@@ -33,15 +35,29 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
       .getItem(LocalStorageKeys.PortfolioItemLikes)
       ?.includes(`id-${props.id}`) || false;
 
+  const [commentsCountLoading, setCommentsCountLoading] = React.useState(false);
   const [liked, setLiked] = React.useState(likedInLocalStorage);
   const [previouslyLikedValue, setPreviouslyLikedValue] =
     React.useState(likedInLocalStorage);
   const [showConfetti, setShowConfetti] = React.useState(false);
+  const [totalComments, setTotalComments] = React.useState(0);
   const [totalLikes, setTotalLikes] = React.useState(props.total_likes);
 
   const likeButtonRef = React.useRef<HTMLButtonElement>(null);
 
   const executeDatabaseActionTimer = React.useRef<NodeJS.Timeout | null>(null);
+
+  // Get the total comments count
+  React.useEffect(() => {
+    (async () => {
+      setCommentsCountLoading(true);
+
+      const commentsCount = await getPortfolioItemCommentsCount(props.id);
+
+      setTotalComments(commentsCount);
+      setCommentsCountLoading(false);
+    })();
+  }, []);
 
   /**
    * Component that shows the type of the portfolio item as a badge.
@@ -243,7 +259,12 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
                 boxSize={5}
                 color={useColorModeValue('gray.700', 'white')}
               />
-              <Text>{(15426).toLocaleString(store.locale)}</Text>
+
+              {commentsCountLoading ? (
+                <Spinner size="sm" />
+              ) : (
+                <Text>{totalComments.toLocaleString(store.locale)}</Text>
+              )}
             </Stack>
           </Button>
         </Stack>
