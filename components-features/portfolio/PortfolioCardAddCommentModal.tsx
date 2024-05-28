@@ -1,5 +1,6 @@
 import PortfolioCardTitle from '@/components-features/portfolio/PortfolioCardTitle';
 import { i18n } from '@/services/localization';
+import { addPortfolioItemComment } from '@/services/supabase-database/adders/portfolio_item_comments';
 import { useStore } from '@/zustand/store';
 import {
   Button,
@@ -18,8 +19,10 @@ import {
   ModalOverlay,
   Text,
   Textarea,
-  useColorModeValue
+  useColorModeValue,
+  useToast
 } from '@chakra-ui/react';
+import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
 type FormInputs = {
@@ -37,12 +40,15 @@ export default function PortfolioCardAddCommentModal(
   props: PortfolioCardAddCommentModalProps
 ) {
   const store = useStore();
+  const toast = useToast();
 
   const {
     formState: { errors },
     handleSubmit,
     register
   } = useForm<FormInputs>();
+
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
 
   const portfolioItem = store.portfolioItems.find(
     (item) => item.id === store.portfolioItemIdSelected
@@ -59,12 +65,50 @@ export default function PortfolioCardAddCommentModal(
     );
   }
 
+  /**
+   * Handles the form submission.
+   * @param data The form data.
+   */
   const onSubmit: SubmitHandler<FormInputs> = async (data) => {
-    console.log(data);
+    if (!store.portfolioItemIdSelected) return;
+
+    setIsSubmitting(true);
+
+    const success = await addPortfolioItemComment(
+      data.comment,
+      store.portfolioItemIdSelected,
+      data.name
+    );
+
+    // If there was an error adding the comment
+    if (!success) {
+      setIsSubmitting(false);
+      toast({
+        description: i18n.t('error_adding_comment'),
+        isClosable: true,
+        status: 'error'
+      });
+      return;
+    }
+
+    setIsSubmitting(false);
+    store.setPortfolioCardCommentsModalIsOpen(false);
+    store.setPortfolioCardAddCommentModalIsOpen(false);
+
+    toast({
+      description: i18n.t('comment_added_successfully'),
+      isClosable: true,
+      status: 'success'
+    });
   };
 
   return (
-    <Modal isOpen={props.isOpen} onClose={props.onClose} size="xl">
+    <Modal
+      closeOnOverlayClick={!isSubmitting}
+      isOpen={props.isOpen}
+      onClose={props.onClose}
+      size="xl"
+    >
       {!store.portfolioCardCommentsModalIsOpen && (
         <ModalOverlay
           backdropFilter="blur(10px) saturate(180%)"
@@ -81,7 +125,7 @@ export default function PortfolioCardAddCommentModal(
           <Heading size="md">{i18n.t('add_a_comment')}</Heading>
         </ModalHeader>
 
-        <ModalCloseButton title={i18n.t('close')} />
+        <ModalCloseButton isDisabled={isSubmitting} title={i18n.t('close')} />
 
         <ModalBody>
           <Text size="sm">{i18n.t('add_comment_description')}</Text>
@@ -89,13 +133,19 @@ export default function PortfolioCardAddCommentModal(
           <form id="add-comment-form" onSubmit={handleSubmit(onSubmit)}>
             <FormControl mt={4}>
               <FormLabel>{i18n.t('name')}</FormLabel>
-              <Input placeholder="John Doe" type="text" {...register('name')} />
+              <Input
+                isDisabled={isSubmitting}
+                placeholder="John Doe"
+                type="text"
+                {...register('name')}
+              />
               <FormHelperText>{i18n.t('this_is_optional')}</FormHelperText>
             </FormControl>
 
             <FormControl mt={4}>
               <FormLabel>{i18n.t('comment')}</FormLabel>
               <Textarea
+                isDisabled={isSubmitting}
                 placeholder={i18n.t('comment_input_placeholder')}
                 {...register('comment', { required: true })}
               />
@@ -106,6 +156,7 @@ export default function PortfolioCardAddCommentModal(
             <FormControl mt={4}>
               <Checkbox
                 colorScheme="primary"
+                isDisabled={isSubmitting}
                 {...register('disclaimer', { required: true })}
               >
                 {i18n.t('add_comment_disclaimer')}
@@ -117,11 +168,22 @@ export default function PortfolioCardAddCommentModal(
         </ModalBody>
 
         <ModalFooter>
-          <Button variant="ghost" mr={3} onClick={props.onClose}>
+          <Button
+            isDisabled={isSubmitting}
+            mr={3}
+            onClick={props.onClose}
+            variant="ghost"
+          >
             {i18n.t('close')}
           </Button>
 
-          <Button colorScheme="primary" form="add-comment-form" type="submit">
+          <Button
+            colorScheme="primary"
+            disabled={isSubmitting}
+            form="add-comment-form"
+            isLoading={isSubmitting}
+            type="submit"
+          >
             {i18n.t('submit')}
           </Button>
         </ModalFooter>
