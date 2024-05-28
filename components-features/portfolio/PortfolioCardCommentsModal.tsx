@@ -68,7 +68,7 @@ export default function PortfolioCardCommentsModal(
           <Heading size="md">{i18n.t('comments')}</Heading>
         </ModalHeader>
 
-        <ModalCloseButton />
+        <ModalCloseButton title={i18n.t('close')} />
 
         <ModalBody>
           <EmptyComments />

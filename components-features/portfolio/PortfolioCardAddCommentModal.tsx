@@ -81,7 +81,7 @@ export default function PortfolioCardAddCommentModal(
           <Heading size="md">{i18n.t('add_a_comment')}</Heading>
         </ModalHeader>
 
-        <ModalCloseButton />
+        <ModalCloseButton title={i18n.t('close')} />
 
         <ModalBody>
           <Text size="sm">{i18n.t('add_comment_description')}</Text>
