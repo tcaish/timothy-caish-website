@@ -1,5 +1,5 @@
 import GhostJson from '@/assets/lottie/ghost.json';
-import PortfolioCardTitle from '@/components/PortfolioCardTitle';
+import PortfolioCardTitle from '@/components-features/portfolio/PortfolioCardTitle';
 import { i18n } from '@/services/localization';
 import { useStore } from '@/zustand/store';
 import {

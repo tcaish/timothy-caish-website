@@ -1,4 +1,4 @@
-import PortfolioCardTitle from '@/components/PortfolioCardTitle';
+import PortfolioCardTitle from '@/components-features/portfolio/PortfolioCardTitle';
 import AnimatedPressIn from '@/components/animation/AnimatedPressIn';
 import ConfettiExplosion from '@/components/animation/ConfettiExplosion';
 import { opaqueDarkBgColor, opaqueLightBgColor } from '@/constants/colors';

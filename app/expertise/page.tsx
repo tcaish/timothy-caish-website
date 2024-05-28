@@ -1,10 +1,10 @@
 'use client';
 
+import SkillCards from '@/components-features/expertise/SkillCards';
+import Statistic from '@/components-features/expertise/Statistic';
+import PageContainer from '@/components/PageContainer';
 import TopEditorsChart from '@/components/charts/TopEditorsChart';
 import TopLanguagesChart from '@/components/charts/TopLanguagesChart';
-import PageContainer from '@/components/PageContainer';
-import SkillCards from '@/components/SkillCards';
-import Statistic from '@/components/Statistic';
 import { SupabaseEdgeFunctionUrls } from '@/constants/settings';
 import { WakaTimeAllTimeStats } from '@/constants/types';
 import { i18n } from '@/services/localization';

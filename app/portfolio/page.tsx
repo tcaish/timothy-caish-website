@@ -1,9 +1,9 @@
 'use client';
 
+import PortfolioCard from '@/components-features/portfolio/PortfolioCard';
+import PortfolioCardCommentsModal from '@/components-features/portfolio/PortfolioCardCommentsModal';
+import PortfolioCardSkeleton from '@/components-features/portfolio/PortfolioCardSkeleton';
 import PageContainer from '@/components/PageContainer';
-import PortfolioCard from '@/components/PortfolioCard';
-import PortfolioCardCommentsModal from '@/components/PortfolioCardCommentsModal';
-import PortfolioCardSkeleton from '@/components/PortfolioCardSkeleton';
 import { getPortfolioItems } from '@/services/supabase-database/getters/portfolio_items';
 import { useStore } from '@/zustand/store';
 import { Center, SimpleGrid } from '@chakra-ui/react';

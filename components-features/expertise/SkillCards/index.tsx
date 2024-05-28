@@ -1,4 +1,4 @@
-import SkillCard from '@/components/SkillCards/SkillCard';
+import SkillCard from '@/components-features/expertise/SkillCards/SkillCard';
 import { Skill } from '@/constants/types';
 import { openUrlInNewTab } from '@/helpers';
 import { i18n } from '@/services/localization';

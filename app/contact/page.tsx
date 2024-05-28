@@ -1,6 +1,6 @@
 'use client';
 
-import BusinessCard from '@/components/BusinessCard';
+import BusinessCard from '@/components-features/contact/BusinessCard';
 import PageContainer from '@/components/PageContainer';
 import { Center, Stack } from '@chakra-ui/react';
 
