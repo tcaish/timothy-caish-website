@@ -75,7 +75,12 @@ export default function PortfolioCardCommentsModal(
             {i18n.t('close')}
           </Button>
 
-          <Button colorScheme="primary">{i18n.t('add_comment')}</Button>
+          <Button
+            colorScheme="primary"
+            onClick={() => store.setPortfolioCardAddCommentModalIsOpen(true)}
+          >
+            {i18n.t('add_comment')}
+          </Button>
         </ModalFooter>
       </ModalContent>
     </Modal>

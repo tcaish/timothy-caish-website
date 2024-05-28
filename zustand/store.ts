@@ -10,6 +10,9 @@ export type ZustandStore = {
   locale: string;
   setLocale: (locale: string) => void;
 
+  portfolioCardAddCommentModalIsOpen: boolean;
+  setPortfolioCardAddCommentModalIsOpen: (enabled: boolean) => void;
+
   portfolioCardCommentsModalIsOpen: boolean;
   setPortfolioCardCommentsModalIsOpen: (enabled: boolean) => void;
 
@@ -45,6 +48,10 @@ export const useStore = create<ZustandStore>()((set) => ({
 
   locale: languageCodes.en,
   setLocale: (locale) => set({ locale }),
+
+  portfolioCardAddCommentModalIsOpen: false,
+  setPortfolioCardAddCommentModalIsOpen: (enabled) =>
+    set({ portfolioCardAddCommentModalIsOpen: enabled }),
 
   portfolioCardCommentsModalIsOpen: false,
   setPortfolioCardCommentsModalIsOpen: (enabled) =>

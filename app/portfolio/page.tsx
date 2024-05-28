@@ -1,6 +1,7 @@
 'use client';
 
 import PortfolioCard from '@/components-features/portfolio/PortfolioCard';
+import PortfolioCardAddCommentModal from '@/components-features/portfolio/PortfolioCardAddCommentModal';
 import PortfolioCardCommentsModal from '@/components-features/portfolio/PortfolioCardCommentsModal';
 import PortfolioCardSkeleton from '@/components-features/portfolio/PortfolioCardSkeleton';
 import PageContainer from '@/components/PageContainer';
@@ -35,6 +36,14 @@ export default function Portfolio() {
     store.setPortfolioItemIdSelected(null);
   }
 
+  /**
+   * Handles what happens when the user closes the portfolio card add comment
+   * modal.
+   */
+  function handleClosePortfolioCardAddCommentModal() {
+    store.setPortfolioCardAddCommentModalIsOpen(false);
+  }
+
   return (
     <PageContainer>
       <Center flex={1} px={{ base: 2, sm: 4 }} py={{ base: 4, sm: 0 }}>
@@ -56,6 +65,11 @@ export default function Portfolio() {
       <PortfolioCardCommentsModal
         isOpen={store.portfolioCardCommentsModalIsOpen}
         onClose={handleClosePortfolioCardCommentsModal}
+      />
+
+      <PortfolioCardAddCommentModal
+        isOpen={store.portfolioCardAddCommentModalIsOpen}
+        onClose={handleClosePortfolioCardAddCommentModal}
       />
     </PageContainer>
   );
