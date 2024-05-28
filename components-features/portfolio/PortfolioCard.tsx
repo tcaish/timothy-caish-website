@@ -111,6 +111,14 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
   }
 
   /**
+   * Handles what happens when the comment button is clicked.
+   */
+  function handleCommentButtonClicked() {
+    store.setPortfolioItemIdSelected(props.id);
+    store.setPortfolioCardAddCommentModalIsOpen(true);
+  }
+
+  /**
    * Handles what happens when the comments button is clicked.
    */
   function handleCommentsButtonClicked() {
@@ -269,6 +277,7 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
               color={useColorModeValue('gray.700', 'white')}
               flex={1}
               leftIcon={<Icon as={BiChat} boxSize={6} />}
+              onClick={handleCommentButtonClicked}
               variant="ghost"
             >
               {i18n.t('comment')}
