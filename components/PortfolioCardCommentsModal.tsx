@@ -1,5 +1,6 @@
 import GhostJson from '@/assets/lottie/ghost.json';
 import PortfolioCardTitle from '@/components/PortfolioCardTitle';
+import { i18n } from '@/services/localization';
 import { useStore } from '@/zustand/store';
 import {
   Button,
@@ -45,11 +46,7 @@ export default function PortfolioCardCommentsModal(
         textAlign="center"
       >
         <Lottie animationData={GhostJson} style={styles.ghost_lottie} />
-
-        <Text mt={0}>
-          There are no comments for this portfolio item yet. Be the first to
-          leave a comment!
-        </Text>
+        <Text mt={0}>{i18n.t('no_comments_yet')}</Text>
       </Stack>
     );
   }
@@ -64,7 +61,7 @@ export default function PortfolioCardCommentsModal(
             learn_more_url={portfolioItem?.learn_more_url}
             title={portfolioItem?.title}
           />
-          <Heading size="md">Comments</Heading>
+          <Heading size="md">{i18n.t('comments')}</Heading>
         </ModalHeader>
 
         <ModalCloseButton />
@@ -75,10 +72,10 @@ export default function PortfolioCardCommentsModal(
 
         <ModalFooter>
           <Button variant="ghost" mr={3} onClick={props.onClose}>
-            Close
+            {i18n.t('close')}
           </Button>
 
-          <Button colorScheme="primary">Add Comment</Button>
+          <Button colorScheme="primary">{i18n.t('add_comment')}</Button>
         </ModalFooter>
       </ModalContent>
     </Modal>
