@@ -15,8 +15,10 @@ import {
   ModalContent,
   ModalFooter,
   ModalHeader,
+  ModalOverlay,
   Text,
-  Textarea
+  Textarea,
+  useColorModeValue
 } from '@chakra-ui/react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
@@ -37,62 +39,79 @@ export default function PortfolioCardAddCommentModal(
   const store = useStore();
 
   const {
-    register,
+    formState: { errors },
     handleSubmit,
-    watch,
-    formState: { errors }
+    register
   } = useForm<FormInputs>();
 
   const portfolioItem = store.portfolioItems.find(
     (item) => item.id === store.portfolioItemIdSelected
   );
 
-  const onSubmit: SubmitHandler<FormInputs> = async (data) => console.log(data);
+  /**
+   * Component that shows a message indicating that a field is required.
+   */
+  function RequiredFieldMessage(): JSX.Element {
+    return (
+      <FormHelperText color={useColorModeValue('red.500', 'red.300')}>
+        {i18n.t('this_field_is_required')}
+      </FormHelperText>
+    );
+  }
+
+  const onSubmit: SubmitHandler<FormInputs> = async (data) => {
+    console.log(data);
+  };
 
   return (
-    <Modal isOpen={props.isOpen} onClose={props.onClose}>
+    <Modal isOpen={props.isOpen} onClose={props.onClose} size="xl">
+      {!store.portfolioCardCommentsModalIsOpen && (
+        <ModalOverlay
+          backdropFilter="blur(10px) saturate(180%)"
+          bg={useColorModeValue('rgba(0, 0, 0, 0.1)', 'none')}
+        />
+      )}
+
       <ModalContent>
         <ModalHeader>
           <PortfolioCardTitle
             learn_more_url={portfolioItem?.learn_more_url}
             title={portfolioItem?.title}
           />
-          <Heading size="md">Add a Comment</Heading>
+          <Heading size="md">{i18n.t('add_a_comment')}</Heading>
         </ModalHeader>
 
         <ModalCloseButton />
 
         <ModalBody>
-          <Text size="sm">
-            Please be respectful and only provide constructive criticism or
-            compliments when adding a comment to this portfolio item.
-          </Text>
+          <Text size="sm">{i18n.t('add_comment_description')}</Text>
 
           <form id="add-comment-form" onSubmit={handleSubmit(onSubmit)}>
             <FormControl mt={4}>
-              <FormLabel>Name</FormLabel>
+              <FormLabel>{i18n.t('name')}</FormLabel>
               <Input placeholder="John Doe" type="text" {...register('name')} />
-              <FormHelperText>This is optional.</FormHelperText>
+              <FormHelperText>{i18n.t('this_is_optional')}</FormHelperText>
             </FormControl>
 
             <FormControl mt={4}>
-              <FormLabel>Comment</FormLabel>
+              <FormLabel>{i18n.t('comment')}</FormLabel>
               <Textarea
-                placeholder="This is awesome!"
-                required={true}
-                {...register('comment')}
+                placeholder={i18n.t('comment_input_placeholder')}
+                {...register('comment', { required: true })}
               />
+
+              {errors.comment && <RequiredFieldMessage />}
             </FormControl>
 
             <FormControl mt={4}>
               <Checkbox
                 colorScheme="primary"
-                required={true}
-                {...register('disclaimer')}
+                {...register('disclaimer', { required: true })}
               >
-                I understand that this comment will be reviewed before being
-                made public and that it may be removed at any time.
+                {i18n.t('add_comment_disclaimer')}
               </Checkbox>
+
+              {errors.disclaimer && <RequiredFieldMessage />}
             </FormControl>
           </form>
         </ModalBody>
@@ -103,7 +122,7 @@ export default function PortfolioCardAddCommentModal(
           </Button>
 
           <Button colorScheme="primary" form="add-comment-form" type="submit">
-            Submit
+            {i18n.t('submit')}
           </Button>
         </ModalFooter>
       </ModalContent>
