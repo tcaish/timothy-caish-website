@@ -1,4 +1,5 @@
 import { supabaseClient } from "@/services/supabase";
+import Bugsnag from "@bugsnag/js";
 
 /**
  * Adds a comment to the given portfolio item.
@@ -20,5 +21,13 @@ export async function addPortfolioItemComment(
       },
     );
 
-  return error == null;
+  // If there was an error
+  if (error) {
+    Bugsnag.notify(
+      `addPortfolioItemComment() error: ${JSON.stringify(error)}`,
+    );
+    return false;
+  }
+
+  return true;
 }

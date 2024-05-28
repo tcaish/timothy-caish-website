@@ -1,4 +1,5 @@
 import { supabaseClient } from "@/services/supabase";
+import Bugsnag from "@bugsnag/js";
 
 /**
  * Updates the total likes of a portfolio item depending on the action.
@@ -13,7 +14,15 @@ export async function updatePortfolioItemTotalLikes(
         id_of_portfolio_item: id,
       });
 
-    return error == null;
+    // If there was an error
+    if (error) {
+      Bugsnag.notify(
+        `updatePortfolioItemTotalLikes() error 1: ${JSON.stringify(error)}`,
+      );
+      return false;
+    }
+
+    return true;
   }
 
   const { error } = await supabaseClient
@@ -21,5 +30,13 @@ export async function updatePortfolioItemTotalLikes(
       id_of_portfolio_item: id,
     });
 
-  return error == null;
+  // If there was an error
+  if (error) {
+    Bugsnag.notify(
+      `updatePortfolioItemTotalLikes() error 2: ${JSON.stringify(error)}`,
+    );
+    return false;
+  }
+
+  return true;
 }

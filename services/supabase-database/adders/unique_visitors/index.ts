@@ -1,5 +1,6 @@
 import { supabaseClient } from "@/services/supabase";
 import { isVisitorUnique } from "@/services/supabase-database/getters/unique_visitors";
+import Bugsnag from "@bugsnag/js";
 
 /**
  * Adds a unique visitor to the database.
@@ -12,7 +13,14 @@ export async function addUniqueVisitor(hashedIpv6Addr: string) {
   if (!isUnique) return;
 
   // Add the unique visitor to the database
-  await supabaseClient.from("unique_visitors").insert({
+  const { error } = await supabaseClient.from("unique_visitors").insert({
     hashed_ipv6: hashedIpv6Addr,
   });
+
+  // If there was an error
+  if (error) {
+    Bugsnag.notify(
+      `addUniqueVisitor() error: ${JSON.stringify(error)}`,
+    );
+  }
 }

@@ -1,15 +1,24 @@
 import { supabaseClient } from "@/services/supabase";
+import Bugsnag from "@bugsnag/js";
 
 /**
  * Gets the unique visitors count from the unique_visitors table.
  * @returns The total number of unique visitors.
  */
 export async function getTotalUniqueVisitors() {
-  const response = await supabaseClient
+  const { count, error } = await supabaseClient
     .from("unique_visitors")
-    .select("*", { count: "exact", head: true });
+    .select("id", { count: "exact", head: true });
 
-  return response.error || response.count == null ? 0 : response.count;
+  // If there was an error
+  if (error) {
+    Bugsnag.notify(
+      `getTotalUniqueVisitors() error: ${JSON.stringify(error)}`,
+    );
+    return 0;
+  }
+
+  return count == null ? 0 : count;
 }
 
 /**
@@ -18,12 +27,20 @@ export async function getTotalUniqueVisitors() {
  * @returns boolean indicating if the visitor is unique.
  */
 export async function isVisitorUnique(hashedIpv6Addr: string) {
-  const response = await supabaseClient
+  const { data, error } = await supabaseClient
     .from("unique_visitors")
     .select("id")
     .match({
       hashed_ipv6: hashedIpv6Addr,
     });
 
-  return !response.error && response.data.length === 0;
+  // If there was an error
+  if (error) {
+    Bugsnag.notify(
+      `isVisitorUnique() error: ${JSON.stringify(error)}`,
+    );
+    return false;
+  }
+
+  return data.length === 0;
 }
