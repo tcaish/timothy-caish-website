@@ -14,7 +14,7 @@
   "can_integrate_with_supabase": "我可以与 Supabase 集成",
   "chakra_ui_desc": "Chakra UI 是一个现代、可访问且易于使用的 React UI 库，它提供了一组可重用和可组合的 React 组件。它旨在让开发人员更轻松地为其 Web 应用程序构建美观、响应灵敏且易于访问的用户界面。 Chakra UI 的设计考虑到了可访问性，确保使用它构建的应用程序可供尽可能广泛的受众（包括残疾人）访问。",
   "chinese": "中文",
-  "close": "关闭",
+  "close": "隐藏",
   "coding_stats_disclaimer": "此页面上的数据来自我的 Wakatime 个人资料，并且每天更新。 这里的统计数据仅显示 Wakatime 跟踪的编码活动，该活动从 2023 年开始跟踪，可能不包括我所做的所有编码。 这只是为了好玩，并展示我大部分时间都花在哪里，所以请持保留态度！",
   "coming_soon": "即将推出",
   "comment": "评论",
