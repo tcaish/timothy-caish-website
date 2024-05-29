@@ -52,7 +52,10 @@ export async function getPortfolioItemComments(
 export async function getPortfolioItemCommentsCount(id: number) {
   const response = await supabaseClient
     .from("portfolio_item_comments")
-    .select("id", { count: "exact", head: true });
+    .select("id", { count: "exact", head: true })
+    .match({
+      portfolio_item_id: id,
+    });
 
   // If there was an error
   if (response.error) {
