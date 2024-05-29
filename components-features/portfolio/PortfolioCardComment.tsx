@@ -1,5 +1,6 @@
 import { Tables } from '@/constants/types/supabase';
 import { i18n } from '@/services/localization';
+import { useStore } from '@/zustand/store';
 import {
   Avatar,
   Box,
@@ -16,6 +17,8 @@ import {
 export default function PortfolioCardComment(
   props: Tables<'portfolio_item_comments'>
 ) {
+  const store = useStore();
+
   return (
     <Card
       bg={useColorModeValue('gray.200', 'gray.600')}
@@ -35,7 +38,7 @@ export default function PortfolioCardComment(
                 color={useColorModeValue('gray.500', 'gray.300')}
                 fontSize="sm"
               >
-                {new Date(props.created_at).toLocaleString()}
+                {new Date(props.created_at).toLocaleString(store.locale)}
               </Text>
             </Box>
           </Flex>
