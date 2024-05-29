@@ -30,7 +30,11 @@ export default function PortfolioCardCommentsModal(
   );
 
   return (
-    <Modal isOpen={props.isOpen} onClose={props.onClose}>
+    <Modal
+      isOpen={props.isOpen}
+      onClose={props.onClose}
+      scrollBehavior="inside"
+    >
       <ModalOverlay
         backdropFilter="blur(10px) saturate(180%)"
         bg={useColorModeValue('rgba(0, 0, 0, 0.1)', 'none')}
