@@ -1,10 +1,11 @@
 import GhostJson from '@/assets/lottie/ghost.json';
 import PortfolioCardComment from '@/components-features/portfolio/PortfolioCardComment';
+import PortfolioCardCommentSkeleton from '@/components-features/portfolio/PortfolioCardCommentSkeleton';
 import { Tables } from '@/constants/types/supabase';
 import { i18n } from '@/services/localization';
 import { getPortfolioItemComments } from '@/services/supabase-database/getters/portfolio_item_comments';
 import { useStore } from '@/zustand/store';
-import { Flex, Spinner, Stack, Text, useToast } from '@chakra-ui/react';
+import { Stack, Text, useToast } from '@chakra-ui/react';
 import Lottie from 'lottie-react';
 import React from 'react';
 
@@ -68,9 +69,11 @@ export default function PortfolioCardComments() {
   return (
     <React.Fragment>
       {isLoading ? (
-        <Flex alignItems="center" justifyContent="center" w="100%">
-          <Spinner color="primary.500" size="lg" />
-        </Flex>
+        <Stack spacing={3}>
+          <PortfolioCardCommentSkeleton />
+          <PortfolioCardCommentSkeleton />
+          <PortfolioCardCommentSkeleton />
+        </Stack>
       ) : (
         <React.Fragment>
           {comments.length === 0 ? (
