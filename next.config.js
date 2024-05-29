@@ -11,6 +11,12 @@ module.exports = {
         hostname: 'raw.githubusercontent.com',
         port: ''
         // pathname: '/account123/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'caishcloud.com',
+        port: ''
+        // pathname: '/account123/**',
       }
     ]
   },
