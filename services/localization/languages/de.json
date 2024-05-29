@@ -60,7 +60,10 @@
   "not_including_today": "Ohne heute",
   "npm_package": "NPM-Paket",
   "portfolio_descriptions": {
-    "id-1": "Wir stellen eine umfassende und anpassbare Lösung für die Verwaltung der Cookie-Zustimmung in Ihren React-Anwendungen vor! Unser Paket umfasst eine Reihe leistungsstarker Komponenten, die die Implementierung der Cookie-Einwilligung unkompliziert und im Einklang mit den Benutzerpräferenzen gestalten sollen."
+    "id-1": "Wir stellen eine umfassende und anpassbare Lösung für die Verwaltung der Cookie-Zustimmung in Ihren React-Anwendungen vor! Unser Paket umfasst eine Reihe leistungsstarker Komponenten, die die Implementierung der Cookie-Einwilligung unkompliziert und im Einklang mit den Benutzerpräferenzen gestalten sollen.",
+    "id-2": "Wir sind ein dynamisches Mobil- und Webentwicklungsunternehmen, das sich der Entwicklung innovativer und benutzerfreundlicher digitaler Lösungen verschrieben hat, die es Unternehmen ermöglichen, in der sich ständig weiterentwickelnden Online-Landschaft erfolgreich zu sein.",
+    "id-3": "Dies ist ein Spiel, das in der Kindersendung Peppa Pig auftauchte. Das Ziel ist es, so viele Eier wie möglich zu legen!",
+    "id-4": "The Village ist eine spezielle Social-Media-App, die ausschließlich für Eltern und Betreuer entwickelt wurde und eine unterstützende und engagierte Community bietet, in der sie Kontakte knüpfen, Erfahrungen austauschen und wertvolle Ressourcen für ihre Erziehungsreise finden können."
   },
   "portuguese": "Portugiesisch",
   "postgresql_desc": "PostgreSQL, oft einfach Postgres, ist ein fortschrittliches, objektrelationales Open-Source-Datenbanksystem, das für seine Zuverlässigkeit, Robustheit und Leistung bekannt ist, insbesondere bei der Verwaltung komplexer Daten-Workloads. PostgreSQL wurde im Laufe von mehr als 30 Jahren Ingenieursarbeit entwickelt und verbessert und genießt einen guten Ruf für seine Architektur, Datenintegrität und seinen umfangreichen Funktionsumfang.",

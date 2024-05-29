@@ -231,7 +231,7 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
           height={200}
           priority={true}
           src={props.image_url}
-          style={{ objectFit: 'cover' }}
+          style={{ objectFit: 'fill' }}
           width={500}
         />
 

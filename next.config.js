@@ -16,7 +16,16 @@ module.exports = {
         protocol: 'https',
         hostname: 'caishcloud.com',
         port: ''
-        // pathname: '/account123/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'static.wikia.nocookie.net',
+        port: ''
+      },
+      {
+        protocol: 'https',
+        hostname: 'the-village-social.vercel.app',
+        port: ''
       }
     ]
   },

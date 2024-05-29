@@ -20,9 +20,21 @@ export default function Portfolio() {
     (async () => {
       setIsLoading(true);
 
-      const response = await getPortfolioItems();
-      store.setPortfolioItems(response);
+      const items = await getPortfolioItems();
 
+      // Sort descending by release_date
+      items.sort((a, b) => {
+        if (a.release_date && b.release_date) {
+          return (
+            new Date(b.release_date).getTime() -
+            new Date(a.release_date).getTime()
+          );
+        }
+
+        return 0;
+      });
+
+      store.setPortfolioItems(items);
       setIsLoading(false);
     })();
   }, []);
@@ -46,7 +58,7 @@ export default function Portfolio() {
 
   return (
     <PageContainer>
-      <Center flex={1} px={{ base: 2, sm: 4 }} py={{ base: 4, sm: 0 }}>
+      <Center flex={1} px={{ base: 2, sm: 4 }} py={4}>
         <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={4}>
           {isLoading && (
             <React.Fragment>
