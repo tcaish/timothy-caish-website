@@ -119,7 +119,7 @@ export default function PortfolioCardComments() {
                           onClick={() => fetchComments(true)}
                           variant="link"
                         >
-                          Load more comments
+                          {i18n.t('load_more_comments')}
                         </Button>
                       </Flex>
                     )}
