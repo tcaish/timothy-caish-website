@@ -84,7 +84,7 @@ export default function PortfolioCardAddCommentModal(
     if (!success) {
       setIsSubmitting(false);
       toast({
-        description: i18n.t('error_adding_comment'),
+        description: i18n.t('error__adding_comment__desc'),
         isClosable: true,
         status: 'error'
       });
@@ -96,7 +96,7 @@ export default function PortfolioCardAddCommentModal(
     store.setPortfolioCardAddCommentModalIsOpen(false);
 
     toast({
-      description: i18n.t('comment_added_successfully'),
+      description: i18n.t('success__comment_added__desc'),
       isClosable: true,
       status: 'success'
     });

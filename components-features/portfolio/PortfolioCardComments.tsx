@@ -1,4 +1,5 @@
 import GhostJson from '@/assets/lottie/ghost.json';
+import PortfolioCardComment from '@/components-features/portfolio/PortfolioCardComment';
 import { Tables } from '@/constants/types/supabase';
 import { i18n } from '@/services/localization';
 import { getPortfolioItemComments } from '@/services/supabase-database/getters/portfolio_item_comments';
@@ -32,8 +33,7 @@ export default function PortfolioCardComments() {
       if (response.error) {
         setIsLoading(false);
         toast({
-          description:
-            'There was an error loading the comments. Please try again!',
+          description: i18n.t('error__loading_comments__desc'),
           isClosable: true,
           status: 'error'
         });
@@ -76,9 +76,9 @@ export default function PortfolioCardComments() {
           {comments.length === 0 ? (
             <EmptyComments />
           ) : (
-            <Stack spacing={4}>
+            <Stack spacing={3}>
               {comments.map((comment) => (
-                <Text key={comment.id}>{comment.comment}</Text>
+                <PortfolioCardComment key={comment.id} {...comment} />
               ))}
             </Stack>
           )}
