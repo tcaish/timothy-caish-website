@@ -96,6 +96,20 @@ export function generateMetaData(meta?: {
 }
 
 /**
+ * Gets the user's IPV6 address and then hashes it.
+ * @returns The user's hashed IPV6 address if it can be fetched; otherwise,
+ * null.
+ */
+export async function getHashedIpv6Address(): Promise<string | null> {
+  const ipv6Address = await getIpv6Address();
+
+  // If we couldn't fetch the IPV6 address
+  if (!ipv6Address) return null;
+
+  return createSha512Hash(ipv6Address);
+}
+
+/**
  * Get the user's IPV6 address.
  * @returns The user's IPV6 address.
  */
