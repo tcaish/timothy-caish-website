@@ -2,7 +2,7 @@
 
 import { isDevelopmentEnv } from '@/constants/device';
 import { LocalStorageKeys } from '@/constants/settings';
-import { getHashedIpv6Address } from '@/helpers';
+import { getHashedIpAddress } from '@/helpers';
 import { i18n } from '@/services/localization';
 import { Mixpanel } from '@/services/mixpanel';
 import { addUniqueVisitor } from '@/services/supabase-database/adders/unique_visitors';
@@ -57,7 +57,7 @@ export function Providers(props: ProvidersProps) {
   // Track unique visitors
   React.useEffect(() => {
     async function trackUniqueVisitor() {
-      const hashedIpv6Address = await getHashedIpv6Address();
+      const hashedIpv6Address = await getHashedIpAddress();
 
       if (!hashedIpv6Address) return;
 

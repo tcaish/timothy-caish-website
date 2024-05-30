@@ -1,3 +1,4 @@
+import { TablesInsert } from "@/constants/types/supabase";
 import { supabaseClient } from "@/services/supabase";
 import Bugsnag from "@bugsnag/js";
 
@@ -5,20 +6,12 @@ import Bugsnag from "@bugsnag/js";
  * Adds a comment to the given portfolio item.
  */
 export async function addPortfolioItemComment(
-  comment: string,
-  id: number,
-  name: string,
+  data: TablesInsert<"portfolio_item_comments">,
 ) {
-  const updatedName = name || null;
-
   const { error } = await supabaseClient
     .from("portfolio_item_comments")
     .insert(
-      {
-        comment,
-        portfolio_item_id: id,
-        name: updatedName,
-      },
+      data,
     );
 
   // If there was an error

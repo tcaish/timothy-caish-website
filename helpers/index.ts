@@ -96,22 +96,42 @@ export function generateMetaData(meta?: {
 }
 
 /**
- * Gets the user's IPV6 address and then hashes it.
- * @returns The user's hashed IPV6 address if it can be fetched; otherwise,
- * null.
+ * Gets the user's IPV6 address and then hashes it. If the IPV6 address cannot
+ * be determined, we try to get the IPV4 address and hash that instead. If
+ * neither can be determined, null is returned.
+ * @returns The user's hashed IPV4 or IPV6 address if it can be fetched;
+ * otherwise, null.
  */
-export async function getHashedIpv6Address(): Promise<string | null> {
-  const ipv6Address = await getIpv6Address();
+export async function getHashedIpAddress(): Promise<string | null> {
+  let ipAddress = await getIpv6Address();
 
   // If we couldn't fetch the IPV6 address
-  if (!ipv6Address) return null;
+  if (!ipAddress) {
+    ipAddress = await getIpv4Address();
+  }
 
-  return createSha512Hash(ipv6Address);
+  // If we couldn't fetch the IPV4 address
+  if (!ipAddress) return null;
+
+  return createSha512Hash(ipAddress);
 }
 
 /**
- * Get the user's IPV6 address.
- * @returns The user's IPV6 address.
+ * Get the user's IPV4 address.
+ * @returns The user's IPV4 address; otherwise, null.
+ */
+export async function getIpv4Address(): Promise<string | null> {
+  const ip = await fetch("https://api.ipify.org?format=json")
+    .then((response) => response.json())
+    .then((data) => data.ip)
+    .catch(() => null);
+  return ip;
+}
+
+/**
+ * Get the user's IPV6 address. It is possible that the user does not have an
+ * IPV6 address, and in that case, null is returned.
+ * @returns The user's IPV6 address; otherwise, null.
  */
 export async function getIpv6Address(): Promise<string | null> {
   const ip = await fetch("https://api6.ipify.org?format=json")

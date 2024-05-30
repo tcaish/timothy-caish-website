@@ -1,4 +1,5 @@
 import PortfolioCardTitle from '@/components-features/portfolio/PortfolioCardTitle';
+import { getHashedIpAddress } from '@/helpers';
 import { i18n } from '@/services/localization';
 import { addPortfolioItemComment } from '@/services/supabase-database/adders/portfolio_item_comments';
 import { useStore } from '@/zustand/store';
@@ -70,18 +71,8 @@ export default function PortfolioCardAddCommentModal(
    * @param data The form data.
    */
   const onSubmit: SubmitHandler<FormInputs> = async (data) => {
-    if (!store.portfolioItemIdSelected) return;
-
-    setIsSubmitting(true);
-
-    const success = await addPortfolioItemComment(
-      data.comment,
-      store.portfolioItemIdSelected,
-      data.name
-    );
-
-    // If there was an error adding the comment
-    if (!success) {
+    // Handles what happens when there is an error
+    function handleError() {
       setIsSubmitting(false);
       toast({
         description: i18n.t('error__adding_comment__desc'),
@@ -90,6 +81,25 @@ export default function PortfolioCardAddCommentModal(
       });
       return;
     }
+
+    if (!store.portfolioItemIdSelected) return;
+
+    setIsSubmitting(true);
+
+    const hashedIpAddress = await getHashedIpAddress();
+
+    // If we couldn't generate the hashed IPV6 address
+    if (!hashedIpAddress) handleError();
+
+    const success = await addPortfolioItemComment({
+      comment: data.comment,
+      hashed_ipv6: hashedIpAddress as string,
+      name: data.name,
+      portfolio_item_id: store.portfolioItemIdSelected
+    });
+
+    // If there was an error adding the comment
+    if (!success) handleError();
 
     setIsSubmitting(false);
     store.setPortfolioCardCommentsModalIsOpen(false);
