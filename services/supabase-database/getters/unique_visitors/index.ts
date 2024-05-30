@@ -23,15 +23,15 @@ export async function getTotalUniqueVisitors() {
 
 /**
  * Checks if the given visitor is unique.
- * @param hashedIpv6Addr The hashed IPV6 address of the user.
+ * @param hashedIpAddr The hashed IPV4 or IPV6 address of the user.
  * @returns boolean indicating if the visitor is unique.
  */
-export async function isVisitorUnique(hashedIpv6Addr: string) {
+export async function isVisitorUnique(hashedIpAddr: string) {
   const { data, error } = await supabaseClient
     .from("unique_visitors")
     .select("id")
     .match({
-      hashed_ipv6: hashedIpv6Addr,
+      hashed_ip: hashedIpAddr,
     });
 
   // If there was an error

@@ -14,7 +14,7 @@ export type Database = {
           approved: boolean | null
           comment: string
           created_at: string
-          hashed_ipv6: string
+          hashed_ip: string
           id: number
           name: string | null
           portfolio_item_id: number
@@ -23,7 +23,7 @@ export type Database = {
           approved?: boolean | null
           comment: string
           created_at?: string
-          hashed_ipv6: string
+          hashed_ip: string
           id?: number
           name?: string | null
           portfolio_item_id: number
@@ -32,7 +32,7 @@ export type Database = {
           approved?: boolean | null
           comment?: string
           created_at?: string
-          hashed_ipv6?: string
+          hashed_ip?: string
           id?: number
           name?: string | null
           portfolio_item_id?: number
@@ -83,17 +83,17 @@ export type Database = {
       unique_visitors: {
         Row: {
           created_at: string
-          hashed_ipv6: string
+          hashed_ip: string
           id: number
         }
         Insert: {
           created_at?: string
-          hashed_ipv6: string
+          hashed_ip: string
           id?: number
         }
         Update: {
           created_at?: string
-          hashed_ipv6?: string
+          hashed_ip?: string
           id?: number
         }
         Relationships: []

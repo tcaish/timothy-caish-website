@@ -4,17 +4,17 @@ import Bugsnag from "@bugsnag/js";
 
 /**
  * Adds a unique visitor to the database.
- * @param hashedIpv6Addr The hashed IPV6 address of the user.
+ * @param hashedIpAddr The hashed IPV4 or IPV6 address of the user.
  */
-export async function addUniqueVisitor(hashedIpv6Addr: string) {
-  const isUnique = await isVisitorUnique(hashedIpv6Addr);
+export async function addUniqueVisitor(hashedIpAddr: string) {
+  const isUnique = await isVisitorUnique(hashedIpAddr);
 
   // If the visitor is not unique, bail out
   if (!isUnique) return;
 
   // Add the unique visitor to the database
   const { error } = await supabaseClient.from("unique_visitors").insert({
-    hashed_ipv6: hashedIpv6Addr,
+    hashed_ip: hashedIpAddr,
   });
 
   // If there was an error

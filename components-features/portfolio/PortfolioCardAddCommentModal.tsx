@@ -93,7 +93,7 @@ export default function PortfolioCardAddCommentModal(
 
     const success = await addPortfolioItemComment({
       comment: data.comment,
-      hashed_ipv6: hashedIpAddress as string,
+      hashed_ip: hashedIpAddress as string,
       name: data.name,
       portfolio_item_id: store.portfolioItemIdSelected
     });

@@ -57,11 +57,11 @@ export function Providers(props: ProvidersProps) {
   // Track unique visitors
   React.useEffect(() => {
     async function trackUniqueVisitor() {
-      const hashedIpv6Address = await getHashedIpAddress();
+      const hashedIpAddress = await getHashedIpAddress();
 
-      if (!hashedIpv6Address) return;
+      if (!hashedIpAddress) return;
 
-      addUniqueVisitor(hashedIpv6Address);
+      addUniqueVisitor(hashedIpAddress);
     }
 
     // Only track unique visitors in production
