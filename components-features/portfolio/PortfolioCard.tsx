@@ -8,7 +8,6 @@ import { i18n } from '@/services/localization';
 import { updatePortfolioItemTotalLikes } from '@/services/supabase-database/adders/portfolio_items';
 import { getPortfolioItemCommentsCount } from '@/services/supabase-database/getters/portfolio_item_comments';
 import { useStore } from '@/zustand/store';
-import { Image } from '@chakra-ui/next-js';
 import {
   Box,
   Button,
@@ -24,6 +23,7 @@ import {
   useColorModeValue
 } from '@chakra-ui/react';
 import { AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 import React from 'react';
 import { BiChat, BiLike, BiSolidChat, BiSolidLike } from 'react-icons/bi';
 
@@ -228,10 +228,10 @@ export default function PortfolioCard(props: Tables<'portfolio_items'>) {
 
         <Image
           alt={props.title}
-          height={200}
+          height={0}
           priority={true}
           src={props.image_url}
-          style={{ objectFit: 'fill' }}
+          style={{ height: '200px', objectFit: 'fill', width: 'auto' }}
           width={500}
         />
 
