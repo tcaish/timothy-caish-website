@@ -20,21 +20,30 @@ export default function Portfolio() {
     (async () => {
       setIsLoading(true);
 
-      const items = await getPortfolioItems();
+      let allItems = await getPortfolioItems();
+
+      const itemsWithoutReleaseDate = allItems.filter(
+        (item) => !item.release_date
+      );
+      const itemsWithReleaseDate = allItems.filter((item) => item.release_date);
 
       // Sort descending by release_date
-      items.sort((a, b) => {
-        if (a.release_date && b.release_date) {
-          return (
-            new Date(b.release_date).getTime() -
-            new Date(a.release_date).getTime()
-          );
+      itemsWithReleaseDate.sort((a, b) => {
+        // This if statement should not be reached but necessary to resolve
+        // the undefined error
+        if (!a.release_date || !b.release_date) {
+          return 0;
         }
 
-        return 0;
+        return (
+          new Date(b.release_date).getTime() -
+          new Date(a.release_date).getTime()
+        );
       });
 
-      store.setPortfolioItems(items);
+      allItems = [...itemsWithoutReleaseDate, ...itemsWithReleaseDate];
+
+      store.setPortfolioItems(allItems);
       setIsLoading(false);
     })();
   }, []);
