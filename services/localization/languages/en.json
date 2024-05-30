@@ -1,7 +1,7 @@
 {
   "add_a_comment": "Add a Comment",
   "add_comment": "Add Comment",
-  "add_comment_description": "Please be respectful and only provide constructive criticism or compliments when adding a comment to this portfolio item.",
+  "add_comment_description": "Please be respectful and only provide constructive criticism or compliments when adding a comment to this portfolio item. Also, you can only add one comment per portfolio item.",
   "add_comment_disclaimer": "I understand that this comment will be reviewed before being made public and that it may be removed at any time.",
   "anonymous_user": "Anonymous User",
   "areas_of_expertise": "Areas of Expertise",
@@ -32,6 +32,7 @@
   "django_desc": "Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of web development, so you can focus on writing your app without needing to reinvent the wheel. It's free and open source.",
   "english": "English",
   "error__adding_comment__desc": "There was an error adding the comment. Please try again!",
+  "error__comment_already_added__desc": "You have already added a comment to this portfolio item. You can only add one comment per portfolio item.",
   "error__loading_comments__desc": "There was an error loading the comments. Please try again!",
   "error_desc": "Ah, you've stumbled upon our exclusive 500 Club - a place we didn't think you'd find (and frankly, hoped you wouldn't). While our tech team works their magic to fix what's amiss, let's get you back to safety.",
   "expo_desc": "Expo is an open-source platform for making universal native apps for Android, iOS, and the web with JavaScript and React. It simplifies the process of building and deploying mobile apps by providing a set of tools and services that abstract away much of the complexity involved in managing native development environments. With Expo, developers can develop and test their apps on real devices and emulators without having to configure native code, making the development process faster and accessible to those who might not have extensive experience with iOS or Android development.",

@@ -1,7 +1,7 @@
 {
   "add_a_comment": "Einen Kommentar hinzufügen",
   "add_comment": "Einen Kommentar hinzufügen",
-  "add_comment_description": "Seien Sie bitte respektvoll und äußern Sie nur konstruktive Kritik oder Komplimente, wenn Sie einen Kommentar zu diesem Portfolioelement hinzufügen.",
+  "add_comment_description": "Seien Sie bitte respektvoll und äußern Sie nur konstruktive Kritik oder Komplimente, wenn Sie einen Kommentar zu diesem Portfolioelement hinzufügen. Außerdem können Sie pro Portfolioelement nur einen Kommentar hinzufügen.",
   "add_comment_disclaimer": "Mir ist bewusst, dass dieser Kommentar vor der Veröffentlichung überprüft wird und jederzeit entfernt werden kann.",
   "anonymous_user": "Anonymer Benutzer",
   "areas_of_expertise": "Fachgebiete",
@@ -32,6 +32,7 @@
   "django_desc": "Django ist ein High-Level-Python-Webframework, das eine schnelle Entwicklung und ein klares, pragmatisches Design fördert. Es wurde von erfahrenen Entwicklern entwickelt und nimmt Ihnen einen Großteil des Aufwands der Webentwicklung ab, sodass Sie sich auf das Schreiben Ihrer App konzentrieren können, ohne das Rad neu erfinden zu müssen. Es ist kostenlos und Open Source.",
   "english": "Englisch",
   "error__adding_comment__desc": "Beim Hinzufügen des Kommentars ist ein Fehler aufgetreten. Bitte versuche es erneut!",
+  "error__comment_already_added__desc": "Sie haben diesem Portfolioelement bereits einen Kommentar hinzugefügt. Sie können pro Portfolioelement nur einen Kommentar hinzufügen.",
   "error__loading_comments__desc": "Beim Laden der Kommentare ist ein Fehler aufgetreten. Bitte versuche es erneut!",
   "error_desc": "Ah, Sie sind zufällig auf unseren exklusiven 500 Club gestoßen – einen Ort, von dem wir nicht dachten, dass Sie ihn finden würden (und ehrlich gesagt auch gehofft hatten, dass Sie ihn finden würden). Während unser Tech-Team alles daran setzt, das Problem zu beheben, bringen wir Sie wieder in Sicherheit.",
   "expo_desc": "Expo ist eine Open-Source-Plattform zur Erstellung universeller nativer Apps für Android, iOS und das Web mit JavaScript und React. Es vereinfacht den Prozess der Erstellung und Bereitstellung mobiler Apps durch die Bereitstellung einer Reihe von Tools und Diensten, die einen Großteil der Komplexität abstrahieren, die mit der Verwaltung nativer Entwicklungsumgebungen verbunden ist. Mit Expo können Entwickler ihre Apps auf realen Geräten und Emulatoren entwickeln und testen, ohne nativen Code konfigurieren zu müssen. Dadurch wird der Entwicklungsprozess schneller und für diejenigen zugänglich, die möglicherweise nicht über umfassende Erfahrung mit der iOS- oder Android-Entwicklung verfügen.",
