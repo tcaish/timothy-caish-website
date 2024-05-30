@@ -47,7 +47,8 @@ export default function PortfolioCardAddCommentModal(
   const {
     formState: { errors },
     handleSubmit,
-    register
+    register,
+    reset
   } = useForm<FormInputs>();
 
   const [isSubmitting, setIsSubmitting] = React.useState(false);
@@ -123,6 +124,7 @@ export default function PortfolioCardAddCommentModal(
     setIsSubmitting(false);
     store.setPortfolioCardCommentsModalIsOpen(false);
     store.setPortfolioCardAddCommentModalIsOpen(false);
+    reset();
 
     toast({
       description: i18n.t('success__comment_added__desc'),
