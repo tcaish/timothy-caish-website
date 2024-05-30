@@ -2,6 +2,7 @@ import PortfolioCardTitle from '@/components-features/portfolio/PortfolioCardTit
 import { getHashedIpAddress } from '@/helpers';
 import { i18n } from '@/services/localization';
 import { addPortfolioItemComment } from '@/services/supabase-database/adders/portfolio_item_comments';
+import { hasUserCommentedOnPortfolioItem } from '@/services/supabase-database/getters/portfolio_item_comments';
 import { useStore } from '@/zustand/store';
 import {
   Button,
@@ -90,6 +91,24 @@ export default function PortfolioCardAddCommentModal(
 
     // If we couldn't generate the hashed IPV6 address
     if (!hashedIpAddress) handleError();
+
+    const userHasAlreadyMadeComment = await hasUserCommentedOnPortfolioItem(
+      hashedIpAddress as string,
+      store.portfolioItemIdSelected
+    );
+
+    // If there was an error checking if the user has already made a comment
+    if (userHasAlreadyMadeComment == null) handleError();
+    // If the user has already made a comment
+    else if (userHasAlreadyMadeComment) {
+      setIsSubmitting(false);
+      toast({
+        description: i18n.t('error__comment_already_added__desc'),
+        isClosable: true,
+        status: 'error'
+      });
+      return;
+    }
 
     const success = await addPortfolioItemComment({
       comment: data.comment,

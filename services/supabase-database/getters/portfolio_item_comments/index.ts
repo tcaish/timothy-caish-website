@@ -9,7 +9,7 @@ let lastVisibleCommentId = 0;
  * @returns All the portfolio items.
  */
 export async function getPortfolioItemComments(
-  id: number,
+  portfolioItemId: number,
   fetchAdditional = false,
 ) {
   // If we do not want to fetch additional comments, start from the beginning
@@ -22,7 +22,7 @@ export async function getPortfolioItemComments(
     .select("*")
     .match({
       approved: true,
-      portfolio_item_id: id,
+      portfolio_item_id: portfolioItemId,
     })
     .order("created_at", { ascending: true })
     .limit(CONTENT_SIZE_LIMIT)
@@ -49,12 +49,12 @@ export async function getPortfolioItemComments(
  * Gets the count of all the portfolio item comments.
  * @returns The count of all the portfolio item comments.
  */
-export async function getPortfolioItemCommentsCount(id: number) {
+export async function getPortfolioItemCommentsCount(portfolioItemId: number) {
   const response = await supabaseClient
     .from("portfolio_item_comments")
     .select("id", { count: "exact", head: true })
     .match({
-      portfolio_item_id: id,
+      portfolio_item_id: portfolioItemId,
     });
 
   // If there was an error
@@ -68,4 +68,35 @@ export async function getPortfolioItemCommentsCount(id: number) {
   }
 
   return response.count == null ? 0 : response.count;
+}
+
+/**
+ * Checks if the user has commented on the portfolio item.
+ * @param hashedIpAddress The hashed IPV4 or IPV6 address of the user.
+ * @param portfolioItemId The id of the portfolio item.
+ * @returns
+ */
+export async function hasUserCommentedOnPortfolioItem(
+  hashedIpAddress: string,
+  portfolioItemId: number,
+) {
+  const response = await supabaseClient
+    .from("portfolio_item_comments")
+    .select("id", { count: "exact", head: true })
+    .match({
+      portfolio_item_id: portfolioItemId,
+      hashed_ip: hashedIpAddress,
+    });
+
+  // If there was an error
+  if (response.error || response.count == null) {
+    Bugsnag.notify(
+      `hasUserCommentedOnPortfolioItem() error: ${
+        JSON.stringify(response.error)
+      }`,
+    );
+    return null;
+  }
+
+  return response.count > 0;
 }
