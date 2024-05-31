@@ -1,3 +1,4 @@
+import { opaqueDarkBgColor, opaqueLightBgColor } from '@/constants/colors';
 import { BORDER_RADIUS_DEFAULT } from '@/constants/settings';
 import {
   Card,
@@ -12,14 +13,14 @@ import 'react-loading-skeleton/dist/skeleton.css';
 import './index.scss';
 
 export default function PortfolioCardSkeleton() {
-  const baseColor = useColorModeValue('#EDF2F7', '#718096');
+  const baseColor = useColorModeValue('#A0AEC0', '#718096');
   const highlightColor = useColorModeValue('#E2E8F0', '#A0AEC0');
 
   return (
     <Card
+      bg={useColorModeValue(opaqueLightBgColor, opaqueDarkBgColor)}
       borderRadius={BORDER_RADIUS_DEFAULT}
       maxW="md"
-      minW={{ base: 'xs', md: 'md' }}
     >
       <CardHeader>
         <Skeleton
