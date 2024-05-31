@@ -6,6 +6,7 @@ import {
   CardFooter,
   CardHeader,
   Stack,
+  Text,
   useColorModeValue
 } from '@chakra-ui/react';
 import Skeleton from 'react-loading-skeleton';
@@ -23,6 +24,13 @@ export default function PortfolioCardSkeleton() {
       maxW="md"
     >
       <CardHeader>
+        {/* This component is needed to make sure the card's width is as wide as
+        it can get. If this wasn't here, the card would be very small and not
+        look normal. */}
+        <Text h={0} opacity={0}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </Text>
+
         <Skeleton
           baseColor={baseColor}
           highlightColor={highlightColor}
