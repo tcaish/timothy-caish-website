@@ -83,6 +83,7 @@
   "submit": "Einreichen",
   "success__comment_added__desc": "Kommentar erfolgreich hinzugefügt! Bitte rechnen Sie mit einigen Werktagen für die Überprüfung.",
   "supabase_desc": "Supabase ist eine Open-Source-Firebase-Alternative und bietet Entwicklern eine Reihe von Tools zum schnellen Erstellen und Skalieren ihrer Anwendungen. Es bietet eine Kombination wichtiger Backend-Dienste, die normalerweise für Web- und mobile Anwendungen erforderlich sind, mit dem Ziel, die Entwicklungsgeschwindigkeit zu erhöhen, ohne den Entwickler an ein bestimmtes Framework oder eine bestimmte Technologie zu binden.",
+  "tailwindcss_desc": "Tailwind CSS ist ein Utility-First-CSS-Framework, das eine Reihe von Utility-Klassen bereitstellt, um Entwicklern dabei zu helfen, schnell benutzerdefinierte Designs zu erstellen, ohne benutzerdefiniertes CSS schreiben zu müssen. Es ist so konzipiert, dass es hochgradig anpassbar und benutzerfreundlich ist und es Entwicklern ermöglicht, einzigartige Designs zu erstellen, indem sie Dienstprogrammklassen in ihrem HTML-Markup kombinieren.",
   "this_field_is_required": "Dieses Feld ist erforderlich.",
   "this_is_optional": "Dies ist optional.",
   "top_editors": "Top-Redakteure",

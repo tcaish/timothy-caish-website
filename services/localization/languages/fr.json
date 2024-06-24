@@ -82,6 +82,7 @@
   "spanish": "espagnol",
   "submit": "Soumettre",
   "success__comment_added__desc": "Commentaire ajouté avec succès ! Veuillez prévoir quelques jours ouvrables pour qu'il soit examiné.",
+  "tailwindcss_desc": "Tailwind CSS est un framework CSS axé sur les utilitaires qui fournit un ensemble de classes utilitaires pour aider les développeurs à créer rapidement des conceptions personnalisées sans avoir à écrire du CSS personnalisé. Il est conçu pour être hautement personnalisable et facile à utiliser, permettant aux développeurs de créer des conceptions uniques en combinant des classes utilitaires dans leur balisage HTML.",
   "this_field_is_required": "Ce champ est obligatoire.",
   "this_is_optional": "Ceci est facultatif.",
   "top_editors": "Meilleurs éditeurs",

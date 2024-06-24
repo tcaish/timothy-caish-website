@@ -83,6 +83,7 @@
   "submit": "Entregar",
   "success__comment_added__desc": "¡Comentario agregado exitosamente! Espere unos días hábiles para que se revise.",
   "supabase_desc": "Supabase es una alternativa de código abierto a Firebase que ofrece a los desarrolladores un conjunto de herramientas para crear y escalar rápidamente sus aplicaciones. Proporciona una combinación de servicios backend clave que normalmente se requieren para aplicaciones web y móviles, con el objetivo de aumentar la velocidad de desarrollo sin limitar al desarrollador a un marco o tecnología específica.",
+  "tailwindcss_desc": "Tailwind CSS es un marco CSS de utilidad que proporciona un conjunto de clases de utilidad para ayudar a los desarrolladores a crear rápidamente diseños personalizados sin tener que escribir CSS personalizado. Está diseñado para ser altamente personalizable y fácil de usar, lo que permite a los desarrolladores crear diseños únicos combinando clases de utilidad en su marcado HTML.",
   "this_field_is_required": "Este campo es obligatorio.",
   "this_is_optional": "Esto es opcional.",
   "top_editors": "Editores principales",

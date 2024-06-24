@@ -98,6 +98,14 @@ export default function SkillCards() {
       link: 'https://supabase.io/',
       source: '/assets/brands/supabase_logo.png',
       title: 'Supabase'
+    },
+    {
+      alt: 'Tailwind CSS Logo',
+      color: 'rgba(59, 130, 246, 0.5)',
+      description: i18n.t('tailwindcss_desc'),
+      link: 'https://tailwindcss.com/',
+      source: '/assets/brands/tailwindcss_logo.png',
+      title: 'Tailwind CSS'
     }
   ];
 
