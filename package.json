@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@bugsnag/js": "^7.23.0",
-    "@bugsnag/plugin-react": "^7.22.7",
+    "@bugsnag/plugin-react": "^7.24.0",
     "@chakra-ui/next-js": "^2.2.0",
     "@chakra-ui/react": "^2.8.2",
     "@devil7softwares/react-drifter-stars": "^1.0.6",
