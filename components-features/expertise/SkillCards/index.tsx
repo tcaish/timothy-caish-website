@@ -106,6 +106,22 @@ export default function SkillCards() {
       link: 'https://tailwindcss.com/',
       source: '/assets/brands/tailwindcss_logo.png',
       title: 'Tailwind CSS'
+    },
+    {
+      alt: 'TypeScript Logo',
+      color: 'rgba(0, 122, 204, 0.5)',
+      description: i18n.t('typescript_desc'),
+      link: 'https://www.typescriptlang.org/',
+      source: '/assets/brands/typescript_logo.png',
+      title: 'TypeScript'
+    },
+    {
+      alt: 'Zustand Logo',
+      color: 'rgba(255, 174, 0, 0.5)',
+      description: i18n.t('zustand_desc'),
+      link: 'https://zustand-demo.pmnd.rs/',
+      source: '/assets/brands/zustand_logo.png',
+      title: 'Zustand'
     }
   ];
 

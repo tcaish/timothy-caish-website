@@ -92,6 +92,8 @@
   "top_languages__description": "Dies sind die sechs Sprachen, mit denen ich am meisten Zeit verbracht habe, in absteigender Reihenfolge nach Stunden.",
   "total_hours_coding": "Codierung der Gesamtstunden",
   "total_unique_visitors": "Insgesamt einzigartige Besucher",
+  "typescript_desc": "TypeScript ist eine typisierte Obermenge von JavaScript, die zu einfachem JavaScript kompiliert wird. Es bietet Klassen, Module und Schnittstellen, die Ihnen beim Aufbau robuster Komponenten helfen.",
   "website": "Webseite",
-  "with_blend_of_creativity": "Mit einer Mischung aus Kreativität und technischem Fachwissen brilliere ich als Full-Stack-Entwickler, der Ideen in dynamische Mobil- und Webanwendungen umwandelt, die das Engagement der Benutzer steigern und Unternehmen voranbringen."
+  "with_blend_of_creativity": "Mit einer Mischung aus Kreativität und technischem Fachwissen brilliere ich als Full-Stack-Entwickler, der Ideen in dynamische Mobil- und Webanwendungen umwandelt, die das Engagement der Benutzer steigern und Unternehmen voranbringen.",
+  "zustand_desc": "Zustand ist eine kleine, schnelle und skalierbare Bearbones-Lösung für das Zustandsmanagement. Es hat eine geringe Stellfläche und ist einfach zu bedienen."
 }

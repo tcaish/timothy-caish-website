@@ -91,6 +91,8 @@
   "top_languages__description": "Estes são os seis principais idiomas com os quais passei mais tempo, em ordem decrescente por horas.",
   "total_hours_coding": "Codificação total de horas",
   "total_unique_visitors": "Total de visitantes únicos",
+  "typescript_desc": "TypeScript é um superconjunto digitado de JavaScript que é compilado em JavaScript simples. Oferece classes, módulos e interfaces para ajudá-lo a construir componentes robustos.",
   "website": "Local na rede Internet",
-  "with_blend_of_creativity": "Com uma mistura de criatividade e conhecimento técnico, me destaquei como desenvolvedor full stack, transformando ideias em aplicativos móveis e web dinâmicos que melhoram o envolvimento do usuário e impulsionam os negócios."
+  "with_blend_of_creativity": "Com uma mistura de criatividade e conhecimento técnico, me destaquei como desenvolvedor full stack, transformando ideias em aplicativos móveis e web dinâmicos que melhoram o envolvimento do usuário e impulsionam os negócios.",
+  "zustand_desc": "Zustand é uma solução de gerenciamento de estado bearbones pequena, rápida e escalável. Ele ocupa pouco espaço e é fácil de usar."
 }

@@ -91,6 +91,8 @@
   "top_languages__description": "Ce sont les six langues avec lesquelles j'ai passé le plus de temps, par ordre décroissant d'heures.",
   "total_hours_coding": "Codage des heures totales",
   "total_unique_visitors": "Nombre total de visiteurs uniques",
+  "typescript_desc": "TypeScript est un sur-ensemble typé de JavaScript qui se compile en JavaScript simple. Il propose des classes, des modules et des interfaces pour vous aider à créer des composants robustes.",
   "website": "Site web",
-  "with_blend_of_creativity": "Avec un mélange de créativité et d'expertise technique, j'excelle en tant que développeur full stack, transformant des idées en applications mobiles et Web dynamiques qui améliorent l'engagement des utilisateurs et propulsent les entreprises vers l'avant."
+  "with_blend_of_creativity": "Avec un mélange de créativité et d'expertise technique, j'excelle en tant que développeur full stack, transformant des idées en applications mobiles et Web dynamiques qui améliorent l'engagement des utilisateurs et propulsent les entreprises vers l'avant.",
+  "zustand_desc": "Zustand est une petite solution de gestion d'état Bearbones, rapide et évolutive. Il a un faible encombrement et est facile à utiliser."
 }

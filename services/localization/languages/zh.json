@@ -91,6 +91,8 @@
   "top_languages__description": "以下是我使用时间最多的六种语言（按小时降序排列）。",
   "total_hours_coding": "编码总时间",
   "total_unique_visitors": "独立访客总数",
+  "typescript_desc": "TypeScript 是 JavaScript 的类型化超集，可编译为纯 JavaScript。它提供类、模块和接口来帮助您构建健壮的组件。",
   "website": "网站",
-  "with_blend_of_creativity": "凭借创造力和技术专长的结合，我作为一名出色的全栈开发人员，将想法转化为动态的移动和 Web 应用程序，从而增强用户参与度并推动业务发展。"
+  "with_blend_of_creativity": "凭借创造力和技术专长的结合，我作为一名出色的全栈开发人员，将想法转化为动态的移动和 Web 应用程序，从而增强用户参与度并推动业务发展。",
+  "zustand_desc": "Zustand 是一个小型、快速且可扩展的 Bearbones 状态管理解决方案。它占地面积小且易于使用。"
 }

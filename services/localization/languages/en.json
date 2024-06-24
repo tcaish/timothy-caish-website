@@ -92,6 +92,8 @@
   "top_languages__description": "These are the top six languages I've spent the most time with in descending order by hours.",
   "total_hours_coding": "Total Hours Coding",
   "total_unique_visitors": "Total unique visitors",
+  "typescript_desc": "TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. It offers classes, modules, and interfaces to help you build robust components.",
   "website": "Website",
-  "with_blend_of_creativity": "With a blend of creativity and technical expertise, I excel as a full stack developer, transforming ideas into dynamic mobile and web applications that enhance user engagement and propel businesses forward."
+  "with_blend_of_creativity": "With a blend of creativity and technical expertise, I excel as a full stack developer, transforming ideas into dynamic mobile and web applications that enhance user engagement and propel businesses forward.",
+  "zustand_desc": "Zustand is a small, fast and scalable bearbones state-management solution. It has a tiny footprint and is easy to use."
 }
