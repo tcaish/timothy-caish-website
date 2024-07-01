@@ -24,7 +24,7 @@
     "@emotion/styled": "^11.11.5",
     "@supabase/ssr": "^0.4.0",
     "@supabase/supabase-js": "^2.43.5",
-    "echarts": "^5.5.0",
+    "echarts": "^5.5.1",
     "framer-motion": "^11.2.10",
     "get-user-locale": "^2.3.2",
     "i18n-js": "^4.4.3",
