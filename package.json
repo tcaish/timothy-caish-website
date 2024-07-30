@@ -15,7 +15,7 @@
     "supabase-deploy-all": "npx supabase secrets set --env-file ./supabase/.env && npx supabase functions deploy --debug"
   },
   "dependencies": {
-    "@bugsnag/js": "^7.23.0",
+    "@bugsnag/js": "^7.25.0",
     "@bugsnag/plugin-react": "^7.25.0",
     "@chakra-ui/next-js": "^2.2.0",
     "@chakra-ui/react": "^2.8.2",
@@ -25,7 +25,7 @@
     "@supabase/ssr": "^0.4.0",
     "@supabase/supabase-js": "^2.44.3",
     "echarts": "^5.5.1",
-    "framer-motion": "^11.2.13",
+    "framer-motion": "^11.3.19",
     "get-user-locale": "^2.3.2",
     "i18n-js": "^4.4.3",
     "lottie-react": "^2.4.0",
@@ -44,13 +44,13 @@
     "zustand": "^4.5.4"
   },
   "devDependencies": {
-    "@types/mixpanel-browser": "^2.49.0",
+    "@types/mixpanel-browser": "^2.49.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "encoding": "^0.1.13",
     "eslint": "^8",
-    "eslint-config-next": "14.2.4",
+    "eslint-config-next": "14.2.5",
     "sass": "^1.77.8",
     "supabase": "^1.178.2",
     "typescript": "^5",

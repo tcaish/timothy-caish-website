@@ -58,17 +58,17 @@
     "@babel/helper-validator-identifier" "^7.22.20"
     to-fast-properties "^2.0.0"
 
-"@bugsnag/browser@^7.22.7":
-  version "7.22.7"
-  resolved "https://registry.yarnpkg.com/@bugsnag/browser/-/browser-7.22.7.tgz#ba1f9f3596b9d3cf1b4db11250f8be2f178a78c1"
-  integrity sha512-70jFkWKscK2osm7bnFbPLevrzHClrygM3UcKetKs/l81Xuzlxnu1SS3onN5OUl9kd9RN4XMFr46Pv5jSqWqImQ==
+"@bugsnag/browser@^7.25.0":
+  version "7.25.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/browser/-/browser-7.25.0.tgz#aa56a8e138dfff268ac29c5fe374cfc3c9b42a76"
+  integrity sha512-PzzWy5d9Ly1CU1KkxTB6ZaOw/dO+CYSfVtqxVJccy832e6+7rW/dvSw5Jy7rsNhgcKSKjZq86LtNkPSvritOLA==
   dependencies:
-    "@bugsnag/core" "^7.22.7"
+    "@bugsnag/core" "^7.25.0"
 
-"@bugsnag/core@^7.22.7":
-  version "7.22.7"
-  resolved "https://registry.yarnpkg.com/@bugsnag/core/-/core-7.22.7.tgz#ea5e0822b01913c88be4dbc67d388aff8d65f26a"
-  integrity sha512-9DPWBkkBjhFJc5dCFy/wVC3HE0Aw3ZiLJKjyAxgywSKbILgtpD+qT1Xe8sacWyxU92znamlZ8H8ziQOe7jhhbA==
+"@bugsnag/core@^7.25.0":
+  version "7.25.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/core/-/core-7.25.0.tgz#ee4dbc66dba4adc65717a3a8bf05dca55790e218"
+  integrity sha512-JZLak1b5BVzy77CPcklViZrppac/pE07L3uSDmfSvFYSCGReXkik2txOgV05VlF9EDe36dtUAIIV7iAPDfFpQQ==
   dependencies:
     "@bugsnag/cuid" "^3.0.0"
     "@bugsnag/safe-json-stringify" "^6.0.0"
@@ -81,20 +81,20 @@
   resolved "https://registry.yarnpkg.com/@bugsnag/cuid/-/cuid-3.0.2.tgz#544f8e6e7e3768c8cb618ca5c5fb1eea6aacbb7e"
   integrity sha512-cIwzC93r3PQ/INeuwtZwkZIG2K8WWN0rRLZQhu+mr48Ay+i6sEki4GYfTsflse7hZ1BeDWrNb/Q9vgY3B31xHQ==
 
-"@bugsnag/js@^7.23.0":
-  version "7.23.0"
-  resolved "https://registry.yarnpkg.com/@bugsnag/js/-/js-7.23.0.tgz#92df585be48e509df3c138182ce507dd4162a587"
-  integrity sha512-gnCpcv/v6p3CtbwwDuAjVYPPNq4NMVj4hp70MiB3OGJ+LmIS66CwElDiyvRMA8Ar6OzCF4joTeaNG5bD9cM41w==
+"@bugsnag/js@^7.25.0":
+  version "7.25.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/js/-/js-7.25.0.tgz#339d5c4815a8c141a4056759184636a64404ad89"
+  integrity sha512-d8n8SyKdRUz8jMacRW1j/Sj/ckhKbIEp49+Dacp3CS8afRgfMZ//NXhUFFXITsDP5cXouaejR9fx4XVapYXNgg==
   dependencies:
-    "@bugsnag/browser" "^7.22.7"
-    "@bugsnag/node" "^7.23.0"
+    "@bugsnag/browser" "^7.25.0"
+    "@bugsnag/node" "^7.25.0"
 
-"@bugsnag/node@^7.23.0":
-  version "7.23.0"
-  resolved "https://registry.yarnpkg.com/@bugsnag/node/-/node-7.23.0.tgz#cc685bb9255504dc6a4ad3f09458968e98c82b65"
-  integrity sha512-eXA8/h+J2booEMlKsuRl1NAszebwm4KZ9zxCSg/xN4sw5boXia7kMifLf8QTqk+UBtIhNKBsyQQKHXbawKyE6Q==
+"@bugsnag/node@^7.25.0":
+  version "7.25.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/node/-/node-7.25.0.tgz#ce00920ce290333114f33e5167397c6b1657cb47"
+  integrity sha512-KlxBaJ8EREEsfKInybAjTO9LmdDXV3cUH5+XNXyqUZrcRVuPOu4j4xvljh+n24ifok/wbFZTKVXUzrN4iKIeIA==
   dependencies:
-    "@bugsnag/core" "^7.22.7"
+    "@bugsnag/core" "^7.25.0"
     byline "^5.0.0"
     error-stack-parser "^2.0.2"
     iserror "^0.0.2"
@@ -1136,10 +1136,10 @@
   resolved "https://registry.yarnpkg.com/@next/env/-/env-14.2.4.tgz#5546813dc4f809884a37d257b254a5ce1b0248d7"
   integrity sha512-3EtkY5VDkuV2+lNmKlbkibIJxcO4oIHEhBWne6PaAp+76J9KoSsGvNikp6ivzAT8dhhBMYrm6op2pS1ApG0Hzg==
 
-"@next/eslint-plugin-next@14.2.4":
-  version "14.2.4"
-  resolved "https://registry.yarnpkg.com/@next/eslint-plugin-next/-/eslint-plugin-next-14.2.4.tgz#c7f965cb76f0b454e726ef0f69157c4fb4e28f53"
-  integrity sha512-svSFxW9f3xDaZA3idQmlFw7SusOuWTpDTAeBlO3AEPDltrraV+lqs7mAc6A27YdnpQVVIA3sODqUAAHdWhVWsA==
+"@next/eslint-plugin-next@14.2.5":
+  version "14.2.5"
+  resolved "https://registry.yarnpkg.com/@next/eslint-plugin-next/-/eslint-plugin-next-14.2.5.tgz#f7e3ff3efe40a2855e5f29bc2692175f85913ba8"
+  integrity sha512-LY3btOpPh+OTIpviNojDpUdIbHW9j0JBYBjsIp8IxtDFfYFyORvw3yNq6N231FVqQA7n7lwaf7xHbVJlA1ED7g==
   dependencies:
     glob "10.3.10"
 
@@ -1381,10 +1381,10 @@
   resolved "https://registry.yarnpkg.com/@types/minimist/-/minimist-1.2.5.tgz#ec10755e871497bcd83efe927e43ec46e8c0747e"
   integrity sha512-hov8bUuiLiyFPGyFPE1lwWhmzYbirOXQNNo40+y3zow8aFVTeyn3VWL0VFFfdNddA8S4Vf0Tc062rzyNr7Paag==
 
-"@types/mixpanel-browser@^2.49.0":
-  version "2.49.0"
-  resolved "https://registry.yarnpkg.com/@types/mixpanel-browser/-/mixpanel-browser-2.49.0.tgz#ad92ecc36fad63b9c0aed80b6283d86dbf52e49e"
-  integrity sha512-StmgUnS58d44DmIAEX9Kk8qwisAYCl6E2qulIjYyHXUPuJCPOuyUMTTKBp+aU2F2do+kxAzCxiBtsB4fnBT9Fg==
+"@types/mixpanel-browser@^2.49.1":
+  version "2.49.1"
+  resolved "https://registry.yarnpkg.com/@types/mixpanel-browser/-/mixpanel-browser-2.49.1.tgz#baf011f4f2818fda99d68874813914551e6c4442"
+  integrity sha512-W9VZxD7haNMenkRwXxPZBJLhED7Sx1l89nZsGcWi3WzdIk417k/KnpmfDFn2sEyL31G/h0rY1E6erAny+8ItOw==
 
 "@types/node@*", "@types/node@^20":
   version "20.14.10"
@@ -2416,12 +2416,12 @@ escape-string-regexp@^4.0.0:
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz#14ba83a5d373e3d311e5afca29cf5bfad965bf34"
   integrity sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==
 
-eslint-config-next@14.2.4:
-  version "14.2.4"
-  resolved "https://registry.yarnpkg.com/eslint-config-next/-/eslint-config-next-14.2.4.tgz#eb0bedfe4a894bc2aea918214bb5243ee4fa7d4b"
-  integrity sha512-Qr0wMgG9m6m4uYy2jrYJmyuNlYZzPRQq5Kvb9IDlYwn+7yq6W6sfMNFgb+9guM1KYwuIo6TIaiFhZJ6SnQ/Efw==
+eslint-config-next@14.2.5:
+  version "14.2.5"
+  resolved "https://registry.yarnpkg.com/eslint-config-next/-/eslint-config-next-14.2.5.tgz#cdd43d89047eb7391ba25445d5855b4600b6adb9"
+  integrity sha512-zogs9zlOiZ7ka+wgUnmcM0KBEDjo4Jis7kxN1jvC0N4wynQ2MIx/KBkg4mVF63J5EK4W0QMCn7xO3vNisjaAoA==
   dependencies:
-    "@next/eslint-plugin-next" "14.2.4"
+    "@next/eslint-plugin-next" "14.2.5"
     "@rushstack/eslint-patch" "^1.3.3"
     "@typescript-eslint/parser" "^5.4.2 || ^6.0.0 || 7.0.0 - 7.2.0"
     eslint-import-resolver-node "^0.3.6"
@@ -2793,10 +2793,10 @@ framer-motion@^10.16.5:
   optionalDependencies:
     "@emotion/is-prop-valid" "^0.8.2"
 
-framer-motion@^11.2.13:
-  version "11.2.13"
-  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-11.2.13.tgz#ab23fbc386233b1a1548757d840190054e5e1f1d"
-  integrity sha512-AyIeegfkXlkX1lWEudRYsJlC+0A59cE8oFK9IsN9bUQzxLwcvN3AEaYaznkELiWlHC7a0eD7pxsYQo7BC05S5A==
+framer-motion@^11.3.19:
+  version "11.3.19"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-11.3.19.tgz#7a2bd72ed1dd04a47d8ecb8444447cfc47c70984"
+  integrity sha512-+luuQdx4AsamyMcvzW7jUAJYIKvQs1KE7oHvKkW3eNzmo0S+3PSDWjBuQkuIP9WyneGnKGMLUSuHs8OP7jKpQg==
   dependencies:
     tslib "^2.4.0"
 
